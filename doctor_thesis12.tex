@@ -1,0 +1,2258 @@
+
+\documentclass[a4,10.5pt]{report}
+\usepackage[backend=bibtex,style=phys,articletitle=false,biblabel=brackets,chaptertitle=false,pageranges=false]{biblatex}
+\bibliography{docter_thesis_ref}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{epic, eepic}
+\usepackage[dvipdfmx]{hyperref,graphicx}
+\usepackage{pxjahyper}
+\usepackage{braket}
+\usepackage{comment}
+\usepackage{bm}
+\usepackage{here}
+
+\renewcommand{\bibname}{References}
+
+\newcommand{\mycomment}[1]{%
+}%
+
+
+\begin{document}
+\large
+\tableofcontents
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Hyperhoneycomb $\beta$-Li$_2$IrO$_3$ is a candidate material for Kitaev spin liquid.
+High pressure suppresses the spiral magnetic oreder without metallization, so pressure-induced spin liquid is expected.
+In fact, $\mu$SR reported the appearance of liquid-like spin component at high pressure.
+Our main motivation is to test the liquid component with NMR relaxation measurement. 
+
+The magnetic properties of $\beta$-Li$_2$IrO$_3$ were investigated 
+by the ${}^7$Li NMR and the magnetization measurements under high pressures up to 3.9 GPa.  
+At ambient pressure, the NMR measurement confirmed the reported spiral ordering of $J_{\mathrm{eff}} = 1/2$ moments below $T_{\mathrm{mag}}$ = 38 K, 
+which is suppressed to become a ferromagnetically polarized paramagnet by applying a magnetic field parallel to the b-axis $B_b$ $>$ 2.7 T. 
+With application of pressure, the magnetic phase is suddenly suppressed at $P_c \sim$1 GPa. 
+Above $P_c$, a nonmagnetic spin-singlet state emerges below a first order transition temperature $T_\mathrm{d}$, 
+evidenced by the almost zero Knight shift and the suppressed relaxation rate $T^{-1}_1$. 
+The spin singlet phase is accompanied with the formation of the strong dimerized Ir$_2$ pairs within Ir zigzag chains previously observed by x-ray and neutron diffraction measurements. 
+We argue that the observed phase competition under pressure reflects the subtle balance between the orbital disordered $J_{\mathrm{eff}} = 1/2$ state 
+and the orbital selective valence bond state.
+
+Similar pressure-induced dimerization is oberved among some Kitaev candidates.
+The competition between spin-orbit coupling and dimerization might be ubiquitous phenomenon.
+Our study indicates the pressure is not the suitable variable to tune the Kitaev candidates to be close to Kitaev spin liquid.
+
+\chapter{Introduction}
+Historically, band theory succeeded to explain the physics of weakly correlated $s$ or $p$ electron system like alkhali metal or semiconducting behavior of Si or Ge.
+The interest of physicists pursuing the exotic quantum phenomena, then, focused on surveying the effect of strong Coulomb correlation.
+The target was $3d$ electron system, where strong correlation originated from well-localized $3d$ orbital was expected ($U \sim 5$eV for NiO \cite{bengone2000implementation}).
+For example, Mott/charge-transfer insulator \cite{arima1993variation}, colossal magnetoresistance in manganites \cite{dagotto2005complexity} 
+and high-$T_C$ superconducting cuprate \cite{dagotto2005complexity} are the topics in 3d electron system.
+These phenomena are beyond the conventional band theory or mean-field theory.
+They stimulated the theoretical development to correctly include strong Coulomb $U$ such as dynamical mean-field theory \cite{georges1996dynamical}.
+In that sense, $4d, 5d$ electron systems had been forgot because the effect of correlation was considered to be weaker in the extended $4d, 5d$ orbitals compared to $3d$.
+
+
+The situation is drastically changed from the discovery of layered perovskite Sr$_2$IrO$_4$ \cite{kim2008novel, kim2009phase}.
+In Sr$_2$IrO$_4$, octahedral crystal field split $5d$ orbital into $t_{2g}$ and $e_g$ orbitals.
+Metallic state was expected since five electrons fill the widely-spread $t_{2g}$ orbital.
+However, it is actually a magnetic insulator.
+The insulating state is induced by the interplay of strong spin-orbit coupling (SOC) ($\lambda_{SO} \sim 0.3$ eV \cite{kim2008novel}, 0.01 eV for 3d ion \cite{Kanamori})
+and modest Coulomb $U$($U \sim 2$eV for Sr$_2$IrO$_4$ \cite{arita2012ab}).
+Strong SOC mixes up $S = 1/2$ of the hole and the effective angular momentum of $t_{2g}$ orbital, $L_\mathrm{eff} = -1$ (Fig.\ref{five_t2g}).
+It gives the splitting of $t_{2g}$ orbitals into completely filled $J_{\mathrm{eff}} = 3/2$ quartet and half-filled $J_{\mathrm{eff}} = 1/2$ doublet.
+The band width of $t_{2g}$ orbitals is reduced to that of $J_{\mathrm{eff}} = 1/2$ state by SOC.
+In the narrow $J_{\mathrm{eff}} = 1/2$ state, the modest value of Coulomb $U$ is enough to open the Mott gap.
+Thus, by reducing the band width, strong SOC enhances the effect of Coulomb $U$, which makes $4d$, $5d$ systems nontrivial spin-orbit Mott insulators.
+
+The existence of $J_{\mathrm{eff}} = 1/2$ state in Sr$_2$IrO$_4$ was established by resonant X-ray scattering (RXS) \cite{kim2009phase}.
+Fig.\ref{Sr2IrO4} shows the RXS intensity for L$_2$ and L$_3$ edge of Ir.
+In $S = 1/2$ model, both of L$_2$ and L$_3$ edge should be enhanced, while in $J_\mathrm{eff} = 1/2$ model, only L$_3$ edge is enhanced.
+The enhancement in RXS intensity is only observed in L$_3$ edge, indicating the validity of $J_\mathrm{eff} = 1/2$ model in Sr$_2$IrO$_4$.
+
+%Fig. Energy level splitting of Ir$^{4+}$ or Ru$^{3+} ion.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{five_t2g.png}
+  \caption{Energy level splitting of Ir$^{4+}$ or Ru$^{3+}$ ion under octahedral crystal field.
+  $\Delta_{\mathrm{cubic}}$ is the strength of crystal field splitting.
+  Angular momentum of $d$ orbital ($L$ = 2) reduces to $L_{\mathrm{eff}}$ = -1 in $t_{2g}$ manifold.
+  Strong SOC mixes $L_{\mathrm{eff}}$ = -1 and $S = \frac{1}{2}$ of one hole and gives $J_{\mathrm{eff}} = \frac{1}{2}$ state.
+  $\lambda_{\mathrm{SO}}$ is the strength of SOC.
+  $\Delta_{\mathrm{cubic}}$ is of the order of 3.3 eV for Sr$_2$IrO$_4$ \cite{ishii2011momentum}, 2.2 eV for RuCl$_3$ \cite{sandilands2016spin}
+  and 3.5 eV for $\beta$-Li$_2$IrO$_3$ \cite{takayama2018pressure}.
+  Splitting $\frac{3}{2}\lambda_{\mathrm{SOC}}$ is of the order of 0.4 eV for Sr$_2$IrO$_4$ \cite{kim2008novel} 0.14 eV for RuCl$_3$ \cite{sandilands2016spin} 
+  and 0.7 eV for $\beta$-Li$_2$IrO$_3$ \cite{takayama2018pressure}.}
+  \label{five_t2g}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Sr2IrO4.png}
+  \caption{(A) Solid lines are X-ray absorption spectra. The dotted red lines is the intensity of magnetic (1 0 22) peak.
+  (B) Equal resonant enhancement for L$_2$ and L$_3$ edge is expected in $S = 1/2$ model. In contrast, the enhancement occurs only in L$_3$ edge in $J_\mathrm{eff} = 1/2$ model
+  \cite{kim2009phase}.}
+  \label{Sr2IrO4}
+\end{figure}
+
+In conventional $S = 1/2$ Mott insulator, the interaction between spins is isotropic AF Heisenberg interaction.
+However, in the spin-orbit $J_\mathrm{eff} = 1/2$ Mott insulator, the interaction between $J_\mathrm{eff} = 1/2$ pseudo-spins can be strongly anisotropic \cite{jackeli2009mott}
+and it depends on how the octahedra are connected.
+First, let's consider two $J_\mathrm{eff} = 1/2$ spins in corner-shared octahedra (Fig.\ref{180_90bond}(a)).
+In this case, isotropic Heisenberg interaction remains.
+Interation between $J_\mathrm{eff} = 1/2$ spins is 
+\begin{equation}
+\mathcal{H}_{ij} = J_1\bm{S}_i\cdot\bm{S}_j + J_2(\bm{S}_i\cdot\bm{r}_{ij})(\bm{r}_{ij}\cdot\bm{S}_j),
+\end{equation}
+where $\bm{S}_{i(j)}$ is  $J_{\mathrm{eff}} = 1/2$ spin at site $i(j)$, $\bm{r}_{ij}$ is a unit vector along $ij$ bond.
+$J_1$, $J_2$ is a coupling constant and the isotropic Heisenberg interaction, $J_1$, is more dominant.
+On the other hand, let's consider two $J_\mathrm{eff} = 1/2$ pseudo-spins in edge-shared anion octahedra (Fig.\ref{180_90bond}(b)).
+In this case, as shown in Fig.\ref{180_90bond}, we can consider two indirect virtual hopping paths mediated by anion, 
+$d_{yz}$-$p_z$ (upper anion)-$d_{xz}$ and $d_{xz}$-$p_z$ (lower anion)-$d_{yz}$.
+It is because the $J_{\mathrm{eff}} = 1/2$ state is a spin-orbital-entangled wavefunction including $d_{xz}$ and $d_{yz}$ \cite{jackeli2009mott}:
+\begin{align}
+\ket{J^z_{eff} = \pm \frac{1}{2}} = \frac{1}{\sqrt{3}}(\ket{d_{xy}, \pm}\pm\ket{d_{yz}, \mp}+i\ket{d_{xz}, \pm}),
+\label{Jeff} 
+\end{align}
+where signs in $\ket{}$ of the right-hand side denotes the spin state.
+The two contribution interfere in destructive manner and the isotropic exchange interaction vanishes.
+This is a striking difference from 180$^\circ$ bond situation.
+Only the anisotropic FM Ising interaction called Kitaev interaction,
+\begin{equation}
+\mathcal{H}^{(\gamma)}_{ij} = -KS^\gamma_iS^\gamma_j,
+\label{Kitaev}
+\end{equation}
+remains, where $\bm{S}_{i(j)}$ is  $J_{\mathrm{eff}} = 1/2$ spin at site $i(j)$, $\gamma$ is a direction perpendicular to $ij$ bond and sharing edge, and $K$ is positive.
+The magnetic easy axis of this FM Ising interaction, $\gamma$ direction, is bond-dependent.
+This feature is key ingredient to realize Kitaev model in $J_{\mathrm{eff}} = 1/2$ pseudo-spins.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{180_90bond.png}
+  \caption{Virtual hopping path for two $J_{\mathrm{eff}} = \frac{1}{2}$ spins in (a) corner-shared anion octahedra and (b) edge-shared anion octahedra \cite{jackeli2009mott}.
+  Site $i, j$ is the position of two $J_{\mathrm{eff}} = \frac{1}{2}$ spins and small circle is anion $X$.
+  In (a), Heisenberg interaction reamains, but in (b), two virtual $dpd$ hoppings via upper or lower anion gives Kitaev interaction.}
+  \label{180_90bond}
+\end{figure}
+
+Here, Kitaev model is the model where one-half spins are aligned in honeycomb lattice and the Kitaev interaction (Eq.\ref{Kitaev}) is given for each bond (Fig.\ref{Kitaev_model})
+\cite{kitaev2006anyons}.
+In Hamiltonian, it can be written as,
+%formula.
+\begin{equation}
+\mathcal{H} = -K_x\sum_\mathrm{X-bond} S^x_iS^x_j - K_y\sum_\mathrm{Y-bond} S^y_iS^y_j - K_z\sum_\mathrm{Z-bond} S^z_iS^z_j,
+\label{Kitaev_H}
+\end{equation}
+where $K_x$, $K_y$, $K_z$ is positive, $\bm{S}$ is one-half spin, and X, Y, Z bonds are denoted in Fig.\ref{Kitaev_model}.
+Since the interactions on three bonds try to orient the spin to three different direction, it gives the frustration.
+The frustration disturbs the magnetic order and gives spin liquid in the ground state.
+
+We can exactly solve Kitaev model as follows.
+First, let's rewrite one-half spin in Kitaev model as,
+%formula
+\begin{equation}
+S^\gamma_j = \frac{i}{2}b^\gamma_jc_j
+\end{equation}
+Here, $\gamma = x,y,z$ and $b^\gamma_j$, $c_j$ is Majorana fermions.
+$j$ represents the site index.
+This means that $\bm{S}_j$ is represented by four Majorana fermions.
+One is itinerant Majorana fermion, $c_j$, and the other are localized ones, $b^x_j, b^y_j, b^z_j$.
+Generally, Majorana fermions $a_j$ is an operator which satisfies,
+\begin{equation}
+\{a_i, a_j\} = 2\delta_{ij}, \vspace{4mm} a^\dag_i = a_i.
+\end{equation}
+$S^\gamma_j$ actually behaves one-half spins if we assume one constrain for Majorana fermions,
+\begin{equation}
+D_j = b^x_jb^y_jb^z_jc_j = 1.
+\end{equation}
+Then, Kitaev model (Eq.\ref{Kitaev_H}) can be rewritten as,
+\begin{equation}
+\mathcal{H} = \frac{i}{4}\sum_{j,k}A_{jk}c_jc_k.
+\label{hopping}
+\end{equation}
+Here, $A_{jk}$ is defined as,
+\begin{equation}
+A_{jk} = \begin{cases}
+2K_{\alpha_{jk}}u_{jk} & \text{if j and k are connected}\\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+$u_{jk}$ is defined as,
+\begin{equation}
+u_{jk} = ib^{\alpha_{jk}}_jb^{\alpha_{jk}}_k,
+\end{equation}
+where $\alpha_{jk} = x, y, z$ if $jk$ is X, Y, Z-bond. 
+$u_{jk}$ is a constant ($\pm 1$) since it commutes with $\mathcal{H}$ and satisfies $u^2_{jk} = 1$.
+Thus, Kitaev model (Eq.\ref{Kitaev_H}) is mapped to nearest neighbor hopping model of Majorana fermions coupled with $Z_2$ variables.
+The product of $u_{jk}$ around hexagon, $W$, is also conserved quantity with the value of $\pm1$.
+Numerical calculation or Lieb's theorem \cite{kitaev2006anyons} tell that the ground state is obtained if $W = 1$ for all hexagons.
+This means that one of the ground state is achieved if all $u_{jk}$ are equal to one.
+Thus, the model (Eq.\ref{hopping}) reduces to just a nearest neighbor hopping model on honeycomb lattice. 
+It gives the Dirac cone dispersion of itinerant Majorana fermion $c_j$, similarly to graphene.
+
+For the Kitaev spin liquid, variety of novel phenomena have been predicted: application to topologaical quantum computing \cite{kitaev2006anyons}, 
+realization of exotic superconductor by hole-doping \cite{you2012doping}, and fractional excitation by Majorana fermions \cite{nasu2015thermal, yoshitake2017temperature}.
+
+The essential ingredients for Kitaev model is three 120$^\circ$ bond structure.
+This means that we can consider the extension of Kitaev model on the lattice different from honeycomb at least if the lattice has three 120$^\circ$ bond structure. 
+Theorists invented a lot of such extension of Kitaev model \cite{o2016classification}.
+One of them is 3D hyperhoneycomb lattice (Fig.\ref{hyperhoneycomb}).
+The hyperhoneycomb structure can be constructed from the three-dimensional stack of two-dimensional honeycomb layers, 
+by dividing the honeycomb lattice into zigzag chains and the bridging bonds, rotating the zigzag chains alternatively and reconnecting them with those in the upper and lower planes.
+Kitaev model on hyperhoneycomb lattice also shows spin liquid ground state with nodal line of itinerant Majorana fermion \cite{mandal2009exactly}.
+Because of the three dimensionality, it shows topological phase transition to spin liquid ground state \cite{nasu2014vaporization}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Kitaev_model.png}
+  \caption{Kitaev model on honeyomcb lattice \cite{kitaev2006anyons, kitagawa2018spin}.
+  For each X, Y, Z bond, Kitaev interaction $\mathcal{H}^{(x)}$,$\mathcal{H}^{(y)}$,$\mathcal{H}^{(z)}$ (e.q.(\ref{Kitaev})) is defined.
+  Each bond has different magnetic easy axis and frustrates.}
+  \label{Kitaev_model}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{hyperhoneycomb.png}
+  \caption{Hyperhoneycomb lattice \cite{nasu2014vaporization}. a, b, c represent primitive translation vectors.}
+  \label{hyperhoneycomb}
+\end{figure}
+
+Kiteav model was originally toy model.
+However, since it was suggested that $J_{\mathrm{eff}} = 1/2$ pseudo-spins in edge-shared anion octahedra can show the Kitaev interaction \cite{jackeli2009mott}, 
+the materialzation of Kitaev model become realistic.
+It triggered the intensive material reseach on honeycomb-based Ir$^{4+}$ or Ru$^{3+}$ compounds pursuing Kitaev spin liquid.
+
+Na$_2$IrO$_3$ has 2D honeycomb-layered structure of Ir$^{4+}$.
+It is an insulator with optical gap $\sim 340$ meV, which can be explained only by LDA + SO + $U$, not LDA + SO \cite{comin20122}.
+This means that Na$_2$IrO$_3$ is spin-orbit Mott insulator.
+The Ir$^{4+}$ ions are surrounded by edge-shared O$^{2-}$ octahedra, so the building blocks for Kiteav model are provided.
+However, it has AF interaction with Curie-Weiss temperature $\theta_{\mathrm{CW}} = - 116$ K \cite{singh2010antiferromagnetic} 
+and shows zigzag order of $J_{\mathrm{eff}} = 1/2$ pseudo-spins \cite{ye2012direct}.
+It is considered that additional AF interaction exists and makes the iridate far from ideal FM Kitaev spin liquid.
+On the other hand, the dominance of bond-directional interaction was revealed by diffuse magnetic X-ray scattering \cite{chun2015direct}.
+For Na$_2$IrO$_3$, instead of $J_{\mathrm{eff}} = 1/2$ picture, quasi-molecular orbital (QMO) picture is proposed \cite{mazin20122}.
+In QMO picture, electrons delocalize within Ir hexagon, which is in contrast to atomically localizing $J_{\mathrm{eff}} = 1/2$ picture.
+Other calculation indicates that anisotropic interaction induced by trigonal distortion of O$^{2-}$ octahedra as well as SOC play a key role to stabilze zigzag order 
+\cite{yamaji2014first}.
+In that sense, uniaxial strain to reduce trigonal distortion might be helpful to reach quantum spin liquid in Na$_2$IrO$_3$.
+
+
+$\alpha$-Li$_2$IrO$_3$ has the same structure as Na$_2$IrO$_3$.
+Again, it has AF interaction ($\theta_{\mathrm{CW}} = - 33$ K \cite{singh2012relevance}),
+and shows non-collinear order \cite{williams2016incommensurate}.
+However, if we substitute Li between the honeycomb layers of $\alpha$-Li$_2$IrO$_3$ to H, 
+the resulting compound, $($H$_{\frac{3}{4}}$Li$_{\frac{1}{4}}$)$_2$IrO$_3$ 
+or namely H$_3$LiIr$_2$O$_6$, shows no magnetic order.
+The spin liquid behavior was confirmed down to 50 mK by specific heat measurement. 
+The interaction is still AF for H$_3$LiIr$_2$O$_6$ ($\theta_{\mathrm{CW}} = -105$ K) \cite{kitagawa2018spin}, suggesting the deviation from ideal FM Kitaev spin liquid.
+In fact, the characteristic behavior for Kitaev spin liquid like fractional excitation have not been reported yet.
+Instead, fermionic excitation based on impurities was captured by NMR relaxation measurement \cite{kitagawa2018spin}.
+Theorists revealed that configuration of interlayer hydrogen modifies the interaction between pseudo-spins via H-O bonding \cite{li2018role}.
+Zero-point fluctution of hydrogen is considered as a key to understand spin-liquid behavior in H$_3$LiIr$_2$O$_6$ \cite{li2018role}.
+
+$\alpha$-RuCl$_3$ is one of the most intensively studied Kitaev candidates.
+It has Ru$^{3+}$ honeycomb-layered structure surrounded by edge-shared Cl$^-$ octahedra.
+Photoemission spectroscopy confirmed that it is Mott insulator with substaintial SOC \cite{koitzsch2016j}.
+The sign of Curie-Weiss temperature is dependent on field direction: $\theta_{\mathrm{CW}} = 37$ K ($H \parallel$ ab-plane) and 
+$\theta_{\mathrm{CW}} = -150$ K ($H \parallel$ c-axis) \cite{majumder2015anisotropic}.
+In calculation, Kitaev term is FM and 3-5 times larger than AF Heisenberg \cite{yadav2016kitaev}.
+However, surpringly, inelastic neutron scattering revealed the existence of AF Kitaev interaction, not FM Kitaev interaction \cite{banerjee2017neutron}.
+It shows zigzag AF order at low temperature, but the order can be suppressed under the field within ab-plane above $\sim 7$ T \cite{kasahara2018majorana}. 
+In the high-field regime, the spin liquid behavior is confirmed by NMR measurement \cite{baek2017evidence}.
+Anomolous thermal quantum Hall effect, which can be regarded as emergence of Majorana fermions, is also reported in the high-field spin liquid state of $\alpha$-RuCl$_3$ 
+\cite{kasahara2018majorana}.
+
+$\gamma$-Li$_2$IrO$_3$ \cite{modic2014realization} has 3D stripy honeycomb structure of Ir$^{4+}$.
+The FM Curie-Weiss behavior in high temperature region is reported.
+It shows the complex spiral order \cite{biffin2014noncoplanar}.
+Also for $\gamma$-Li$_2$IrO$_3$, field above $\sim 3$ T suppresses the magnetic order and liquid state is proposed \cite{modic2017robust}, 
+while the microscopic confirmation like NMR has not been done yet.
+On the other hand, high-pressure $\sim 1.4$ GPa suppress the order without structural phase transition \cite{breznay2017resonant}.
+The nature of high-pressure phase still remains unclear.
+
+%Fig. crystal structure (a) honeyocmb (b) stripy (c) beta-Li2IrO3
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{lattices2.png}
+  \caption{(a) Crystal structure of 2D honeycomb-layered H$_3$LiIr$_2$O$_6$ \cite{kitagawa2018spin}.
+  (b) 3D stripy honeycomb structure of $\gamma$-Li$_2$IrO$_3$ \cite{modic2014realization}.
+  (c) Crystal structure of 3D hyperhoneycomb $\beta$-Li$_2$IrO$_3$ \cite{takayama2015hyperhoneycomb}.}
+  \label{lattices}
+\end{figure}
+
+Our material, $\beta$-Li$_2$IrO$_3$ \cite{takayama2015hyperhoneycomb}, is one of such Kitaev candidates.
+$\beta$-Li$_2$IrO$_3$ crystallizes in orthorhombic structure with the space group $F_{ddd}$ at ambient pressure. 
+Ir$^{4+}$ ions have a spin-orbital-entangled $J_\mathrm{eff}$ = 1/2 pseudo-spin due to the octahedral crystal field from surrounding O$^{2-}$ ions 
+as well as the strong spin-orbit coupling. 
+The Ir ions form hyperhoneycomb sub-lattice, which can be viewed as a three-dimensional analogue of two-dimensional honeycomb lattice (Fig. \ref{lattices}(c)).  
+The hyperhoneycomb lattice is surrounded by edge-shared O$^{2-}$ octahedra.
+It means the existence of Kitaev interaction between Ir$^{4+}$ ions.
+Since the hyperhoneycomb lattice shares 120$^\circ$ bond structure with honeycomb lattice, the frustration of Kitaev interactions also arises.
+It leads spin liquid state theoretically \cite{mandal2009exactly}.
+There are two crystallographically inequivalent Li sites. 
+Li2 is surrounded by pseudo-honeycomb five-membered ring of Ir, while Li1 is located outside the pseudo-honeycomb ring.
+
+Fig.\ref{band_cal} shows band calculation for $\beta$-Li$_2$IrO$_3$ under ambient pressure \cite{veiga2017pressure}.
+We can see the splitting of $J_\mathrm{eff} = 1/2$ band and $J_\mathrm{eff} = 3/2$ band.
+$J_\mathrm{eff} = 1/2$ band lies at fermi level, which means the physics of $\beta$-Li$_2$IrO$_3$ is governed by $J_\mathrm{eff} = 1/2$ pseudo-spins.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{band_cal.png}
+  \caption{Band calculation for $\beta$-Li$_2$IrO$_3$ under ambient pressure \cite{veiga2017pressure}. $U_\mathrm{eff} = U - J_H = 2.5$ eV, where $U$ is on-site Coulomb repulsion
+  and $J_H$ is Hund coupling.}
+  \label{band_cal}
+\end{figure}
+
+Fig. \ref{beta0GPa} (a) shows the magnetic susceptibility $\chi = M/B$ at 1 T for polycrystalline sample of $\beta$-Li$_2$IrO$_3$ \cite{takayama2015hyperhoneycomb}.
+The high-$T$ Curie-Weiss fit yields the effective moment $p_{\mathrm{eff}} \sim$ 1.61 $\mu_B$, which is close to 1.73 $\mu_B$ of ideal $J_{\mathrm{eff}} = 1/2$ moment,  
+and the ferromagnetic Curie-Weiss constant $\theta_{CW} \sim 40$ K.
+The ferromagnetically interacting $J_{\mathrm{eff}} = 1/2$ spins indicate the proximity to ideal Kitaev model in $\beta$-Li$_2$IrO$_3$.
+Also, Raman spectroscopy suggests the emergence of Majorana fermionic excitation originating from Kitaev model \cite{glamazda2016raman}.
+However, $\chi$ shows steep increase below 50 K and have a kink at $T_\mathrm{mag} = 38$ K.
+The kink corresponds to the appearance of incommensurate non-coplanar antiferromagnetic (ICAF) order, confirmed by neutron scattering \cite{Biffin2014}. 
+Fig. \ref{beta0GPa}(b) shows the magnetic structure for ICAF order phase.
+The theoretical investigations suggest that the existence of additional interaction different from nearest neighbor FM Kitaev interaction 
+can explain the realization of the spiral order in $\beta$-Li$_2$IrO$_3$ \cite{Lee2015}.
+For example, direct $dd$ hoppings between the Ir$^{4+}$ ions gives isotropic Heisenberg interaction,
+%formula
+\begin{equation}
+\mathcal{H}_{ij} = J\bm{S}_i\cdot\bm{S}_j,
+\end{equation}
+where $\bm{S}_{i(j)}$ is  $J_{\mathrm{eff}} = 1/2$ spin at site $i(j)$.
+The combination of $dd$ and $dpd$ hopping gives symmetric off-diagonal interaction \cite{Nasu2014},
+%formula
+\begin{equation}
+\mathcal{H}_{ij} = \Gamma_{xy} (S^x_iS^y_j + S^y_iS^x_j).
+\label{symoff}
+\end{equation}
+Also, the importance of next nearest neighbor AF Heisenberg interaction is pointed out \cite{Katukuri2016}.
+These interactions disturb Kitaev spin liquid state and stabilize the ICAF order phase in $\beta$-Li$_2$IrO$_3$.
+
+%Fig. magnetic susceptibilty
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{beta0GPa.png}
+  \caption{Physical property of $\beta$-Li$_2$IrO$_3$ under ambient pressure.
+  (a) Temperature dependence of magnetic susceptibility $\chi$ and $\chi^{-1}$ (inset) at 1 T for polycrystalline sample\cite{takayama2015hyperhoneycomb}.
+  It shows the magnetic order below $T_{\mathrm{AF}} = 38$ K.
+  (b) Magnetic structure in the ordered phase revealed by neutron scattering \cite{Biffin2014}}
+  \label{beta0GPa}
+\end{figure}
+
+However, there are two ways to suppress the ICAF order --- applying high field along b-axis above $\sim$ 2.7 T 
+and applying high pressure above $\sim$ 2 GPa \cite{takayama2015hyperhoneycomb}.
+In the case of high field, the kink corresponding to ICAF order vanishes (Fig. \ref{Bdep_mag} (inset)), 
+and system remains paramagnetic with field induced moment of $\sim$ 0.35 $\mu_B$ (Fig. \ref{Bdep_mag}).
+The size of magnetic moment in ICAF order phase is 0.47 $\mu_B$, which is close to the value of the field-induced moment \cite{Biffin2014}.
+Thus, the high field destroys the ICAF order by ferromagnetically orienting $J_{\mathrm{eff}} = 1/2$ moment along the field direction.
+On the other hand, magnetic x-ray scattering revealed that high-field paramagnetic state admixes zigzag component along a-axis \cite{ruiz2017correlated}. 
+There is also a possibility that the high-field state can be a spin liquid state.
+Thus, our first motivation is to explore the high-field state of $\beta$-Li$_2$IrO$_3$ by NMR measurement.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{magnetization.png}
+  \caption{Field dependence of magnetization of $\beta$-Li$_2$IrO$_3$ under ambient pressure.
+  (inset) Field depnedence of magnetic susceptibility $\chi$ \cite{takayama2015hyperhoneycomb}.
+  The kink of ICAF order vanishes at high field.}
+  \label{Bdep_mag}
+\end{figure}
+
+In the case of high pressure, the ICAF order is suppressed without metallization.
+Fig. \ref{beta2GPa} (a) shows the pressure dependence of X-ray Magnetic Circular Dichroism (XMCD) at 5 K, 4 T.
+XMCD corresponds to bulk magnetization.
+The field-induced moment is suppressed around 2 GPa.
+On the other hand, the resistivity shows the insulating state (Fig. \ref{beta2GPa} (a) (inset)).
+The disappearance of ICAF order without metallization indicates the possible pressure-induced Kitaev spin liquid in $\beta$-Li$_2$IrO$_3$. 
+Also, $\mu$SR found the coexistence of liquid-like dynamic spins and glass-like frozen spins at $\sim$ 2 GPa (Fig. \ref{beta2GPa} (b)) \cite{Majumder2018}.
+First principle calculation suggested the enhancement of symmetric off-diagonal term (Eq.\ref{symoff}) as applying pressure in $\beta$-Li$_2$IrO$_3$ \cite{Yadav2018, Kim2016}.
+In the model with the dominance of symmetric off-diagonal term, classical spin liquid instability is proposed \cite{Rousochatzakis2017}.
+Therefore, our second motivation is to test the spin-liquid component with different time scale, NMR relaxation measurement. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{beta2GPa.png}
+  \caption{Evolution of field-induced moment or magnetic order in $\beta$-Li$_2$IrO$_3$ as pressurizing.
+  (a) Pressure dependence of X-ray Magnetic Circular Dichroism (XMCD) at 5 K, 4 T and resistivity (inset) \cite{takayama2015hyperhoneycomb}.
+  XMCD reflects bulk magnetization.
+  Around 2 GPa, the ICAF order is surppressed, but the state is insulating, which excludes metallization.
+  (b) Phase diagram based on $\mu$SR \cite{Majumder2018}.
+  Coexistence of frozen glassy spins and dynamic spins is proposed in the order-surppressed pressure region around 2 GPa.}
+  \label{beta2GPa}
+\end{figure}
+
+On the other hand, the larger pressure around 4 GPa induces a structural phase transition at room temperature for $\beta$-Li$_2$IrO$_3$.
+Fig. \ref{beta4GPa} (a) is pressure dependence of lattice parameter $\beta$ obtained by powder and single-crystal XRD at room temperature \cite{veiga2017pressure}.
+Abrupt decrease of the lattice parameter is observed around 4 GPa.
+It corresponds to structural phase transition from $F_{ddd}$ struccture to $C2/c$ structure. 
+The high-pressure $C2/c$ structure has dimerized Ir-Ir bonds, which is 12 \% shorter than other bonds (Fig. \ref{beta4GPa}(b)). 
+
+There are three possibilities for the non-magnetic state of dimer in $J_{\mathrm{eff}} = 1/2$ system (Fig. \ref{three}). 
+The first one is $J_{\mathrm{eff}} = 1/2$ spin singlet based on the spin-orbital-entangled wave function.
+This is conventional spin singlet, 
+\begin{equation}
+\frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow}-\ket{\downarrow\uparrow}),
+\end{equation}
+where $\uparrow, \downarrow$ means $J_{\mathrm{eff}} = 1/2$ up state and down state.
+It is realized when direct $dd$ hopping, $t_{dd}$, is larger than indirect $dpd$ hopping, $t'_{dpd}$ 
+as long as $J_{\mathrm{eff}} = 1/2$ picture is valid.
+The singlet-triplet excitation gap $\sim t^2_{dd}/U$ is relatively small.
+Here $U$ is on-site Coulomb repulsion.
+
+The second one is quadrupolar state of $J_{\mathrm{eff}} = 1/2$ spins \cite{Nasu2014}. 
+It can be written as,
+%formula
+\begin{equation}
+\ket{\psi^-_Q} = \frac{1}{\sqrt{2}}(\ket{\uparrow\uparrow}-i\ket{\downarrow\downarrow}),
+\label{quad_m}
+\end{equation}
+where $\uparrow, \downarrow$ means $J_{\mathrm{eff}} = 1/2$ up state and down state.
+It is stabilized when the symmetric off-diagonal interaction (Eq.(\ref{symoff})) exists and the $t'_{dpd}$ is larger than $t_{dd}$.
+The state has a finite van Vleck term.
+If the symmetric off-diagonal interaction (Eq.(\ref{symoff})) doesn't exist, the state (Eq.\ref{quad_m}) is degenerate with another quadrupolar state,
+\begin{equation}
+\ket{\psi^+_Q} = \frac{1}{\sqrt{2}}(\ket{\uparrow\uparrow}+i\ket{\downarrow\downarrow}).
+\label{quad_p}
+\end{equation}
+
+The last one is band-insulator-like non-magnetic dimer based on molecular orbital.
+This is a singlet of $S = 1/2$.
+It is realized when $t_{dd}$ is larger than $U$.
+The $J_{\mathrm{eff}} = 1/2$ wavefunction collapses in this limit.
+The bonding-antibonding excitation gap $\sim t$ is relatively large.
+Thus, our third motivation is to judge which non-magnetic state is realzied in the high-pressure dimer phase via NMR measurement.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{beta4GPa2.png}
+  \caption{Structural property of $\beta$-Li$_2$IrO$_3$ at high pressure \cite{veiga2017pressure}.
+  (a) Pressure dependence of lattice parameter $\beta$.
+  Structural phase transition occurs around 4 GPa at room temperature
+  (b) Structure in the high pressure $C2/c$ phase.
+  Emphasized Y bond become 12 \% shorter than X, Z bond (X : 3.0139(12) \AA, Y : 2.6620(13) \AA, Z : 3.0122(15) \AA). }
+  \label{beta4GPa}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{three_possibilities.eps}
+  \caption{Three possiblities for the non-magnetic state of dimer in $J_{\mathrm{eff}} = 1/2$ system.}
+  \label{three}
+\end{figure}
+
+Here, we completed the $P$-$T$ phase diagram of $\beta$-Li$_2$IrO$_3$ (Fig. \ref{phase_pre}). 
+We revealed that the high-$P$ phase is non-magnetic singlet dimer. 
+It is probably based on molecular orbital. 
+The high-$T$ high-$P$ singlet dimer formation is connected to low-$T$ low-$P$ magnetic collapse. 
+From the continuity of the phase, we concluded that spin-liquid component observed in $\mu$SR is dynamical defect-induced moments embedded in singlet dimer phase. 
+Our results suggest that the pressure-induced competition between orbitally-disordered $J_{\mathrm{eff}} = 1/2$ magnetism and orbital-selective molecular dimer 
+is a ubiquitous phenomenon among some Kitaev magnets.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=1.0]{phase19.png}
+  \caption{Pressure-temperature phase diagram for $\beta$-Li2IrO3. 
+  PM, ICAF means paramagnetic phase, incommensurate non-coplanar antiferromagnetic phase, respectively. 
+  Dashed region is coexisting phase. 
+  $\times$ is from chi at 1 T along b-axis and $\bullet$ is from 4 T NMR. 
+  $\circ$ is from chi at 1 T for polycrystalline sample \cite{Majumder2018} and $\blacktriangledown$ comes from XRD \cite{veiga2017pressure}. 
+  Note that ICAF order is destroyed and substituted to PM at 4 T. (Inset) crystal structures for each phase. 
+  In $F_{ddd}$ phase at ambient pressure, all bonds have almost equivalent lengths \cite{takayama2015hyperhoneycomb}. 
+  In $C2/c$ phase, the emphasized bonds are 12 \% shorter than other bonds \cite{veiga2017pressure}.}
+  \label{phase_pre}
+\end{figure}
+
+\chapter{Method}
+\label{method}
+\section{Synthesis}
+We prepared two samples with different quality.
+The first one was revealed to be low-quality with substaintial defects after intensive measurements (Fig.\ref{lowQ}).
+Thus, we started the synthesis by ourselves to clarify the physics of $\beta$-Li$_2$IrO$_3$ with high-quality crystals.
+
+There is a suggestion that crystal growth of $\alpha, \beta$-Li$_2$IrO$_3$ is reaction between IrO$_3$ gas and LiOH gas \cite{Freund2016}.
+The reaction is as follows.
+First, the oxidization, 
+\begin{align}
+\mathrm{Ir} + \mathrm{O_2} &\rightarrow \mathrm{IrO_2},\\
+\mathrm{2Li} + \mathrm{\frac{1}{2}O_2} &\rightarrow \mathrm{Li_2O},
+\end{align}
+is necessary.
+Then, IrO$_3$ gas and LiOH gas are generated in the equivalnece of 
+\begin{align}
+\mathrm{IrO_2 (s)} + \mathrm{\frac{1}{2}O_2} &\rightleftharpoons \mathrm{IrO_3 (g)},\\
+\mathrm{Li_2O (s)} + \mathrm{H_2O (g)} &\rightleftharpoons \mathrm{2LiOH (g)}.
+\end{align}
+Finally, the gases reaact,
+\begin{align}
+\mathrm{IrO_3 (g)} + \mathrm{2LiOH (g)} &\rightarrow \mathrm{Li_2IrO_3 (s)} + \mathrm{H_2O (g)} + \mathrm{\frac{1}{2}O_2}.
+\end{align}
+
+Considering it, we adopted a vapor-transport-like method using H$_2$O and O$_2$ as agent.
+In the very early stage for synthesis, we used Li and Ir.
+It was a simple synthesis where Li and Ir are put together without mixing and heated.
+Since the initial low-quality crystal had hexagonal shape, we tried to grow the hexagonal crystal.
+However, later, the hexagonal crystal was revealed to be $\alpha$-Li$_2$IrO$_3$.
+(Initial hexagonal low-quality crystal was at least $\beta$-Li$_2$IrO$_3$.)
+Then, we switched the Li supplyer from Li to LiOH$\cdot$H$_2$O.
+We obtained rhombic crystals and they were $\beta$-Li$_2$IrO$_3$.
+Since the difference between Li and LiOH$\cdot$H$_2$O is considered as the amount of water vapor, we induced the humid air flow into furnace.
+The rhombic $\beta$-Li$_2$IrO$_3$ crystal become bigger, but the quality of crystal was still low.
+It shows the magnetic transition point at $T_\mathrm{mag} = 38$ K, but the low-$T$ Curie tail coming from defects was still substaintially large.
+Then, we optimized the time for inducing humid air flow.
+With the optimization, low-$T$ Curie tail was minimized.
+However, the size of crystal was still too small $\sim 0.2$ mm.
+Then, we switched the Li supplyer from LiOH$\cdot$H$_2$O to Li$_2$CO$_3$.
+Thus, finally, after 60 trials, we could obtain the large high-quality crystal of $\beta$-Li$_2$IrO$_3$.
+
+The maximum dimension of $\beta$-Li$_2$IrO$_3$ single crystal was 0.69 $\times$ 0.45 $\times$ 0.56 mm (b $\times$ a$\times$ c-axes) (Fig. \ref{crystal}).
+
+%Fig. photo of crystal
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{crystal.png}
+  \caption{$\beta$-Li$_2$IrO$_3$ single crystal.
+  (a) Top view from c axis.
+  (b) Side view.}
+  \label{crystal}
+\end{figure}
+
+The detail of optimized synthesis condition is as follows.
+Ir (99.9\%, 100 $\mu m$ mesh, rare metallic) of 0.5 g was placed in a alumina crucible (SSA-S) of $\phi$ 14 mm $\times$ 38 mm and 
+Li$_2$CO$_3$ (99.999\%, rare metallic) with 5 \% shortage of Li from the stoichiometric ratio of Li/Ir 
+was just put on the Ir without mixing by mortar (Fig. \ref{synthesis} (a)). 
+The crucible with loose lid was further placed in the larger crucible with loose lid.
+The setup was heated in humid air with the sequence of 
+4 h up to 880$^\circ$C, 1 h up to 1000$^\circ$C, 24 h up to 1050$^\circ$C, 24 h down to 1000$^\circ$C (Fig. \ref{synthesis} (b)).
+From 1000$^\circ$C, the crucible was in dry air with the sequence of 24 h down to 950$^\circ$C and 5 h down to room temperature.
+Humid air was made by flowing the dry air through de-ionized water (Fig.\ref{flow}).
+The air flowed from the bottom to the top in the order-made airtight vertical tube furnace.
+%aim of the each sequence
+The original aim of each sequence in Fig. \ref{synthesis} (b) is as follows;
+The one-hour sequence from 880$^\circ$C to 1000$^\circ$C is done for the oxidization of Ir.
+The 24-hour sequence from 1000$^\circ$C to 1050$^\circ$C is done for the creation of seed crystals of $\beta$-Li$_2$IrO$_3$.
+The 48-hour sequence from 1050$^\circ$C to 950$^\circ$C is for the crystal growth.
+However, especially, the meanings of the one-hour sequence is almost nothing but the tracing of the initial success.
+
+%picture of setup and sequence
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{synthesis.png}
+  \caption{(a) Setup for the synthesis. 
+  The reagents are placed in alumina crucible doubly.
+  The dimension is in mm.
+  Air flows from the bottom to the top.
+  (b) Sequence of furnace for the synthesis.
+  RT means room temperature.}
+  \label{synthesis}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{air_condition.png}
+  \caption{Flow chart for (a) humid air condition
+  and (b) dry air condition.}
+  \label{flow}
+\end{figure}
+
+The large crystals are mainly obtained from the top surface of the resulting compound with surrounded by hard Li-Ir oxide,
+as if they were buried fossils.
+
+Although the shape of the crystal, magnetic anisotropy and magnetic transition point are similar to $\gamma$-Li$_2$IrO$_3$ \cite{modic2014realization}, 
+there are differences in extinction rule for (hh0) Bragg peaks and in the absolute value of magnetic susceptibility.
+We confirmed that our crystal is truly $\beta$-Li$_2$IrO$_3$ through single-crystal X-ray diffraction with Bruker D8 Discover (Bruker AXS) 
+and magnetic susceptibility measurement with Magnetic Property Measurement System (MPMS) (Quantum Design).
+
+The magnetic transition point of our crystal is 38 K, which is the same as reported \cite{ruiz2017correlated}.
+
+\section{Measurement of magnetic susceptibility}
+We measured magnetic susceptibility along b-axis of $\beta$-Li$_2$IrO$_3$ single crystals (0.587 mg as a whole)
+by MPMS in opposed-anvil-type high-pressure cell (mCAC cell, Fig.\ref{tateiwa_cell} \cite{Tateiwa2011}) up to 1.4 GPa and down to 6 K at 1 T. 
+Pressure medium was Daphne 7575 (succesor of Daphne7474 \cite{Murata2008}). 
+
+The advantages of this method are mainly three points \cite{Tateiwa2011}.
+(i) The cell has low background magnetization.
+It enables us to measure not only high-pressure ferromagnetism but also antiferromagnetism under pressure.
+(ii) The cost to manufacture the cell is lower than diamond anvil cell.
+(iii) It is easy to use for the beginners of high-pressure technique.
+
+The detail technique is as follows.
+For the background measurement, first we attached the lower zilconia anvil and CuBe gasket 
+with small amount of GE varnish in high-pressure cell for the later easier treatment of setup.
+Then we put tiny piece of Pb as manometer and Daphne 7575 as pressure medium.
+The setup was cloesd with upper zilconia anvil and the background was measured (Fig.\ref{chi_meas_setup} (a)).
+
+After the background measurement, setup was decomposed.
+The three crystals were attached to be oriented to b-axis with small amount of GE varnish and the crystals are fixed at the center of lower anvil with GE varnish 
+(Fig. \ref{chi_setup}).
+Then again we attached the lower anvil and gasket with GE varnish, put the same Pb piece and Daphne 7575 and measured the magnetization (Fig.\ref{chi_meas_setup} (b)).
+The background was directly substracted in the scan data for each temperature.
+
+With the above method, the ambiguity arises in the background substraction for the difference in small amount of GE varnish, but it can be neglected in our measurement.
+
+The gasket was broken at 1.7 GPa. 
+After the measurement, the top edge of b-axis was scratched, but the orientation was maintained.
+
+We summarized the dimension of the setup in Fig.\ref{chi_setup} (a).
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{tateiwa_cell.png}
+  \caption{The over all view of the high-pressure cell \cite{Tateiwa2011}.}
+  \label{tateiwa_cell}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{mag_suscep_meas.png}
+  \caption{(a) The setup for background measurement
+  (b) The setup for the magnetic susceptibility measurement}
+  \label{chi_meas_setup}
+\end{figure}
+
+%photo of setup
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{chi_setup.png}
+  \caption{(a) The dimension of the anvil and gasket. The unit is in mm.
+  (b) Photos of the setup for the magnetic susceptibility measurement under high pressure (top view).
+  Three crystals are attached with GE varnish and it is glued on lower zilconia anvil.
+  Field $B$ is parallel to b axis.
+  The dimension is in mm.
+  (c) Side view of (b).}
+  \label{chi_setup}
+\end{figure}
+
+\newpage
+\section{Principles of nuclear magnetic resonance (NMR)}
+%explanation of NMR
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{nmr.png}
+  \caption{Schematic image for the situation of NMR measurement. 
+  By measuring the Zeeman levels of nuclear spins, we can know the magnetism of electrons through hyperfine field.
+  $H_0$ is applied static field for the Zeeman level formation.
+  $H_1(t)$ is radio wave with the energy of $\sim\hbar\omega = \gamma\hbar H_0$ to manipulate the direction of nuclear moments.
+  Here, $\gamma$ is gyromagnetic ratio of the nuclear spin.}
+  \label{nmr}
+\end{figure}
+
+Nuclear spins in solid interact with electrons.
+The interaction is called hyperfine interaction.
+It can be described as the field applied at the nuclear site, which is called hyperfine field (Fig.\ref{nmr}).
+It consists of dipolar field of electron spin, the field induced by orbital motion of electrons, and Fermi contact term.
+Here, Fermi contact term comes from the finite overlap of electron wave function at the nuclear spin site.
+
+By applying magnetic field, the degenerate levels of the nuclear spin splits to Zeeman levels.
+The hyperfine field gives the deviation in Zeeman levels or induce the transition between Zeeman levels. 
+
+If we apply the radio wave (pulse) whose frequency corresponds to the Zeeman level splitting, the absorption of radio wave occurs (Fig.\ref{nmr}).
+In Nuclear Magnetic Resonance (NMR) measurement, we utilized this phenomenon and manipulate the coherent motion of the total nuclear magnetization.
+With the manipulation, we can obtain the information about the Zeeman level.
+Since it contains the effect of the hyperfine field, we can know the magnetism of electrons via NMR.
+
+First, we will present the motion of free nuclear spin under magnetic field in order to explain the experimental manipulation of total nuclear magnetization.
+Then, we will explain what we can measure in NMR --- NMR spectrum, spin-spin relaxation time $T_2$, Knight shift $K$, and spin-lattice relaxation rate $T^{-1}_1$.
+
+The overall discussion in this section is based on Ref.\cite{Kitaoka, Asayama, Takigawa}.
+
+\subsection{Free nuclear spin under field}
+Suppose we have a free nucleus with spin $\hbar\vec{I}$ and gyromagnetic ratio $\gamma$.
+The magnetic moment $\vec{\mu}$ of nucleus is written as,
+\begin{equation}
+\vec{\mu} = \gamma\hbar\vec{I}.
+\end{equation}
+If we apply the static field along $z$ direction, $\overrightarrow{H_0} = H_0\vec{e_z}$, the nuclear moment interacts with the field.
+The Hamiltonian for the Zeeman interaction is,
+\begin{equation}
+\mathcal{H} = -\vec{\mu}\cdot\overrightarrow{H_0}.
+\end{equation}
+The motion of the nuclear moment is described by equation of motion in Heisenberg picture,
+\begin{equation}
+\frac{\mathrm{d}\vec{\mu}}{\mathrm{d}t} = \frac{i}{\hbar}[\mathcal{H},\vec{\mu}] = \gamma\vec{\mu}\times\overrightarrow{H_0}.
+\label{eom_H0}
+\end{equation}
+Here, commutation relations for spin components, $[I^x, I^y] = iI^z$ etc. were used.
+The solution of Eq.(\ref{eom_H0}) is 
+\begin{align}
+\mu^x (t) &= \mu^x(0)\cos\omega_0t + \mu^y(0)\sin\omega_0t,\\
+\mu^y (t) &= \mu^y(0)\cos\omega_0t - \mu^x(0)\sin\omega_0t,\\
+\mu^z (t) &= \mu^z(0),
+\end{align}
+where we set 
+\begin{equation}
+\omega_0 = \gamma H_0
+\end{equation}
+This is a precession motion (Fig.\ref{precession1}(a)). 
+If we view it from $+z$ direction , it rotates clockwise. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{precession1.png}
+  \caption{(a) Precession motion of nuclear moment under static field $H_0$ in laboratory coordinate system.
+  It is clockwise with the angular velocity $\gamma H_0$
+  (b) Nuclear moments doesn't move in the clockwise rotating coordinate system with angular velocity $\gamma H_0$.}
+  \label{precession1}
+\end{figure}
+
+Then, let's change the coordinate system to the rotating coordinate system.
+The rotating coordinate system shares the origin and $z$ axis with the original laborarory coordinate system and it rotates 
+around $z$ axis with angular velocity of $\vec{\omega}$.
+We name the coordinate axes fixed to the rotating system as $X, Y, Z$ axes.
+$Z$ axis is the same as $z$ axis.
+In the rotating system, the equation of motion of $\vec{\mu}$ can be written as,
+\begin{equation}
+\frac{\delta\vec{\mu}}{\delta t} = \gamma\vec{\mu}\times\left(\overrightarrow{H_0} + \frac{\vec{\omega}}{\gamma}\right),
+\end{equation}
+where $\frac{\delta}{\delta t}$ is a derivative in rotating coordinate system.
+If we choose 
+\begin{equation}
+\vec{\omega} = -\gamma\overrightarrow{H_0}
+\end{equation}
+the equation of motion becomes 
+\begin{equation}
+\frac{\delta\vec{\mu}}{\delta t} = 0
+\end{equation}
+It means that nuclear moment doesn't move in the rotating coordinate with $\vec{\omega} = -\gamma\overrightarrow{H_0}$ (Fig.\ref{precession1}(b)).
+The rotation of cooridnate system is clockwise if we view it from $+z$ direction.
+
+Suppose that the initial condition of spin component is 
+\begin{align}
+\mu^x(0) = 0\\
+\mu^y(0) = 0\\
+\mu^z(0) = m.
+\end{align}
+In this case, the nuclear moment is fixed along $z$ direction and doesn't move under $\overrightarrow{H_0}$ 
+both in the laboratory coordinate system and in the rotating coordinate system (Fig.\ref{precession2}(a)).
+In this situation, let's apply the clockwise rotating magnetic field with the angular frequency $\omega_0$ perpendicular to $\overrightarrow{H_0}$,
+\begin{equation}
+\overrightarrow{H_1}(t) = H_1(\cos\omega_0t\vec{e_x} - \sin\omega_0t\vec{e_y}).
+\end{equation}
+In rotating coordinate system with $\vec{\omega} = -\gamma\overrightarrow{H_0}$ (clockwise), $\overrightarrow{H_1}(t)$ doesn't move.
+Thus, we can set the direction of $\overrightarrow{H_1}(t)$ as $X$ axis.
+The equation of motion becomes
+\begin{equation}
+\frac{\delta\vec{\mu}}{\delta t} = \gamma\vec{\mu}\times\overrightarrow{H_1}.
+\label{eom_H1}
+\end{equation}
+Here, we omit the argument $t$ for $\overrightarrow{H_1}$ because it is time independent in the rotating coordinate system.
+Eq.(\ref{eom_H1}) is equivalent to eq.(\ref{eom_H0}).
+Therefore, the nuclear moment starts precession motion around $X$ direction with the angular frequency of $\omega_1 = \gamma H_1$ (Fig.\ref{precession2}(b)).
+It is rotation within ZY plane and clockwise if we view it from $+X$ direction.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{precession2.png}
+  \caption{(a) Initial situation.
+  The nuclear moment is fixed along Z (or z) direction and doesn't move both in laboratory system and in rotating system.
+  (b) If the rotating field $H_1 (t)$ is applied, nuclear moment starts precession around X axis with angular velocity $\gamma H_1$.}
+  \label{precession2}
+\end{figure}
+
+This corresponds to applying radio wave or oscillating field with the energy equivalent to Zeeman level splitting $\hbar\omega_0$.
+Oscillating field is a linear combination of clockwise rortaing field and counterclockwise roatating field.
+In clockwise rotating coordinate system, the counterclockwise rotating component has a frequency of $2\omega_0$, which is too large compared to Zeeman level splitting.
+Thus, the counterclockwise component doesn't affect the motion of nuclear moment.
+It means that we can regard oscillating field as clockwise rotating field.
+
+Static field $\overrightarrow{H_0}$ is generated by superconducting magnet.
+Oscillating field $\overrightarrow{H_1}(t)$ can be made by applying the high-frequncy current to coil.
+Thus, if we insert sample into coil and set the ocillating field of coil perpendicular to static field of the magnet,
+we can manipulate the direction of magnetization of selected nuclei in the sample.
+
+\subsection{Free induction decay (FID) and NMR spectrum}
+If we apply pulse of the oscillating filed with the energy corresponding to $\hbar\omega_0$ only within the time of $\pi/(2\omega_1)$ ($\pi/2$ pulse), 
+the nuclear moments rotate clockwise by $\pi/2$ from $Z$ direction to $Y$ direction (Fig.\ref{FID}(a)).
+In the rotating system, the moment doesn't move any more.
+In the laboraory system, it rotates in xy-plane with angular frequency $\omega_0$.
+The rotation of the nuclear moment generates induced electromotive force on the coil and it is detected as a voltage signal with high frequancy of $\omega_0$.
+If the field is perfectly uniform and static, the oscillating signal doesn't decay and its Fourier transformed spectrum is delta function $\delta(\omega-\omega_0)$ (Fig.\ref{FID}(a)).
+However, in reality, spatial distribution and dynamical fluctuation are induced by local field.
+Here, local field is a general term which means the microscopic field at nuclear site, including hyperfine field by electrons or dipolar field by other nuclei.
+With the local field, the resonance condition for each nuclear moment can be different.
+It gives a width around $\omega = \omega_0$ in the Fourier transformed spectrum (Fig.\ref{FID}(b)).
+This means that some nuclear spins with the resonance of $\omega_0 + \delta\omega$ cannot be static in rotating system with angular frequency of $\omega_0$.
+As time passed, they rotates and phase coherence of nuclear spins disappears (Fig.\ref{FID}(b)).
+In signal, many oscillating components different from $\omega_0$ comes in and the signal decay (Fig.\ref{FID}(b)).
+We can also say that the decay or the Fourier transformed spectrum reflects the information of local field.
+The decay is called Free Induction Decay (FID).
+The time constant for the decay is called $T^*_2$ and the Fourier transformed spectrum is called NMR spectrum.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{FID.png}
+  \caption{The effect of $\pi/2$ pulse in the case of (a) uniform and static local field, and (b) realistic local field.
+  Fourier transformed spectrum and evolution of nuclear moments for each case are also shown.
+  In case of (a), there is no decay in signal, but in (b), Free Induction Decay (FID) is induced.
+  From NMR spectrum of FID signal, we can know the local field distribution.
+  If the field is given as a constant value, NMR spectrum is obtained as a frequency-swept data.}
+  \label{FID}
+\end{figure}
+
+The weak point of FID is that it is immediately successive to $\pi/2$ pulse.
+In general, there is a insensitive time after pulse injection.
+If the insensitive time is longer than $T^*_2$, we cannot observe FID signal.
+There is a technique to overcome such a situation called spin echo method (section\ref{spin_echo}).
+
+
+\subsubsection{NMR spectrum}
+%explanation of NMR spectrum
+Here, we explain NMR spectrum with the simple example.
+Let's consider about commensurate collinear AF transition. 
+Fig.\ref{NMRspectrum} shows the schematic picture for the example.
+Here, we only consider the dipolar field as a hyperfine field.
+Also, we suppose that we measure NMR for the nuclei which have the electronic spins and that the nuclear site is crystallographically one.
+Above the transition point, $T_{AF}$, the system is in paramagntic state, so there is only one kind of hyperfine field (Fig.\ref{NMRspectrum}(a)).
+It means one peak in NMR spectrum.
+On the other hand, below $T_{AF}$, antiferromagnetic up-down spin array gives two kinds of hyperfine field (Fig.\ref{NMRspectrum}(b)). 
+It gives two peaks in NMR spectrum.
+In the case of incommensurate AF order, hte hyperfine field is distributed in a certain range (Fig.\ref{NMRspectrum}(c)).
+In this sense, in spin glass state, it gives the complex many kinds of hyperfine field (Fig.\ref{NMRspectrum}(d)).
+As a reult, NMR spectrum become broadened.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{NMRspectrum.png}
+  \caption{Simplified example for the concept of NMR spectrum
+  in (a) paramagnetic state, (b) commensurate collinear AF order,  (c) incommensurate AF order, (d) spin glass.
+  The number of peaks and the width of NMR spectrum indicate the distribution of hyperfine field.
+  $P(H)$ is NMR spectrum and $H_0$ is the field corresponding to the resonance condition $H_0 = \omega_0/\gamma$,
+  where $\omega_0$ is applied frequency of radio wave and $\gamma$ is gyromagnetic ratio of the nuclear spin.
+  $H^z_{hf}$ and $H'^z_{hf}$ is a strength of hyperfine field.
+  If the frequency is given, NMR spectrum is obtained as a field-swept data.}
+  \label{NMRspectrum}
+\end{figure}
+
+
+\subsection{Spin echo and spin-spin relaxation time $T_2$}
+\label{spin_echo}
+Fig.\ref{spin_echo} shows the pulse sequence for spin echo method.
+Applying $\pi/2$ pulse gives FID.
+Then, after time $\tau$ passed, if we apply $\pi$ pulse, the direction of nuclear moments is reversed.
+It leads the re-convergence of spin direction after the same time $\tau$ passed.
+The same situation just after the $\pi/2$ pulse injection is reproduced at $t = 2\tau$.
+The signal is called spin echo.
+Fourier transformation of spin echo signal also gives NMR spectrum.
+Thus, we can measure the signal which is apart from the insensitive time of pulses.
+
+If the local field is static, spin echo signal doesn't decay.
+However, in realtiy, the local field is time-dependent.
+The value of local field in $0 < t < \tau$ and in $\tau < t < 2\tau$ can be different.
+It disturb the complete phase recovery at $t = 2\tau$. 
+Also, interaction between nuclear spins, e.g. dipor interaction, distrubs the phase coherence of the total nuclear spin motion.
+Thus, the spin echo signal decays as a function of $2\tau$: $\sim \exp(-2\tau/T_2)$.
+The time constant $T_2$ is called spin-spin relaxation time.
+If $T_2$ is small and the decay is rapid, we cannot measure the spin echo signal.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{spin_echo.png}
+  \caption{Principle of spin echo method.
+  The pulse sequence and the corresponding schematic evolution of nuclear moments are shown.
+  (a) $t = 0$, before applying $\pi/2$ pulse, (b) $t = \pi/(2\omega_1)$, just after applying $\pi/2$ pulse.
+  (c) $t = \pi/(2\omega_1) + \tau$, just before applying $\pi$ pulse.
+  (d) $t = \pi/\omega_1 + \tau$, just after applying $\pi$ pulse.
+  (e) $t = 2\tau$, spin echo signal.}
+  \label{spin_echo}
+\end{figure}
+
+\subsection{Knight shift $K$ and spin-lattice relaxation rate $T^{-1}_1$}
+In Hamiltonian, the situation for NMR measurement (Fig.\ref{nmr}) can be written as,
+\begin{align}
+\mathcal{H}_{tot} &=\mathcal{H}_{nuc} + \mathcal{H}_{hf}+\mathcal{H}_{env},
+\end{align}
+where $\mathcal{H}_{tot}$ is Hamiltonian for the total system, 
+$\mathcal{H}_{nuc}$ is for nuclear spins of the same species to measure, $\mathcal{H}_{env}$ is for the environment, 
+$\mathcal{H}_{hf}$ represents the interaction between the nuclear spins and the environment through hyperfine field.
+Here, we call the source of hyperfine field as the environment, which is usually itinerant electrons or localized electronic spins. 
+Nuclear spins are treated as a sum of free independent spins under applied static field $\overrightarrow{H_0} = H_0\overrightarrow{e_z}$ 
+and radio wave (pulses) $\overrightarrow{H_1}(t)$,
+\begin{align}
+\mathcal{H}_{nuc} = -\sum^{N_{nuc}}_{i = 1}\vec{\mu}\cdot\left(\overrightarrow{H_0}+\overrightarrow{H_1}(t)\right),
+\end{align}
+where $N_{nuc}$ is the number of the nuclear spins and $\vec{\mu}$ represents the magnetic momenet of the measuring nuclear spin. 
+The interaction is written as,
+\begin{align}
+\mathcal{H}_{hf} = -\sum^{N_{nuc}}_{i = 1}\vec{\mu}\cdot\overrightarrow{H_{hf}}(i),
+\end{align}
+where hyperfine field at a certain nuclear site $\overrightarrow{r_i}$ is represented as 
+$\overrightarrow{H_{hf}}(i) \left(= \overrightarrow{H_{hf}}\left(\overrightarrow{r_i}, \overrightarrow{H_0}\right) \right)$
+
+As a result, the total Hamitonian can be described as,
+\begin{align}
+\mathcal{H}_{tot} &= -\gamma\hbar\sum^{N_{nuc}}_{i = 1} \left(I^zH_0 + I^zH^z_{hf}(i) 
+ + \frac{1}{2}(I^+H^-_{hf}(i)+I^-H^+_{hf}(i))+\vec{I}\cdot\overrightarrow{H_1}(t)\right) \label{Htot}\\
+ & + \mathcal{H}_{env} \notag
+\end{align}
+where $\gamma$ is a gyromagnetic ratio of the nuclear spin, which connects magnetic moment $\vec{\mu}$ and nuclear spin $\hbar\vec{I}$: $\vec{\mu} = \gamma\hbar\vec{I}$.
+The first and fifth term in Eq.(\ref{Htot}) are what the experimentalists manipulate for NMR measurement as we saw in preceding sections.
+With the maniplulation, we can measure the effect of the second, third, and forth term. 
+
+\subsubsection{Knight shift}
+%explanation of Knight shift
+By the first term in Eq.(\ref{Htot}), we can form Zeeman level (Fig.\ref{Knight_shift}).
+The second term in Eq.(\ref{Htot}) gives the deviation in the Zeeman level.
+The difference in the levels is described as,
+\begin{align}
+\gamma (H_0 + H^z_{hf}(i)) = \gamma (1 + K_i)H_0,
+\end{align}
+in the unit of frequency.
+Here, the Knight shift, 
+\begin{align}
+\label{K}
+K_i = H^z_{hf}(i)/H_0,
+\end{align}
+is defined as the strength of hyperfine field along the applied field at the nuclear site $i$.
+The definition of $K_i$ (Eq.(\ref{K})) we adopted here is too detail and a bit unusual.
+We usually define Knight shift $K$ in paramagnetic phase only for the dominant hyperfine field that gives a peak shift in NMR spectrum.
+In that sense, usual definition is 
+\begin{align}
+\label{K_usual}
+K = H^z_{hf, peak}/H_0,
+\end{align}
+where $H^z_{hf, peak}$ is the dominant hyperfine field that gives a peak shift in NMR spectrum.
+The definition of $K_i$ (Eq.(\ref{K})) contains $K$ in Eq.(\ref{K_usual}).
+The Knight shift is detected as a peak shift from the resonance of $\omega_0 = \gamma H_0$ in NMR spectrum (Fig.\ref{NMRspectrum}).
+
+The Kinght shift represents the static magnetic response because it is propotional to magnetic susceptibility in high-temperature paramagntic phase as shown below.
+Suppose that the hyperfine field at nuclear site $i$ is given by localized electronic spins:
+\begin{align}
+\label{Hhf}
+H^\alpha_{hf}(i) = \sum^{N_s}_{j = 1}\sum_{\beta = x,y,z}A^{\alpha\beta}(i, j)\mu^\beta_e(j),
+\end{align}
+where $A^{\alpha\beta}$ is hyperfine tensor, $N_s$ is the number of the spins, and $\vec{\mu_e}(j)$ is the magnetic momnent of localized electronic spin at site $j$.
+In paramagnetic phase, each magnetic moment is parallel to applied field: 
+\begin{align}
+\label{PM_mu}
+\vec{\mu_e} = m\vec{e_z}
+\end{align}
+where $m$ is the size of the moment.
+By substituting Eq. (\ref{PM_mu}) to Eq. (\ref{Hhf}), Knight shift $K_i$ in Eq. (\ref{K}) is rewritten as.
+\begin{align}
+K_i = \frac{A_{hf}(i)}{N_A\mu_B}\chi_{mol},
+\label{Kchi}
+\end{align}
+where $N_A$ is Avogadro number, $\mu_B$ is Bohr magnetron, $\chi_{mol}$ is a molar magnetic susceptibility: $\chi_{mol} H_0 = M_{mol} = N_A m$,
+and $A_{hf}(i)$ is hyperfine field at nuclear site $i$ generated by magnetic moments of 1 $\mu_B$: $A_{hf}(i) = \sum^{N_s}_{j = 1}A^{zz}(i, j)\mu_B$.
+Eq.(\ref{Kchi}) tells that we can experimentally determine the strength of the hyperfine field, $A_{hf}(i)$.
+Suppose that we have the Knight shift, $K$, and magnetic susceptibility, $\chi$, in paramagnetic state.
+By plotting $K$ as a function of $\chi$ at the corresponding temperature, we can obtain the strength of the hyperfine field, $A_{hf}(i)$, as a slope of the linear plot.
+The plot is called $K-\chi$ plot.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Knight_shift.png}
+  \caption{Formation of Zeeman levels of nuclear spins in the case of I = 1/2.
+  The deviation in Zeeman level induced by hyperfine field gives Knight shift.}
+  \label{Knight_shift}
+\end{figure}
+
+
+
+\subsubsection{Spin-lattice relaxation rate, $T^{-1}_1$}
+%explanation of T^{-1}_1
+In thermal equilibrium state, nuclear moments distribute in Zeeman levels with Boltzmann distribution.
+It has a corresponding nuclear magnetization.
+Here, if we apply the fifth term in Eq.(\ref{Htot}), the radio wave, we can temporarily make non-equilibirum state with the deviated nuclear magnetization.
+As the time passed, the magnetization recovers to the value of thermal equilibrium state through hyperfine field of the third and forth term in Eq.(\ref{Htot}).
+The time constant for the relaxation process is called spin-lattice relaxation time $T_1$.
+The inverse $T^{-1}_1$ is called spin-lattice relaxation rate, which corresponds the transition rate between the levels.
+
+$T^{-1}_1$ is measured as follows (Fig.\ref{T1measurement}). 
+First, we apply a pulse to make all the nuclear moments be in $XY$ plane,
+In general, the number of pulses can be more than two (Comb pulses).
+Then, after the time $T^*_2$ passed, the phase coherence of nuclear moments disappears and we lose the signal.
+However, after the further time $T$ passed, the nuclear magnetization starts recover to the thermal equilibirum state via hyperfine field.
+We can measure the recovering magnetization $M(T)$ by spin echo method.
+By changing time $T$ and measuring $M(T)$ for each time, we can obtain relaxation curve $M(t)$.
+Finally, we can obtain $T^{-1}_1$ by fitting to the relaxation curve.
+The fitting function for $I = 1/2$ nuclei is,
+\begin{equation}
+M (t) = A + M_0 (1 - \mathrm{e}^{-\frac{t}{T_1}}).
+\end{equation}
+The fitting function can be more complex if there are many relaxation processes.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{T1measurement.png}
+  \caption{Pulse sequence for $T^{-1}_1$ measurement.
+  The corresponding schematic evolution of nuclear moments are also shown.
+  (a) $t < 0$, before applying comb pulses.
+  (b) $t = 0$, just after applying comb pulses.
+  (c) $t\sim T^*_2$, signal decays.
+  (d) $t = T$, total nuclear magnetizaztion recovers via hyperfine field.}
+  \label{T1measurement}
+\end{figure}
+
+$T^{-1}_1$ represents dynamic magnetic fluctuation at the measuring nuclear site because it is related to dynamical magnetic susceptibility as shown below.
+Fermi golden rule gives the general expression of $T^{-1}_1$ by hyperfine field $H^{\pm}_{hf}$,
+\begin{align}
+\label{T1_Hhf}
+T^{-1}_1 = \left(\frac{\gamma}{2}\right)^2\frac{1}{N_{nuc}}\sum^{N_{nuc}}_{i = 1}\int^{\infty}_{-\infty}\mathrm{d}t\mathrm{e}^{i\omega_0t}\braket{\{H^+_{hf}(i,t),H^-_{hf}(i,0)\}},
+\end{align}
+where $\hbar\omega_0$ is the energy difference of the two Zeeman levels, $\{A, B\} = AB + BA$,
+$Q (t) = \mathrm{e}^{\frac{i}{\hbar}\mathcal{H}_{env}t}Q\mathrm{e}^{-\frac{i}{\hbar}\mathcal{H}_{env}t}$ for arbitariry operator $Q$,
+and thermal average $\braket{}$ is taken by the environment, i.e.,
+\begin{align}
+\braket{Q} = \sum_{\nu}\frac{\mathrm{e}^{-\beta E_{\nu}}}{Z_{env}}\bra{\nu}Q\ket{\nu},
+\end{align}
+where $E_{\nu}$ is the energy of the state of the environment $\ket{\nu}$, and $Z_{env} = \sum_{\nu} \mathrm{e}^{-\beta E_{\nu}}$.
+\begin{comment}
+NMR relaxation rate $T^{-1}_1$ is propotional to thermal average of time-correlation function of spin components perpendicular 
+to the applied external magnetic field.
+It can be related to dynamical susceptibility through 
+\end{comment}
+Again suppose that we have a hyperfine field of Eq.(\ref{Hhf}).
+If we assume that orthogonal matrix to diagonalize $A^{\alpha\beta}$ is independent from magnetic site index $j$ and
+that, for the eigenvalues of $A^{\alpha\beta}$, $\lambda_x, \lambda_y, \lambda_z$, $\lambda_x = \lambda_y (= A^{\perp})$ holds,
+we can derive,
+\begin{align}
+\label{Hhf_S}
+H^\pm_{hf}(i) = -\gamma_e\hbar\sum^{N_s}_{j = 1}A^{\perp}(i, j)S^\pm(j),
+\end{align}
+where $\gamma_e$ is a gyromagnetic ratio of the electronic spin, which connects magnetic moment $\vec{\mu_e}$ and electronic spin $\hbar\vec{S}$: $\vec{\mu_e} = -\gamma_e\hbar\vec{S}$,
+and we used the same notation for the vectors before and after the change of the basis for diagonalization.
+Substituting Eq.(\ref{Hhf_S}) to Eq.(\ref{T1_Hhf}), we obtain
+\begin{align}
+\label{T1_Sq}
+T^{-1}_1 = \left(\frac{\gamma}{2}\right)^2(\gamma_e\hbar)^2\sum_{\bm{q}}A^{\perp}_{\bm{q}}A^\perp_{-\bm{q}}\int^{\infty}_{-\infty}\mathrm{d}t\mathrm{e}^{i\omega_0t}
+\braket{\{S^+_{\bm{q}}(t),S^-_{-\bm{q}}(0)\}},
+\end{align}
+where we assume that $A^\perp (i, j)$ is dependent only on relative position $\bm{r}_i - \bm{r}_j$, i.e., $A^\perp (i, j) = A^\perp(\bm{r}_i - \bm{r}_j)$,
+and conducted Fourier transformation,
+\begin{align}
+A^\perp (i, j) &= A^\perp(\bm{r}_i - \bm{r}_j) = \frac{1}{\sqrt{N_s}}\sum_{\bm{q}}A^\perp_{\bm{q}}\mathrm{e}^{-\bm{q}\cdot(\bm{r}_i - \bm{r}_j)},\\
+S^\pm (j) &= \frac{1}{\sqrt{N_s}}\sum_{\bm{q}} S^\pm_{\bm{q}}\mathrm{e}^{-\bm{q}\cdot\bm{r}_j}.
+\end{align}
+Applying fluctuation-dissipation theorem \cite{Kitaoka}, 
+\begin{align}
+\frac{1}{4}\int^{\infty}_{-\infty}\mathrm{d}t\mathrm{e}^{i\omega_0t} \braket{\{S^+_{\bm{q}}(t),S^-_{-\bm{q}}(0)\}} 
+= \frac{2\chi^{\prime\prime}(\bm{q}, \omega_0)}{(\gamma_e\hbar)^2(1-\mathrm{e}^{-\hbar\omega_0/k_BT})},
+\end{align}
+Eq.(\ref{T1_Sq}) is further transformed to
+\begin{align}
+\label{T1_chi}
+T^{-1}_1 = \frac{2\gamma^2k_BT}{\hbar}\sum_{\bm{q}}A^{\perp}_{\bm{q}}A^\perp_{-\bm{q}} \frac{\chi^{\prime\prime}(\bm{q}, \omega_0)}{\omega_0},
+\end{align}
+where we assume $\hbar\omega_0 \ll k_BT$. 
+Here, $\chi^{\prime\prime}(\bm{q}, \omega)$ is imaginary part of dynamic magnetic susceptibility.
+
+
+\section{Measurement of NMR}
+We measured ${}^7$Li Nuclear Magnetic Resonance (NMR) of $\beta$-Li$_2$IrO$_3$ single crystal 
+in opposed-anvil cell (Fig.\ref{kitagawa_cell} \cite{Kitagawa2010}) up to 3.9 GPa and down to 5 K  at 4 T. 
+The anvils are made of WC.
+The type of lower and upper anvils were IVc and 3, respectively.
+The gasket was NiCrAl and VIIb type.
+For the gasket, the age hardening was done in the sequence of 1 hour up to 760 ${}^\circ$C, 12 hours for maintaining 760 ${}^\circ$C and 1 hour down to room temperature.
+The cell was No. 6. 
+Pressure medium was Daphne 7575 (succcesor of Daphne 7474 \cite{Murata2008}). 
+We used ruby-fluorescene method to determine the pressure.
+
+The setup for high-pressure NMR is shown in Fig.\ref{NMR_highP_setup}.
+Here, we describe how to make the setup.
+First, we have to make a coil by hand.
+It is prepared by winding Cu wire of $\phi$ 0.02 mm around stretched teflon sheet.
+Then, two kinds of instant adhesives (Aron Alpha, Toagosei Co., Ltd. and Araldite, Huntsman Japan) is painted on the coil.
+The adhesive doesn't react with teflon, so we can glue coil only.
+The coil is soldered with two-fold braided Cu wire of $\phi$ 0.1 mm.
+Then, the available frequency range of the coil should be checked.
+The soldered points is covered by Araldite to avoid vacuum discharge.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{kitagawa_cell.png}
+  \caption{The over all view of high-pressure NMR cell \cite{Kitagawa2010}.}
+  \label{kitagawa_cell}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{NMR_highP_setup.png}
+  \caption{Schematic view of setup for high-pressure NMR measurement.}
+  \label{NMR_highP_setup}
+\end{figure}
+
+Next, we have to prepare the setup to measure ruby fluorescence.
+We need to make a constriction to optical fiber by instataneously heating.
+The constriction enhances the stability against pressure.
+The constricted fiber is connected to moissanite with optically transpareant glue (phthalic glue, NIKKA SEIKO).
+Moissanite is optically transparent, which is imitaion of diamond.
+
+The coil and optical fiber with moissanite is wrapped by capton tube.
+The setup is inserted to lower anvil.
+Then, we need to fill the space with 'cement', which is made of diamond powder and stycast 1266 in the ratio of 3.75 : 1 (weight).
+If we fill 70 \% of the space, we need to push down the moissanite.
+After filling the rest, we have to make the surface of the cement smooth and flat.
+Some pieces of ruby are fixed on moissanite with Araldite.
+Also, we put Aron Alpha to glue the capton tube to the anvil and to glue the fiber and Cu wire to capton tube.
+The whole setup is put on the heater at 40 ${}^\circ$C for 14 hours.
+
+After the cement become dried and hard, we have to paint the surface of the cement with coating, which is made of Araldite and appropriate amount of diamond powder.
+The coating is also painted on the upper anvil and inside of the gasket.
+Thus, we can obtain the setup in Fig.\ref{NMR_highP_setup}.
+
+At this stage, we need to insert the $\beta$-Li$_2$IrO$_3$ crystal into the coil.
+However, since the coil is larger than the crystal, we cannot confirm the crystal direction after inserting.
+To overcome this, $\beta$-Li$_2$IrO$_3$ crystal was attached to small piece of weighing paper with GE varnish (Fig.\ref{crystal_setup}).
+Weighing paper was cut in rectangular shape.
+The direction parallel to shorter edge of rectangle is b-axis and the direction perpendicular to paper is c-axis.
+Since the paper exceed the legth of coil, we can check the crystal direction through the paper even after the inserting to coil.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{crystal_setup.png}
+  \caption{Schematic view of setup for crystal to insert the coil.}
+  \label{crystal_setup}
+\end{figure}
+
+The rest procedure is to assemble the anvils and gasket, put Daphne 7575 oil as pressure medium and pressurize.
+The photo of the setup just before pressurizing is shown in Fig.\ref{NMR_highP_setup_photo}.
+It is important to put the marker on the cell, which indicates the direction of oscillating field of coil.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{NMR_highP_setup_photo.png}
+  \caption{Photo of setup for high-pressure NMR measurement.}
+  \label{NMR_highP_setup_photo}
+\end{figure}
+
+Pressurizig was done at room temperature with monitoring ruby fluorescence.
+Then, the whole setup was gradually cooled down to liquid nitrogen temperature.
+We confirmed the stability of pressure at liquid nitrogen temperature.
+After that, we also checked the pressure at room temperature.
+Then, high-pressure cell is ready to set NMR probe.
+
+In the NMR probe, we have to check the motion of two-axis rotator.
+The high-pressure cell should be set properly in order to avoid the breaking of the Cu wire and optical fiber during rotation.
+After manually orienting the b-axis to be parallel to field direction, now it is ready to start the measurement.
+
+Ambient-pressure NMR at 4 T and at 1 T were also measured.
+
+To adjust crystal direction, we measured the angular dependence in a probe by two-axis rotator \cite{Kitagawa2010}. 
+The adjustment was done both for the measurement at ambient pressure and at high pressure.
+The accuracy is roughly $\pm$ 5$^\circ$ (Appendix \ref{appendix_simu}).
+The detail of the confirmation of crystal direction is described in Appendix \ref{appendix_simu}.
+The fitting function for relaxation curve to obtain $T^{-1}_1$ was single exponential formula,
+%formula,
+\begin{equation}
+M (t) = A + M_0 (1 - \mathrm{e}^{-\frac{t}{T_1}}),
+\label{single}
+\end{equation}
+This is because the crystal is high-quality.
+Since the quadrupolar splitting of ${}^7$Li nuclei ($I = 3/2$) is small, the single exponential formula (Eq.(\ref{single}) is also valid for ${}^7$Li.
+If the crystal quality is poor, the fitting function become emprical stretch exponential formula,
+\begin{equation}
+M (t) = A + M_0 (1 - \mathrm{e}^{-\left(\frac{t}{T_1}\right)^\beta}),
+\end{equation}
+but it was not the case for our measurement.
+
+\chapter{Result}
+\label{result}
+\section{Ambient pressure}
+At ambient pressure, the magnetic susceptibility $\chi_b(T)=M_b/B_b$ with applied field $B_b$ = 1 T parallel to the b-axis, shown in Fig. \ref{0GPa_Tdep_Kchi}(a), 
+agrees well with those reported previously \cite{takayama2015hyperhoneycomb}. 
+At high temperatures, a Curie-Weiss behavior with effective moment close to $p_\mathrm{eff}$ = 1.73 $\mu_B$, expected for pure $J_\mathrm{eff}$ = 1/2 moment, 
+and Weiss temperature $\theta_{CW} \sim +40$ K (ferromagnetic) is observed. 
+With further lowering temperature, $\chi_b(T)$ shows a rapid increase below $\sim$ 50 K, 
+followed by almost temperature independent behavior below the well-defined kink at $T_\mathrm{mag} = 38$ K. 
+The kink corresponds to a spiral ordering of $J_\mathrm{eff}$ = 1/2 moments. 
+At a high field $B_b$ = 4 T, the kink corresponding to the magnetic transition is gone, and system remains paramagnetic with field induced moment of 0.35 $\mu_B$ 
+\cite{takayama2015hyperhoneycomb}.
+
+In Fig. \ref{0GPa_spectrum}(a,b), we show ${}^7$Li NMR spectra at ambient pressure with applied magnetic field parallel to b-axis. 
+Two NMR peaks are observed, consistent with the presence of the two Li sites. 
+Those two peaks as a function temperature shifts to the opposite direction, meaning that the two sites have the opposite sign of hyper fine coupling. 
+The temperature dependence is well scaled by the temperature dependent magnetic susceptibility $\chi_b(T)$ as shown in Fig. \ref{0GPa_Tdep_Kchi}(a,b), 
+except for the high temperature region above $\sim 180$ K where the separation of the two peaks and hence the determination of the Knight shift for Li1 and Li2 
+is subject of substantial ambiguity (Fig.\ref{0GPa_spectrum}(d)).
+The $K-\chi$ plot in Fig. \ref{0GPa_Tdep_Kchi}(d) yields a hyperfine field $A_{hf}$= -0.513 $\pm$ 0.007 kOe/$\mu_B$ and 1.67 $\pm$ 0.02 kOe/$\mu_B$, respectively. 
+If we only consider the classical dipolar field, the calculation gives $A_{hf}$ = -0.24 kOe/$\mu_B$ for Li1 and 0.19 kOe/$\mu_B$ for Li2.
+The detail of calculation is as follows.
+
+In order to estimate hyperfine coupling constant of $\beta$-Li$_2$IrO$_3$ in paramagnetic phase,
+we simulated the internal hyperfine field on Li site $\bm{r}_i$, $\overrightarrow{H_{hf}}(i)$, generated by dipolar field of magnetic moments on Ir sites.
+It is given by
+\begin{align}
+\label{Hhf_dip}
+H^\alpha_{hf}(i) &= \sum^{N_s}_{j = 1}\sum_{\beta = x,y,z}A^{\alpha\beta}(i, j)\mu^\beta_e(j),\\
+A^{\alpha\beta} (i, j) &= \frac{1}{4\pi}\sum^{N_s}_{i = 1}\left(3\frac{(r^\alpha_j-r^\alpha_i)(r^\beta_j-r^\beta_i)}{|\bm{r}_j - \bm{r}_i|^5}
+  - \frac{\delta^{\alpha\beta}}{|\bm{r}_j - \bm{r}_i|^3}\right),
+\end{align}
+where $\vec{\mu}_e(j)$ is a magnetic moment of localized electronic spin at Ir site $\bm{r}_j$, $N_s$ is the number of the localized spins, and $A^{\alpha\beta}$ is hyperfine tensor.
+In paramagnetic phase, magnetic moments are parallel to the applied field:
+\begin{align}
+\label{PM}
+\vec{\mu_e} = p\mu_B \frac{\vec{H_0}}{H_0}= p\mu_B\vec{n},
+\end{align}
+where $p\mu_B$ is the size of the moment, $\vec{H_0}$ is the applied field, and $\vec{n}$ is the direction of the applied field.
+Eq.(\ref{Hhf_dip}) and (\ref{PM}) gives,
+\begin{align}
+\label{Bhf_n}
+B^\alpha_{hf} = \mu_0 H^\alpha_{hf}(i) = p\sum_{\beta = x,y,z}\tilde{A}^{\alpha\beta}(i)n^\beta,
+\end{align}
+where
+\begin{align}
+\label{A_tilde}
+\tilde{A}^{\alpha\beta} (i) = \sum^{N_s}_{j = 1} A^{\alpha\beta}(i, j)\mu_0\mu_B.
+\end{align}
+The result of $\tilde{A}(i)$ (kOe) is, 
+\begin{align}
+\label{Li1}
+\tilde{A}(\mathrm{Li(1)site}) =
+\begin{pmatrix}
+0.99 & \pm0.53 & 0\\
+\pm0.53 & -0.28 & 0\\
+0 & 0 & -0.70
+\end{pmatrix},
+\end{align}
+
+\begin{align}
+\label{Li2}
+\tilde{A}(\mathrm{Li(2)site}) =
+\begin{pmatrix}
+-0.56 & \pm1.2 & 0\\
+\pm1.2 & 0.15 & 0\\
+0 & 0 & 0.41
+\end{pmatrix},
+\end{align}
+in the basis of $(\hat{a}, \hat{b}, \hat{c})$, where $\hat{a} = \vec{a}/a$ for unit cell vector along a-axis, $\vec{a}$, and lattice constant of a-axis, $a$, etc.
+The summation in Eq. (\ref{A_tilde}) was conducted spherically, taking the site $i$ as a center position \cite{Kanamori}.
+Demagnetic coefficients are assumed to be zero. 
+$+ 0 .04$ kOe should be added as a contribution from the surface of the sphere for each diagonal component.
+Therefore, for b-axis measurement, calculated hyperfine coupling constant is $A_{hf} = -0.28 + 0.04 = -0.24$ kOe/$\mu_B$ for Li1 and $A_{hf} = 0.15 + 0.04 = 0.19$ kOe/$\mu_B$ for Li2.
+ 
+Thus, we assign the peak with negative hyperfine field as Li1 and the other as Li2. 
+The deviation from the calculated value is due to Fermi contact term, which comes from the finite overlap of electronic wave function at ${}^7$Li nuclear site. 
+The effect of Fermi contact term is more significant for Li2 than Li1. 
+It is probably because Li2 site locates in the pseudo-honeycomb ring of Ir and has larger overlap of $J_\mathrm{eff}$ = 1/2 wave function than Li1.
+
+Fig. \ref{0GPa_Tdep_Kchi}(c) shows the temperature dependence of $T^{-1}_1$ for Li2. 
+It gradually increases as lowering temperature in high-T paramagnetic phase. 
+The behavior corresponds to the enhancement of dynamic susceptibility. 
+The difference between 1 T and 4 T appears below $\sim$ 60 K. 
+Both of $K$ and $T^{-1}_1$ of 4 T are suppressed from the values of 1 T (Fig. \ref{0GPa_Tdep_Kchi}(b,c)). 
+This corresponds to the suppression of magnetic order at 4 T. 
+Below $T_{\mathrm{mag}}$ = 38 K, spectrum of 1 T is broadened and we cannot see the paramagnetic two-line structure any more (Fig.\ref{0GPa_spectrum}(a,c)). 
+This is consistent with the appearance of non-coplanar incommensurate AF (ICAF) order observed in neutron scattering 
+because the ICAF order should diffuse the distribution of hyperfine field. 
+On the other hand, the spectrum of 4 T maintains the paramagnetic Li1 and Li2 even below 38 K (Fig. \ref{0GPa_spectrum}(b)). 
+This means that the field of 4 T destroys ICAF order and makes the system ferromagnetically polarized paramagnet. 
+It is further confirmed by the saturated $K$ and almost zero $T^{-1}_1$ below 38 K (Fig. \ref{0GPa_Tdep_Kchi}(b,c)) 
+because, in the polarized state, the magnetization is saturated and the fluctuation is suppressed.
+We couldn't observe the signature for the mixing of zigzag component in the high-field state \cite{ruiz2017correlated}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{0GPa_Tdep_Kchi.png}
+  \caption{Ambient-pressure magnetic data of $\beta$-Li$_2$IrO$_3$.
+  (a) magnetic susceptibility,$\chi = M/B$, at 1 T, (b) Knight shift $K$ of Li2, (c) spin-lattice relaxation rate $T^{-1}_1$ of Li2, (d) $K$-$\chi$ plot.
+  Field is applied along b-axis for all measurement. 
+  The temperature dependence of the shifts is well scaled by $\chi$ below 160 K [(a,b,d)], 
+  where there is a uncertainity to determine high-$T$ Knight shift above 180 K because of the closeness of two lines [Fig.\ref{0GPa_spectrum}(d)].
+  Thus, $K$-$\chi$ plot was done in the temperature range of 40 K $\leq$ $T$ $\leq$ 160 K, where shifts in 60 K $<$ $T$ $\leq$ 160 K are from 4 T measurement and 
+  shifts in 40 K $\leq$ $T$ $\leq$ 60 K are from 1 T measurement.
+  Both of $K$ and $T^{-1}_1$ of 4 T are suppressed from the values of 1 T below 60 K [(f,g)].
+  It corresponds the suppression of the ICAF order by high field of 4 T.
+  Saturated $K$ and almost zero $T^{-1}_1$ at 4 T below 38 K indicates the ferromagnetic polarization of $J_{\mathrm{eff}} = 1/2$ moments [(f,g)].}
+  \label{0GPa_Tdep_Kchi}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{0GPa_spectrum2.png}
+  \caption{${}^7$Li NMR spectra at ambient-pressure.
+  (a) ${}^7$Li NMR spectrum at 1 T, (b) spectrum at 4 T, (c) spectrum at 1 T in wider $K$ region, (d) spectrum at 4 T around 180 K.
+   Field is applied along b-axis.
+   Dotted lines are gaussian fitting results.
+  Two lines corresponds to two Li sites, Li1 and Li2 [(a, b)]. 
+  Below $T_{\mathrm{mag}}$ = 38 K, spectrum of 1 T is broadened [(a,c)], while two-line structure is preserved in spectrum of 4 T.
+  This corresponds the appearance of ICAF order and the suppression of the order by high field of 4 T.
+  There is a uncertainity to determine high-$T$ Knight shift above 180 K because it is difficult to precisely separate the close two lines as we can see the failure of double
+  gaussian fitting [(d)].}
+  \label{0GPa_spectrum}
+\end{figure}
+
+\newpage
+\section{High pressure}
+High-pressure magnetic susceptibility at 1 T along b-axis, $\chi_b=M_b/B_b$ is shown in Fig. \ref{mag_suscep} with the ambient pressure data. 
+The magnetic transition point, $T_{\mathrm{mag}}$ = 38 K doesn't change up to 1.4 GPa (Fig. 2(a,b)). 
+This means that ICAF ordered moments robustly exist under the pressure up to 1.4 GPa at 1 T. 
+On the other hand, at the pressure of 1.1 and 1.4 GPa, we observed the anomalous drop of $\chi_b$ at $T_{\mathrm{d}}$ = 78 K and 154 K, respectively (Fig. \ref{mag_suscep}(b)). 
+This indicates the appearance of the new high-pressure phase at $T_{\mathrm{d}}$. 
+It has a smaller magnetization than paramagnetic phase. 
+At 1.1 GPa and 1.4 GPa below $T_{\mathrm{d}}$, the new high-pressure phase and paramagnetic phase (or ICAF order phase below $T_{\mathrm{mag}}$) coexists. 
+The pressure-dependence of $\chi_b$ at 6 K (Fig. \ref{mag_suscep} (a) inset) is consistent with reported XMCD \cite{takayama2015hyperhoneycomb} 
+and $\chi$ for polycrystalline sample \cite{Majumder2018}, 
+including the initial enhancement up to 0.9 GPa.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{mag_suscep4.png}
+  \caption{(a) Magentic susceptibility $\chi$ = M/B at 1 T along b axis under various pressure. 
+  (b) the enlarged view. The magnetic transition at $T_{\mathrm{mag}}$ = 38 K is unchanged and exists up to 1.4 GPa, implying the robust ICAF order phase under pressure. 
+  The anomalous decrease of $\chi$ at $T_{\mathrm{d}}$ means the emergence of new high-pressure phase. 
+  At 1.1 GPa and 1.4 GPa, the new phase and the paramagnetic phase (or ICAF order phase below $T_{\mathrm{mag}}$) coexists below $T_{\mathrm{d}}$.}
+  \label{mag_suscep}
+\end{figure}
+
+To clarify the new high-pressure phase observed in $\chi_b$ measurement, we conducted high-pressure ${}^7$Li NMR measurement at 4 T along b-axis. 
+Such a high field destroys ICAF order, but it gives us a larger intensity in NMR. 
+The results at 3.5 GPa is shown in Fig. \ref{3.5GPa}. 
+Above 300 K, the pseudo-spins are in paramagnetic state, evidenced by the spectrum distinguishable as paramagnetic Li1 and Li2 lines (Fig. \ref{3.5GPa} (a)) 
+and the value of $T^{-1}_1$ comparable to that of paramagnetic phase at ambient pressure (Fig.\ref{3.5GPa} (c)). 
+(In high-pressure spectra at high temperature, there is no failure of separating two peaks, which was observed at ambient pressure data.)
+However, at $T_{\mathrm{d}}$ = 292 K, two lines merges to one line (Li$_\mathrm{d}$) with the almost zero value of $K$ (Fig. \ref{3.5GPa} (a), (b)). 
+This means the transition to the non-magnetic state with almost zero susceptibility. 
+Also, $T^{-1}_1$ suddenly decrease at $T_{\mathrm{d}}$ = 292 K (Fig. \ref{3.5GPa} (c)). 
+The behavior agrees with the non-magnetic transition. 
+In the temperature range of 200 K $<$ $T$ $<$ $T_{\mathrm{d}}$ = 292 K, $K$ and $T^{-1}_1$ still have finite values. 
+It is considered that some defects in the non-magnetic phase produce magnetic moments around them in that temperature region. 
+They can give finite $K$ and $T^{-1}_1$ to non-magnetic domain and make the transition step-wise. 
+Below 200 K, both of $K$ and $T^{-1}_1$ are almost zero. 
+This confirms the non-magnetic ground state at 3.5 GPa.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{3p5GPa3.png}
+  \caption{7Li NMR at 3.5 GPa. (a) spectrum, (b) Knight shift $K$, (c) spin-lattice relaxation rate $T^{-1}_1$.
+  In (a), dotted lines are gaussian fits for each line (Li1, Li2, Li$_\mathrm{d}$).
+  In (c), $T^{-1}_1$ at ambient pressure for Li2 is also plotted for comparison.
+  $T^{-1}_1$ was measured for main Li$_\mathrm{d}$ line below $T_\mathrm{d}$ at 3.5 GPa.
+  Above $T_\mathrm{d}$, it was measured for the average of Li1 and Li2 lines.
+  At $T_{\mathrm{d}}$ = 292 K, paramagnetic Li1 and Li2 lines merge to one line (Li$_\mathrm{d}$)
+  with almost zero $K$ and sudden drop of $T^{-1}_1$ occurs, indicating non-magnetic transition. }
+  \label{3.5GPa}
+\end{figure}
+
+Fig. \ref{spectrum_highP} shows the spectrum at 1.3 GPa, 2.6 GPa, 3.5 GPa plotted in the same scale of $K$.
+(a), (b), (c) are the spectra around transition point, $T_\mathrm{d}$, and (d), (e), (f) are the spectra in the whole temperature range.
+The sharp Li$_\mathrm{d}$ line at 3.5 GPa resides at around $K$ = 0 (Fig.\ref{spectrum_highP}(f)). 
+This means that hyperfine field for Li$_\mathrm{d}$ line at 3.5 GPa is less distributed around the zero value. 
+It further confirms the non-magnetic ground state at 3.5 GPa.
+
+For 2.6 GPa, the abrupt drop of $T^{-1}_1$ from the paramagnetic value occurs at $T_{\mathrm{d}}$ = 230 K (Fig. \ref{T1_highP}(a)). 
+Correspondingly, the main line below $T_{\mathrm{d}}$ = 230 K has almost zero $K$ down to the lowest temperature (Fig. \ref{spectrum_highP} (b,e)). 
+These suggest that the main line below $T_{\mathrm{d}}$ = 230 K represents the non-magnetic domain, same as one at 3.5 GPa. 
+Thus, we name it as Li$_\mathrm{d}$ line. 
+The Li$_\mathrm{d}$ line is broader than one at 3.5 GPa. 
+This is probably caused by defect-induced moments in non-magnetic domain. 
+They can diffuse the hyperfine field around zero value. 
+There are the additional lines with positive $K$. 
+They are considered as coexisting paramagnetic component (note that at 4 T, ICAF order is suppressed.) or defect-induced magnetic moments in non-magnetic domain. 
+For the latter case, the concentration of defects is probably larger than one for the Li$_\mathrm{d}$ line enough to give a finite $K$.
+
+For 1.3 GPa, the third line different from paramagnetic Li1 and Li2 splits from Li1 line at $T_{\mathrm{d}}$ = 90 K (Fig. \ref{spectrum_highP}(a)). 
+$T^{-1}_1$ for the new main line start to decrease from the paramagnetic value of Li1 below $T_{\mathrm{d}}$ = 90 K (Fig. \ref{T1_highP}(a)). 
+The transition temperatures, $T_{\mathrm{d}}$, are monotonously dependent on pressure. 
+Also, it is common with 2.6, 3.5 GPa measurement that there is anomaly in spectrum at $T_{\mathrm{d}}$ and that $T^{-1}_1$ decrease below $T_{\mathrm{d}}$. 
+Thus, we can assign the new main line as Li$_\mathrm{d}$ line, which represents the non-magnetic domain. 
+However, the Li$_\mathrm{d}$ line is broad and has a finite $K$ (Fig. \ref{spectrum_highP}(d)). 
+It is considered that the concentration of defect-induced moments in the non-magnetic domain is large enough to give the broad spectrum and finite $K$. 
+Below $T_{\mathrm{d}}$ = 90 K, paramagnetic Li1 and Li2 coexists with Li$_\mathrm{d}$ line. 
+This is consistent with the coexistence of paramagnetic component (or ICAF order moments below $T_\mathrm{mag}$ = 38 K) 
+and the new high-pressure phase observed in $\chi_b$ at 1.1, 1.4 GPa below $T_{\mathrm{d}}$ = 78 K and 154 K, respectively (Fig. \ref{mag_suscep}(b)). 
+Thus, we identify the new high-pressure phase found in 1 T $\chi_b$ measurement as non-magnetic phase confirmed in 4 T NMR measurement. 
+Here, different from ICAF order, which is field-dependent, the non-magnetic phase should be field-independent. 
+It is because the transition temperature $T_{\mathrm{d}}$ reaching to room temperature is much larger than the energy scale of 4 T. 
+Finally, not only Li$_\mathrm{d}$ line but also Li1 and Li2 lines are broadened at low temperature. 
+It is considered that some defects also exist in paramagnetic domain, diffuse the hyperfine field and make the paramagnetic state close to the glassy state. 
+At 5 K, we couldn't observe Li1 line because of the broadening and the small $T_2$.
+
+For 3.9 GPa, $T^{-1}_1$ (Fig. \ref{T1_highP}(a)), $K$ and spectrum (not shown) behaves similarly to those at 3.5 GPa. 
+The only difference is the higher transition point, $T_{\mathrm{d}}$ = 315 K.
+
+For all pressure, even below $T_{\mathrm{d}}$, there are temperature regions with finite $T^{-1}_1$ (Fig. \ref{T1_highP}(a)). 
+For 1.3, 2.6 GPa, the regions extend to the lowest temperature. 
+In these temperature regions, it is considered that defect-induced magnetic moments exist in non-magnetic phase and give finite dynamic magnetic response.
+
+Fig. \ref{T1_highP}(b) is a log-scale plot of $T^{-1}_1$.
+As indicated by arrow, temperature dependence in the almost zero value region at 3.5 and 3.9 GPa in linear-scale plot is not monotonous.
+There is a pressure-independent peak structure.
+It is possibly caused by defect.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{spectrum_highP2.png}
+  \caption{Spectra at 4 T along b-axis and at high pressure around transition temperature, $T_\mathrm{d}$, (a) 1.3 GPa, (b) 2.6 GPa, (c) 3.5 GPa,
+  and in the whole temperature range, (d) 1.3 GPa, (e) 2.6 GPa, (f) 3.5 GPa.
+  Li1, Li2 denote two Li sites in paramagnetic state. 
+  Li$_\mathrm{d}$ denotes the line for non-magnetic state. 
+  Dotted lines are gaussian fits for each line (Li1, Li2, Li$_\mathrm{d}$).  
+  At 3.5 GPa, non-magnetic state with sharp line at $K$ = 0 \% was observed. 
+  As lowering pressure, at 1.3, 2.6 GPa, the non-magnetic state (Li$_\mathrm{d}$) coexists with other components. 
+  Also, at 1.3, 2.6 GPa, possibly, some defects produce the magnetic moments in the non-magnetic domain and make Li$_\mathrm{d}$ line broader. 
+  At 1.3 GPa, they give even finite $K$ to Li$_\mathrm{d}$ line.}
+  \label{spectrum_highP}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1.0]{T1_highP2.png}
+  \caption{Spin-lattice relaxation rate, $T^{-1}_1$, at 4 T along b-axis and at each pressure. 
+  Non-magnetic transition point, $T_\mathrm{d}$, is defined as a onset temperature of significant drop of $T^{-1}_1$.
+  $T_\mathrm{d}$ monotonically increases as applying pressure.
+  $T^{-1}_1$ was measured for main Li$_\mathrm{d}$ line below $T_\mathrm{d}$.
+  Above $T_\mathrm{d}$, it was measured for Li1 line at 1.3 GPa and for the average of Li1 and Li2 lines at other pressure.
+  (a) linear scale, (b) log scale.
+  In (b), we can see the peak structure at 3.5 and 3.9 GPa as indicated by arrow, which is possibly caused by defect.}
+  \label{T1_highP}
+\end{figure}
+
+\newpage
+\section{Phase diagram}
+The transition temperatures we obtained, $T_{\mathrm{mag}}$ and $T_\mathrm{d}$ for 1 T $\chi_b$ measurement, and $T_\mathrm{d}$ for 4 T NMR measurement, 
+are plotted in $P-T$ phase diagram ignoring the difference of the field (Fig. \ref{phase}). 
+Note that the high field above $\sim$ 2.7 T along b-axis switches the ICAF order phase to paramagnetic phase. 
+The magnetic transition points, $T_{\mathrm{mag}}$, in $\chi$ of polycrystalline sample \cite{Majumder2018} 
+and the structural transition point, $T_s$, in single crystal XRD \cite{veiga2017pressure} are also plotted. 
+Consistent with the reported ones, the magnetic transition points, $T_{\mathrm{mag}}$, are almost pressure-independent. 
+We didn't observe $T_{\mathrm{mag}}$ in high-pressure NMR measurement because it was done under 4 T. 
+\begin{comment}
+However, the coexisting component at 1.3 GPa is paramagnetic one. 
+It implies that, at least at 1.3 GPa, $T_{\mathrm{mag}}$ should appear if the field is lowered below 2.7 T because the paramagnetic phase should become ICAF order moments below 2.7 T. 
+\end{comment}
+However, for 2.6 GPa, there is a possibility that the coexisting component is remaining paramagnetic phase and that $T_{\mathrm{mag}}$ can appear if the field is lowered below 2.7 T. 
+For 3.5 GPa, there is no coexisting component and no possibility for the appearnce of ICAF order even if the field is lowered. 
+Thus, we drew the horizontal dotted line for $T_{\mathrm{mag}}$ up to just below 3.5 GPa. 
+
+We can smoothly connect $T_\mathrm{d}$ in $\chi_b$, $T_\mathrm{d}$ in NMR measurement and $T_s$ in single crystal XRD with one line. 
+This means that the paramagnetic-to-non-magnetic transition we observed coincides with $F_{ddd}$-to-$C/2c$ structural transition. 
+In the $C/2c$ phase, only one kind of Ir-Ir bond, emphasized in Fig. \ref{phase}, is 12 \% shorter than other bonds. 
+Therefore, we conclude that the non-magnetic state is a singlet dimer state.
+
+In the phase diagram, we denoted the coexisting region with dashed lines. 
+It is composed of paramagnetic spins (or ICAF ordered momenets below $T_\mathrm{mag}$) and singlet dimers.
+Our high-pressure $\chi$ data and NMR at 1.3 GPa indicates such a coexistence.
+From NMR at 2.6 GPa, there are two possibilities for the coexisting component.
+One is paramagnetic component and  the other is defect-induced moments in singlet dimer domain.
+In the plot (Fig. \ref{phase}), we included the $P-T$ region at 2.6 GPa into dashed coexisting phase because of the ambiguity and in order to simplify the phase diagram.
+The behavior of $T^{-1}_1$ below $T_\mathrm{d}$ is successive for 2.6 GPa, 3.5 GPa and 3.9 GPa, especially if we focus on the temperature region with the finite $T^{-1}_1$ value
+(Fig. \ref{T1_highP}).
+This indicates that those corresponding $P-T$ regions are the same phase.
+Thus, those $P-T$ regions are included into dashed coexisting region.
+As we saw in previous section, the effect of defects is prominent in the dashed region. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=1.0]{phase19.png}
+  \caption{Pressure-temperature phase diagram for $\beta$-Li$_2$IrO$_3$. 
+  PM, ICAF means paramagnetic phase, incommensurate non-coplanar antiferromagnetic phase, respectively. 
+  Dashed region is coexisting phase. 
+  $\times$ is from chi at 1 T along b-axis and $\bullet$ is from 4 T NMR. 
+  $\circ$ is from chi at 1 T for polycrystalline sample \cite{Majumder2018} and $\blacktriangledown$ comes from XRD \cite{veiga2017pressure}. 
+  Note that ICAF order is destroyed and substituted to PM at 4 T. (Inset) crystal structures for each phase. 
+  In $F_{ddd}$ phase at ambient pressure, all bonds have almost equivalent lengths \cite{takayama2015hyperhoneycomb}. 
+  In $C2/c$ phase, the emphasized bonds are 12 \% shorter than other bonds \cite{veiga2017pressure}.}
+  \label{phase}
+\end{figure}
+
+\chapter{Discussion}
+\section{Quantum critical point at ambient pressure}
+The size of the low-$T$ magnetic moment at 4 T is $\sim$ 0.4 $\mu_B$ (Fig.\ref{Bdep_mag}), which is still less than 1.6 $\mu_B$ at paramagnetic phase.
+The magnetic moments are not fully polarized at 4 T.
+This means that there is still a magnetically fluctuating component in the high-field regime.
+In fact, the magnetization is not saturated at 4 T (Fig.\ref{Bdep_mag}).
+The problem is whether the fluctuating component can be understood as spin liquid or not.
+In the case of field-induced spin liquid, $\alpha$-RuCl$_3$, the size of the low-$T$ magnetic moment at 8 T is $\sim$ 0.55 $\mu_B$ \cite{Zheng2017}.
+In that sense, there is a possibility that the unpolarized component in $\beta$-Li$_2$IrO$_3$ can be a spin liquid.
+It has a spin gap of 90 $\pm$ 20 K (Fig.\ref{spin_gap}(b)).
+
+Here, spin gap fitting was done with the function,
+\begin{equation}
+T^{-1}_1 = b\mathrm{e}^{-\Delta/T},
+\end{equation}
+where $b$ and spin gap $\Delta$ are fitting parameters, and $T$ is temperature.
+Temperature range used for fitting is summarized in Table.\ref{Trange}.
+For the pressure of 2.6, 3.5, 3.9 GPa, we estimated the spin gap by the fitting to the decrease from the intermidiate value to almost zero value.
+
+For $\alpha$-RuCl$_3$, there are two reports that one claim the gapless quantum spin liquid \cite{Zheng2017} and the other claim the gapful quantum spin liquid \cite{baek2017evidence}.
+However, the common feature is that it become gapless around the quantum critical point.
+This might mean that the gapped behavior we observed at 4 T is too far away from the quantum critical point.
+In $\alpha$-RuCl$_3$, exotic behavior like quantized thermal Hall effect is only reported around quantum critical point $\sim 8$ T (Fig.\ref{phase_BT}(b)) \cite{kasahara2018majorana}.
+Our result might suggest that, in order to observe quantized thermal Hall effect in $\beta$-Li$_2$IrO$_3$, we need to finely adjust the field between 2.7 T and 4 T 
+(Fig.\ref{phase_BT} (a)).
+On the other hand, quantized thermal Hall effect might be originating from two dimensionality of spin liquid state.
+If it is the case, we cannot observe quantized thermal Hall effect in three dimensional $\beta$-Li$_2$IrO$_3$.
+Instead, if 3D Kitaev spin liquid is realized in $\beta$-Li$_2$IrO$_3$ at the field between 2.7 and 4 T, there should be a topological phase transition from paramagnetic state to
+spin liquid state \cite{nasu2014vaporization}.
+
+Thus, our result gives the upper bound (4 T) to observe the possible field-induced exotic quantum criticality in $\beta$-Li$_2$IrO$_3$.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{spin_gap_both.png}
+  \caption{(a) Spin gap fitting for $T^{-1}_1$.
+  (b) Pressure dependence of the spin gap.
+  Spin gap $\Delta$ is enhanced for the dimerization above 3.5 GPa.} 
+  \label{spin_gap}
+\end{figure}
+
+\begin{table}[H]
+\begin{center}
+\caption{Temperature range used for spin gap fitting.}
+\begin{tabular}{ccc} \hline
+ $P$ (GPa)& $T_\mathrm{start}$ (K)& $T_\mathrm{end}$ (K)\\ \hline
+ 0 & 20 (lowest)& 70\\ \hline
+ 1.3& 40 (lowest)& 110\\ \hline
+ 2.6& 20 (lowest)& 225\\ \hline
+ 3.5& 160& 250\\ \hline
+ 3.9& 180& 290\\ \hline
+\end{tabular}
+\label{Trange}
+\end{center}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{phase_BT.png}
+  \caption{Field-temperature phase diagram (a) for $\beta$-Li$_2$IrO$_3$ \cite{ruiz2017correlated}
+  and (b) for $\alpha$-RuCl$_3$ \cite{kasahara2018majorana}.
+  Quantum critical behavior is observed in $\alpha$-RuCl$_3$ in the red shaded limited region.
+  It might also be true for $\beta$-Li$_2$IrO$_3$.
+  Region with dashed circle below 4 T have a possibility for quantum critical behavior.
+  In (a), we added the words, "measured", "spiral AFM", and "Quantum critical behavior?".} 
+  \label{phase_BT}
+\end{figure}
+
+\section{Strong singlet dimer formation above 3.5 GPa}
+Now we examine the three possibilities for the non-magnetic state of the dimer (Fig.\ref{three}).
+Knight shift in our singlet dimer state at 3.5 GPa is almost zero (Fig.\ref{3.5GPa}).
+It means almost zero susceptibility in the dimer state.
+
+Fig.\ref{chi_cal} is a calculated magnetic susceptiblity $\chi$ for the dimer of $J_{\mathrm{eff}} = 1/2$ spins \cite{Nasu2014}.
+$t'$ represents the direct $dd$ hopping integral in the scale of indirect $dpd$ hopping. 
+$t' < 1$ means stronger indirect $dpd$ hopping and it stabilizes quadrupolar state.
+We can see that the quadrupolar state has a finite $\chi$.
+Thus, quadrupolar state is excluded because we observed almost zero susceptibility in the dimer state.
+
+Then, we examine the possibilty of $J_{\mathrm{eff}} = 1/2$ spin singlet.
+In order to form $J_{\mathrm{eff}} = 1/2$ spin singlet, we need AF Heisenberg interaction.
+However, the first principle calculation revealed that Heisenberg interaction is FM even under pressure \cite{Yadav2018, Kim2016}.
+This makes the $J_{\mathrm{eff}} = 1/2$ spin singlet scenario less plausible.
+There is another negative discussion for the scenario.
+Suppose that $J_{\mathrm{eff}} = 1/2$ spin singlet is formed by exchange interaction.
+There should be the singlet-triplet gap of the order of the interaction. 
+In $\beta$-Li$_2$IrO$_3$, the calculation revealed that the exchange interactions are of the order of $\sim$ 100 K \cite{Yadav2018}. 
+The gap should give a finite van Vleck term in $\chi$ and correspondingly finite $K$.
+In fact, the calculation of magnetic susceptibility $\chi$ for $J_{\mathrm{eff}} = 1/2$ spin singlet revealed that $\chi$ has finite value at the temperature scale of 
+the energy gap (in our case $\sim 100$ K), while it decays to zero value at lower temperature \cite{Nasu2014}.
+In Fig.\ref{chi_cal}, $J_{\mathrm{eff}} = 1/2$ singlet state corresponds to $t' > 1$ case, which means stronger direct $dd$ hopping.
+However, we observed almost zero $K$ for singlet dimer phase. 
+The discrepancy means that $J_{\mathrm{eff}} = 1/2$ spin singlet is not the case. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{chi_cal.png}
+  \caption{Calculated magngetic susceptibility $\chi$ for dimer state of $J_{\mathrm{eff}} = 1/2$ spins.
+  $\beta$ is inverse temperature. \cite{Nasu2014}
+  (a) $\chi$
+  (b) $\mathrm{d}\chi/\mathrm{d}\beta$
+  $t'$ represents the direct $dd$ hopping integral in the scale of indirect $dpd$ hopping. 
+  $t' < 1$ means quadrupolar state and $t' > 1$ means singlet state.
+  The singlet state has a finite peak structure at the temperature scale of singlet-triplet gap.}
+  \label{chi_cal}
+\end{figure}
+
+Other possibility is the collapse of $J_{\mathrm{eff}} = 1/2$ picture and the formation of molecular orbital. 
+Fig.\ref{band_cal_highP} is the calculated density of states (DOS) for ambient-pressure $Fddd$ structure and for high-pressure $C/2c$ structure at 4.4 GPa (Fig.\ref{band_cal_highP})
+\cite{takayama2018pressure}.
+At ambient pressure, we can observe the splitting of $t_{2g}$ states to $J_{\mathrm{eff}} = 1/2$ and $J_{\mathrm{eff}} = 3/2$ states.
+On the other hand, at high-pressure $C/2c$ phase, $d_{xy}$, $d_{yz}$, $d_{zx}$ character appears.
+The lowest occupied sub-band (-1.7 eV) and the highest unoccupied sub-band (0.7 eV) are dominated by $d_{zx}$ character.
+It means the formation of bonding-antibonding state of $d_{zx}$ orbital.
+$d_{zx}$ orbital is directed along dimerized bond (Y bond).
+The degenerate $d_{xy}$, $d_{yz}$ orbitals are entangled by SOC and reside between -1.7 eV and 0.7 eV.
+Thus, the dimer state is a molecular orbital of $d_{zx}$ orbital. 
+The gap induced by the formation of the bonding-antibonding state is estimated as $\sim$ 7000 K. 
+This is consistent with our zero $K$ because such a large excitation gap gives negligible van Vleck susceptibility.
+If we assume the similar behavior of $\chi$ to $J_{\mathrm{eff}} = 1/2$ spin singlet, $\chi$ has a finite value at $\sim 7000$ K and decays to zero at lower temperature,
+which should give the almost zero $\chi$ in our measuring temperature range.
+
+Thus, our results support the molecular orbital formation for the non-magnetic dimer state. 
+
+Also, the large spin gap $\sim 2000$ K (Fig.\ref{spin_gap}) above 3.5 GPa is consistent with our observeation.
+The strong singlet dimer formation is further supported by the high transition temperature reaching to room temperature and the fact that it is first-order transition.
+
+$J_{\mathrm{eff}} = 1/2$ state is obtained by equally mixing up the $d_{xy}$, $d_{yz}$, $d_{zx}$ orbitals with multiplying a complex factor. 
+We can view the transition from $J_{\mathrm{eff}} = 1/2$ state to $d_{zx}$-molecular orbital as the pressure-induced orbital selection.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{band_cal_highP.png}
+  \caption{Calculated density of states (DOS) for Ir. \cite{takayama2018pressure}
+  (a) DOS for the ambient-pressure structure ($Fddd$).
+  $t_{2g}$ states split to $J_{\mathrm{eff}} = 1/2$ and $J_{\mathrm{eff}} = 3/2$ states.
+  (b) DOS for the high-pressure structure at 4.4 GPa ($C/2c$).
+  $d_{zx}$ orbital forms bonding-antibonding state.
+  $d_{xy}$ and $d_{yz}$ are entangled by SOC.
+  Total DOS contains O $2p$ states.}
+  \label{band_cal_highP}
+\end{figure}
+
+
+XRD and neutron scattering revealed that the zigzag chains compress easier than the bridging bonds (Fig.\ref{bond}) \cite{veiga2017pressure, takayama2018pressure}. 
+The first principle calculation suggest that it gives the larger enhancement of direct hopping along zigzag chain than one in bridging bond \cite{Kim2016}.
+It is considered that the anisotropic enhancement of hopping contributes to the stabilization and formation of $d_{zx}$-molecular orbital.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{bond.png}
+  \caption{Pressure dependence of bond length \cite{veiga2017pressure, takayama2018pressure}. X, Y bond composing zigzag chain compresses easier than bridging Z bond.}
+  \label{bond}
+\end{figure}
+
+\section{Competition between spin-orbit couping and dimer formation}
+As we discussed in Chap.\ref{result}, there is a coexisting phase of $J_\mathrm{eff} = 1/2$ spins and singlet dimer in the intermidiate pressure range (1 GPa $< P <$ 3 GPa)
+(Fig.\ref{pressure_phase}).
+In Chap.\ref{result}, we presented the interpretaion that singlet dimer state in the intermidiate region (1.3 and 2.6 GPa) is affected by defects.
+However, we can also have a speculation that the dimer state at 1.3 and 2.6 GPa is different from molecular orbital dimer.
+Quadrupolar dimer state can still be excluded because it cannot be continuously connected to $S = 1/2$ molecular dimer state above 3.5 GPa.
+They belong to different symmertries.
+Here, we mean the possibility of $J_\mathrm{eff} = 1/2$ pseudo-spin singlet at 1.3 and 2.6 GPa.
+It can be continuously connected to $S = 1/2$ molecular dimer state above 3.5 GPa.
+In this view, finite $K$ for Li$_\mathrm{d}$ peak at 1.3 GPa (Fig.\ref{spectrum_highP}(d)) is originated from van Vleck term of modest singlet-triplet gap.
+One of the coexisting component at 2.6 GPa (Fig.\ref{spectrum_highP}(e)) is also understood as $J_\mathrm{eff} = 1/2$ pseudo-spin singlet with finite $K$.
+However, XRD at high pressure and at low temperature is now revealing that the structure of dimer at lower pressure region is the same as one at higher pressure region
+(private communication).
+This suggests the same dimer state for the overall $P-T$ phase diagram.
+The conclusive results from high-pressure XRD is awaited.
+
+What we found in $\beta$-Li$_2$IrO$_3$ under pressure is a competition between spin-orbit Mott state and molecular dimer state.
+The former is characterized by the energy gain of SOC and Coulomb $U$, while the latter is characterized by the energy gain of hopping amplitude $t$.
+If there is no SOC in $\beta$-Li$_2$IrO$_3$, it shows dimerization in Z-bond \cite{Kim2016}.
+Note that, in reality, the dimerization in $\beta$-Li$_2$IrO$_3$ occurs in Y-bond.
+$\alpha$-RuCl$_3$ also shows dimerization without SOC \cite{Kim2016a}.
+These mean that there is an intrinsic instability for orbital-selective dimerization among these Kitaev magnets and strong SOC prevents the dimerization 
+by mixing the orbitals at ambient pressure.
+Pressure modifies the subtle balance by increasing hopping integrals, resulting in the transition from $J_\mathrm{eff} = 1/2$ state to dimerized state.
+On the other hand, Li$_2$RuO$_3$ ($4d^4$) shows dimerizatoin under ambient pressure \cite{Miura2007}.
+This might mean that not only SOC but also spin-orbit Mottness of $J_\mathrm{eff} = 1/2$ state is a key to prevent dimerization.
+
+If the pressure is moderate and the system is just in a competitive region, there should be the incomplete dimer formation.
+In that region, the pairing partner for dimer is not fully determined.
+Fluctuation to find the dimer pair can be regarded as the similar state to resonating valence bond (RVB) state \cite{ANDERSON1973153}.
+In this sense, there might be RVB-like spin liquid state in the competitive region.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{pressure_phase.png}
+  \caption{Schematic image of pressure dependence of the phase in $\beta$-Li$_2$IrO$_3$.
+  Singlet dimer in the intermidiate pressure region is affected by defect or different from strong singlet dimer at higher pressure.}
+  \label{pressure_phase}
+\end{figure}
+
+\section{Effect of defect and $\mu$SR}
+Fig. \ref{lowQ} shows the crystal-quality dependence of $\chi_b$ and $T^{-1}_1$.
+Crystal 1 is supplied by a collaborator.
+Crystal 2 is obtained by the method described in Chap.\ref{method}.
+The kink at $T_\mathrm{mag} = 38$ K disappears for crystal 1 (Fig.\ref{lowQ}(a)).
+It is considered that the large amount of defect disturbs ICAF order for crystal 1.
+The effect of defects is more prominently observed in $T^{-1}_1$ (Fig.\ref{lowQ}(b)).
+$T^{-1}_1$ for crystal 1 at 3.2 GPa and at 7 T doesn't show non-magnetic transition.
+Instead, it shows peak structure around 40 K.
+The low-$T$ value is two order of magnitude larger than that for crystal 2 at 3.5 GPa.
+The peak structure is also observed for crystal 1 at 3 T. 
+This means the anomalous behavior in $T^{-1}_1$ is originating not from the difference in applied field but from the sample quality.
+It is considered that the high concentration of defects in crystal 1 produces dynamical spins.
+
+$\mu$SR at high pressure concluded that there is a coexistence of liquid-like dynamical spins and glass-like frozen spins 
+in the pressure range from 1.37 GPa to 2.27 GPa below $T_{\mathrm{mag}}$ = 38 K \cite{Majumder2018}. 
+In the $P$-$T$ region, our measurement showed the coexistence of ICAF ordered spins, singlet dimers and defects. 
+The discrepancy is possibly caused by the amount of defect. 
+It is considered that the large amount of defect in ICAF order phase make it close to glassy state
+as we observed the diffuse of hyperfine field for paramagnetic component (or ICAF order moments in low-field regime) at 1.3 GPa and at low temperature.
+Also, the high concentration of defect in singlet dimer phase can produce dynamical spins.
+In fact, $T^{-1}_1$ measured for low-quality sample at 3.2 GPa was two-order of magnitude larger than that at 3.5 GPa (Fig.\ref{lowQ}(b)). 
+This indicates the existence of dynamical spins can be strongly dependent on sample quality. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{lowQ.png}
+  \caption{Effect of sample quality.
+  (a) Magnetic susceptibility at 1 T along b-axis of $\beta$-Li$_2$IrO$_3$ single crystals.
+  The high-quality crystal, crystal 2, has higher and clearer magnetic transition point, $T_\mathrm{mag} = 38$ K, than crystal 1.
+  (b) Spin-lattice relaxation rate, $T^{-1}_1$.
+  Non-magnetic transition is absent for low-quality crystal, crystal 1.
+  Instead the large value of $T^{-1}_1$ is observed in crystal 1, indicating the existence of defect-induced dynamical spins.} 
+  \label{lowQ}
+\end{figure}
+
+
+\section{Comparison with other compounds}
+There are not so many iridates which shows valence bond solid.
+CuIr$_2$S$_4$ shows structural transition with octamer formation at $T_s \sim 230$ K and at ambient pressure \cite{Radaelli2002}.
+Spin-lattice realaxation rate, $T^{-1}_1$, in Cu-NMR shows abrupt drop at the transition point (Fig.\ref{T1_CuIr2S4}) \cite{Tsuji1997}.
+Knight shift also change the sign at the transition point from negative above $T_s$  to positive below $T_s$ (Fig.\ref{K_CuIr2S4}) \cite{Tsuji1997}.
+Knight shift below $T_s$ has finite value possibly due to orbital contribution.
+This is a metal-insulator transition.
+There is a discussion about mechanism that one-dimensional hopping originating from anisotropy of $t_{2g}$ orbitals induces Peierls instability and octamer formation
+(orbitally-induced Peierls mechanism) \cite{Khomskii2005}, while it ignores the effect of SOC.
+Our singlet dimer formation in $\beta$-Li$_2$IrO$_3$ is insulator-to-insulator transition, so it is different from CuIr$_2$S$_4$.
+However, also in $\beta$-Li$_2$IrO$_3$, pressure induce anisotropic compression and anisotropic enhancement of hopping, especially in zigzag chain 
+\cite{takayama2018pressure, veiga2017pressure, Kim2016}.
+This might mean that the one-dimensionality in hopping is induced by pressure, resulting in Peierls instability and singlet dimer formation within zigzag chain.
+This pressure-induced one-dimensionality scenario is one possibility to explain the singlet dimer formation in $\beta$-Li$_2$IrO$_3$.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{T1_CuIr2S4.png}
+  \caption{$T^{-1}_1$ of CuIr$_2$S$_4$ ($x = 0$) \cite{Tsuji1997}. It shows abrupt drop at $T_s \sim 230$ K.} 
+  \label{T1_CuIr2S4}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{K_CuIr2S4.png}
+  \caption{Knight shift of CuIr$_2$S$_4$ ($x = 0$) \cite{Tsuji1997}. Sudden sign change is observed at $T_s \sim 230$ K.} 
+  \label{K_CuIr2S4}
+\end{figure}
+
+IrTe$_2$ is another example which shows dimer formation at $T_s \sim 280$ K and at ambient pressure \cite{Pascut2014}.
+Spin-lattice realaxation rate, $T^{-1}_1$, in ${}^{125}$Te-NMR shows abrupt drop at the transition point (Fig.\ref{T1_IrTe2}).
+This is a metal-to-metal transition.
+Both of CuIr$_2$S$_4$ and IrTe$_2$ are mixed-valnent system with formal Ir$^{3.5+}$ valnece \cite{Radaelli2002, Pascut2014}.
+Charge ordering accompanies with octamer or dimer formation for both compounds.
+In that sense, singlet dimer formation in $\beta$-Li$_2$IrO$_3$ without charge fluctuation is rare case among dimerization in iridates.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{T1_IrTe2.png}
+  \caption{$T^{-1}_1$ of IrTe$_2$ \cite{Mizuno2002}. It shows abrupt drop at $T_s \sim 280$ K.} 
+  \label{T1_IrTe2}
+\end{figure}
+
+$\alpha'$-NaV$_2$O$_5$ shows dimer formation of V$^{4+}$ at $T_{SP} = $ 34 K and at ambient pressure (spin-Peierls transitoin) \cite{Isobe1996}.
+Here, spin-Peierls transition is a singlet dimer formation observed in one-dimensional $S = 1/2$ spin system, which is induced by AF Heisenberg interaction.
+The absolute value of Knight shift in ${}^{23}$Na-NMR shows the reduction of almost 1/10 from high-$T$ paramagnetic state to low-$T$ singlet dimer state (Fig.\ref{K_NaV2O5}).
+In our singlet dimer formation in $\beta$-Li$_2$IrO$_3$, the reduction of Knight shift from paramagnetic to singlet state is almost 1/100 at 3.5 GPa (Fig.\ref{3.5GPa}(b)).
+The large reduction in $\beta$-Li$_2$IrO$_3$ indicates that the dimer formation is stronger than spin-Peierls transition in $\alpha'$-NaV$_2$O$_5$.
+In other words, the excitaion gap induced by singlet dimer formation in $\beta$-Li$_2$IrO$_3$ is far larger than singlet-triplet gap in $\alpha'$-NaV$_2$O$_5$.
+This comparison also guarantees that the singlet dimer in $\beta$-Li$_2$IrO$_3$ originates from molecular orbital dimer, not from singlet induced by exchange interaction.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{K_NaV2O5.png}
+  \caption{Knight shift of $\alpha'$-NaV$_2$O$_5$ \cite{Ohama1997}. 
+  Field is along b-axis.
+  The absolute value of Knight shift decrease at $T_{SP} \sim 34$ K.
+  The amount of the decrease is smaller than that at $T_\mathrm{d} = 292$ K in $\beta$-Li$_2$IrO$_3$ under 3.5 GPa.} 
+  \label{K_NaV2O5}
+\end{figure}
+
+The pressure-induced lattice dimerization was also reported for other Kitaev magnets, $\alpha$-Li$_2$IrO$_3$ \cite{Hermann2018}, $\alpha$-RuCl$_3$ \cite{Bastien2018}. 
+Magnetism of the high-$P$ phase in $\alpha$-Li$_2$IrO$_3$ is still unknown though (Fig.\ref{phase_PT}(b)).
+For $\alpha$-RuCl$_3$, the high-pressure magnetism was revealed to be a singlet dimer and similar phase diagram to $\beta$-Li$_2$IrO$_3$ was discovered (Fig.\ref{phase_PT}(a)).
+It is considered that similar mechanism of molecular orbital formation is valid also for the dimerization in $\alpha$-RuCl$_3$.
+For Na$_2$IrO$_3$, it is controversial whether it has a structural phase transition at high pressure \cite{Hermann2017, Xi2018}.
+The discrepancy possibly comes from the air- and moisture-sensitivity of the compound.
+However, at least, the reported transition is moderate and is not the dimerization \cite{Xi2018}. 
+$\gamma$-Li$_2$IrO$_3$ do not show any structural phase transition under pressure \cite{breznay2017resonant}. 
+The magnetic order disappears at $\sim$ 1.4 GPa without any lattice distortion. 
+These indicate that there is a general tendency of pressure-induced singlet dimer formation in Kitaev magnets, 
+but the appearance is highly sensitive to chemical composition or structure. 
+It is necessary to reveal the whole $P-T$ phase diagram for all the Kitaev magnets and to elucidate the condition of appearance or disappearance of singlet dimer formation.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{phase_PT.png}
+  \caption{Pressure-temperature phase diagram (a) for $\alpha$-RuCl$_3$ \cite{Bastien2018} and (b) for $\alpha$-Li$_2$IrO$_3$ \cite{Hermann2018}.
+  Phase diagram for $\alpha$-RuCl$_3$ is similar to one for $\beta$-Li$_2$IrO$_3$.} 
+  \label{phase_PT}
+\end{figure}
+
+\chapter{Summary}
+Since the discovery of $J_\mathrm{eff} = 1/2$ pseudo-spin in Sr$_2$IrO$_4$ \cite{kim2008novel, kim2009phase}, 
+interplay between SOC and correlation has provided the fascinating research area.
+One of the most intensively studied themes is a realizatoin of Kiteav spin liquid in $J_\mathrm{eff} = 1/2$ pseudo-spin system \cite{kitaev2006anyons, jackeli2009mott}.
+For Kitaev spin liquid, there are various exotic theoretical predition such as application to quantum computing \cite{kitaev2006anyons}, 
+realization of fractional excitation \cite{nasu2015thermal, yoshitake2017temperature}
+and appearance of exotic superconductor by hole doping \cite{you2012doping}.
+$\beta$-Li$_2$IrO$_3$ was expected to realize the Kitaev spin liquid under high pressure.
+It is because magnetic order of $J_\mathrm{eff} = 1/2$ at ambient pressure is suppressed by pressure without metallization \cite{takayama2015hyperhoneycomb}.
+Also, there is a $\mu$SR report that the high-pressure phase is a mixture of spin liquid and spin glass  \cite{Majumder2018}.
+Thus, we started the study of high-pressure magnetism of $\beta$-Li$_2$IrO$_3$.
+
+We synthesized the largest $\beta$-Li$_2$IrO$_3$ single crystals.
+At ambient pressure, we confirmed that the magnetic order in low-field regime becomes ferromagnetically polarized paramagnet in high-field regime.
+We measured the high-pressure magnetism up to 3.9 GPa through magnetic susceptibility and ${}^7$Li NMR. 
+We revealed $P$-$T$ phase diagram. 
+The high-pressure phase is a non-magnetic singlet dimer probably based on molecular orbital. 
+Also, we concluded that spin-liquid component observed in $\mu$SR is defect-induced dynamical moments in singlet dimer background. 
+
+We revealed that there is a pressure-induced competition between orbital-disordered $J_{\mathrm{eff}} = 1/2$ state and orbital-selective molecular dimer state in $\beta$-Li$_2$IrO$_3$.
+In the competitive region, pairing partner of dimer fluctuates and RVB-like spin liquid might realize.
+The competition seems to be a common feature among some Kitaev magnets. 
+Uncovering of $P$-$T$ phase diagram for all Kitaev candidates is awaited.
+
+
+\appendix
+\chapter{Simulation in paramagnetic phase \& angular rotation}
+\label{appendix_simu}
+In this chapter, based on the calculation of Eq.(\ref{Li1}) and Eq.(\ref{Li2}), we simulate the peak splitting in ${}^7$Li NMR of $\beta$-Li$_2$IrO$_3$ in paramagnetic phase.
+Since $+ 0 .04$ kOe is one order smaller than the values in Eq.(\ref{Li1}) and Eq.(\ref{Li2}), it is ignored in the calculation below.
+$\pm$ in Eq.(\ref{Li1}) and Eq.(\ref{Li2}) means that there are four Li sites as a hyperfine tensor, even though crystallographically there are two sites.  
+Since Knight shift is a strength of internal field parallel to applied external field, it can be calculated as, 
+\begin{align}
+K_i = \frac{\vec{n}\cdot\overrightarrow{H}_{hf}(i)}{H_0}
+\end{align}
+In paramagnetic phase, using Eq.(\ref{Bhf_n}), it is rewritten as,
+\begin{align}
+K_i = \frac{p}{B_0}\vec{n}\cdot\tilde{A}(i)\cdot\vec{n} = \frac{p}{B_0}M(i, \vec{n})
+\end{align}
+where $B_0 = \mu_0H_0$, $M (i,\vec{n})$ is a angular dependent part of Knight shift defined by the above.
+$M (i,\vec{n})$ is plotted in Fig.\ref{angle_dep} (b),
+where the angles are defined as the deviation from magnetic easy b axis (Fig.\ref{angle_dep}(a)).
+%Fig. (a) definition of angles & (b) angle dependence 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{angle_dep.png}
+  \caption{(a) Angles $\theta$, $\phi$ are defined as the deviation from the magnetic easy b axis.
+  (b) Angle dependent part of Knight shift, $M (i, \theta, \phi)$. 
+  Li1(2)$\pm$ correspond in $\pm$ in Eq.(\ref{Li1}) and Eq.(\ref{Li2}).}
+  \label{angle_dep}
+\end{figure}
+If we apply field in arbitrary direction, spectrum splits to four lines in accordance with four hyperfine Li sites.
+However if the field is in bc-plane or ac-plane, spectrum consists of two lines corresponding to two crystallographic Li sites.
+
+This observation was utilized when we confirmed that the b-axis is parallel to applied field in NMR measurement.
+First, I determined crystal direction by single crystal XRD and set it carefully to orient b-axis to be parallel to applied field. 
+In NMR measurement, spectrum with two-line structure was observed as expected for b-axis.
+I named this original direction as b0 direction and correspondingly named the orthogonal directions as c0, a0.
+Then, I conducted angular rotation with two-axis rotator from b0 to c0 axis to find the direction which shows the maximum splitting.
+It is because b axis is a magnetic easy axis and the largest magnetization, i.e., splitting is expected.
+I named this newly found direction as b1 direction, and correspondingly named the orthogonal directions as c1, a1.
+(Note that a1 is the same as a0.)
+Finally, I rotated from b1 to a1 axis and found the angle with maximum splitting again.
+Larger angle rotation in a1b1 plane gives the further splitting of two-line structure as expected for ab-plane rotation.
+As a result, I could confirm that the b axis is oriented to applied magnetic field.
+
+The example of such an angular rotation is presented in Fig, \ref{b0c0} for b0-c0 rotation and in Fig. \ref{b1a1} for b1-a1 rotation.
+In this case, I found b1 direction ($\theta = 95^\circ$) which shows slightly larger splitting than the original b0 ($\theta = 90^\circ$) direction in b0-c0 rotation (Fig.\ref{b0c0}).
+Then the splitting is insensitive to a1b1 rotation in smaller angle range ($-10^\circ \leq \phi^\prime \leq 0^\circ$).
+This indicates that b1 direction is close enough to angle region with maximum splitting. 
+On the other hand, at larger angle ($\phi^\prime \leq -15$), the Li2 line splits to two lines. 
+This confirms that the smaller angle region is closer to true b axis.
+Therefore, for the measurement, I chose b1 as the direction close to b axis. 
+The accuracy should be roughly $\pm$ $5^\circ$ because the angular dependence was measured in the increment of $5^\circ$ around b axis.
+
+%Fig. spectrum & splitting
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{ang_dep_b0c0_2.png}
+  \caption{(a) Angle dependence of spectrum at 0 GPa, 1 T, 50 K for the rotation in b0-c0 plane.
+  (b) Angle dependence of the split in spectrum. The splitting was read by the eye.
+  Note that the definition of the angle $\theta$ is not based on Fig. \ref{angle_dep} (a).
+  It is defined as the angle within b0-c0 plane in reference of the real two-axis rotator geometry (Appendix.\ref{two-axis}).}
+  \label{b0c0}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{ang_dep_b1a1_2.png}
+  \caption{(a) Angle dependence of spectrum at 0 GPa, 1 T, 50 K for the rotation in b1-a1 plane.
+  (b) Angle dependence of the split in spectrum. 
+  The splitting was read by the eye.
+  The splitting was measured from the leftmost peak.
+  Note that the definition of the angle $\phi^\prime$ is not based on Fig. \ref{angle_dep} (a).
+  It is defined as the angle within b1-a1 plane in reference of the real two-axis rotator geometry (Appendix.\ref{two-axis}).}
+  \label{b1a1}
+\end{figure}
+
+\chapter{Two-axis rotation}
+\label{two-axis}
+To conduct the two-axis rotation of high-pressure cell (or ambient-pressure setup) in NMR measurement probe, we need to understand the mathematical geometry.
+Let's define ($\hat{x}, \hat{y}, \hat{z}$) coordinate system for the probe and ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system for the cell 
+(Fig.\ref{two_axis}(a)).
+Field is applied along $\hat{z}$ axis.
+($\hat{x}, \hat{y}, \hat{z}$) coordinate system is fixed to the laboratory and never move.
+($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system rotates against ($\hat{x}, \hat{y}, \hat{z}$) coordinate system.
+The rotation can be done around two axes.
+One is fixed $\hat{x}$ axis ($\theta$ rotation) and  the other is moving $\hat{z}^\prime$ axis ($\phi$ rotation) (Fig.\ref{two_axis}(b)).
+%Figure of probe and cell, definition of theta and phi
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{two_axis.png}
+  \caption{(a) Initial position without rotation.
+  (b) The schematic view of the cell rotation of $\theta$ and $\phi$.}
+  \label{two_axis}
+\end{figure}
+%The crystal to measure is in the cell and its position is fixed against the cell.
+Suppose, at the initial cell position, those two coordinate systems correspond.
+The way of two-axis rotation of the cell gives the relation between the coordinate systems,
+%matrix R(theta, phi)
+\begin{align}
+\label{coordinates}
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) &= (\hat{x}, \hat{y}, \hat{z}) R(\theta, \phi),\\
+R(\theta, \phi) &=
+\left(
+\begin{array}{ccc}
+\cos\phi & -\sin\phi & 0 \\
+\cos\theta\sin\phi & \cos\theta\cos\phi & \sin\theta \\
+-\sin\theta\sin\phi & -\sin\theta\cos\phi & \cos\theta
+\end{array}
+\right).
+\end{align}
+If a, b, c axes of the crystal perfectly correspond to $\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$ direction of the cell, $(\theta,\phi) = (\frac{\pi}{2},0)$,
+(0,0), $(\frac{\pi}{2}, \frac{\pi}{2})$ gives the measurement of b, c, a axes, respectively.
+The $\theta$ and $\phi$ rotaition gives the rotation within bc plane and ab plane, respectively.
+
+Suppose that there is a mismatch between crystal axes and $\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$ directions.
+Then, suppose that we find b, c axis in the direction of $(\theta,\phi) = (\frac{\pi}{2}+\theta_0,0), (\theta_0,0)$.
+Direction of a-axis is still $(\theta,\phi) = (\frac{\pi}{2}, \frac{\pi}{2})$.
+We can conduct the measurement within bc plane by $\theta$ rotation,
+However, we need to manipulate both of $\theta$ and $\phi$ for the measurement within ab plane.
+The problem is how to find the values of $\theta$ and $\phi$ for the ab-plane measurement. 
+
+In general, if we set the rotation anlges to certain values of $(\theta,\phi)$, the direction,
+%formula
+\begin{align}
+\label{general}
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\theta, \phi) 
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right),
+\end{align}
+is oriented to be parallel to probe $\hat{z}$ direction.
+(Note that, for $R$, the inverse matrix is its transposed matrix: $R^{-1} = R^T$.)
+It is because, from Eq. (\ref{coordinates}), direction of Eq. (\ref{general}) is nothing but a probe $\hat{z}$ direction,
+%formula.
+\begin{align}
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\theta, \phi) 
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right)
+= (\hat{x}, \hat{y}, \hat{z})
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right).
+\end{align}
+
+Let's name the directions we found, $(\theta,\phi) = (\frac{\pi}{2}+\theta_0,0), (\theta_0,0). (\frac{\pi}{2}, \frac{\pi}{2})$ as b1, c1, a1 direction, respectively.
+b1 direction is represented in ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system as, 
+%\hat{b1} = formula
+\begin{align}
+\widehat{b1} = 
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\theta_0 + \frac{\pi}{2}, 0) 
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right).
+\end{align}
+Correspondingly, a1 direction is represented in ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system as 
+%\hat{a1} = formula
+\begin{align}
+\widehat{a1} = 
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\frac{\pi}{2}, \frac{\pi}{2}) 
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right).
+\end{align}
+For the measurement within a1b1 plane, we have to orient the arbitrary direction $\hat{m}$ within a1b1 plane,
+%\hat{m} = formula
+\begin{align}
+\label{m}
+\hat{m} = \cos\phi^\prime\widehat{b1} + \sin\phi^\prime\widehat{a1},
+\end{align}
+to be parallel to probe $\hat{z}$ direction by manipulating both of $\theta$ and $\phi$.
+Here $\phi^\prime$ is a rotation angle within a1b1 plane.
+
+Here let's generalize the problem and consider the way how to orient the arbitrary direction $\hat{n}$ on ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system
+to be parallel to probe $\hat{z}$ direction.
+We introduce polar coordinate for ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system (Fig.\ref{polar}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{polar.png}
+  \caption{Polar coordinates for ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$).}
+  \label{polar}
+\end{figure}
+The arbitrary direction $\hat{n}$ can be described by two angles, ($\theta_n$, $\phi_n$),
+%formula
+\begin{align}
+\hat{n} = 
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime)
+\left(
+\begin{array}{c}
+\sin\theta_n\cos\phi_n \\
+\sin\theta_n\sin\phi_n \\
+\cos\theta_n
+\end{array}
+\right).
+\end{align}
+The problem is now reduced to find the rotation angle, ($\theta$, $\phi$), which satisfies,
+%formula 
+\begin{align}
+\hat{n} = 
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime)  
+\left(
+\begin{array}{c}
+\sin\theta_n\cos\phi_n \\
+\sin\theta_n\sin\phi_n \\
+\cos\theta_n
+\end{array}
+\right)
+&= (\hat{x}, \hat{y}, \hat{z}) R(\theta, \phi)
+\left(
+\begin{array}{c}
+\sin\theta_n\cos\phi_n \\
+\sin\theta_n\sin\phi_n \\
+\cos\theta_n
+\end{array}
+\right) \notag\\
+&= (\hat{x}, \hat{y}, \hat{z})
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right),
+\end{align}
+for arbitrary ($\theta_n$, $\phi_n$).
+Here, the second equation comes from Eq. (\ref{coordinates}) and the last equation is what we have to solve.
+The solution is, 
+%formula
+\begin{align}
+\label{solution}
+(\theta, \phi) = \left(-\theta_n, -\phi_n + \frac{\pi}{2}\right)
+\end{align}
+If ($\theta$, $\phi$) satisfies Eq. (\ref{solution}), arbitrary direction $\hat{n}$ on ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system
+is oriented to be parallel to probe $\hat{z}$ direction.
+Therefore, coming back to the original problem, we can orient $\hat{m}$ in Eq. (\ref{m}) to be parallel to probe $\hat{z}$ direction
+by rewriting $\hat{m}$ as ($\theta_m$, $\phi_m$) in polar coordinate, and setting ($\theta$, $\phi$) = $\left(-\theta_m, -\phi_m+\frac{\pi}{2}\right)$.
+
+To determine ($\theta$, $\phi$) for a1b1 rotation in programming, the above results were considered. 
+
+Finally, $(\theta,\phi)$ is controlled by two values (A, B) in KAME interface via
+%formula.
+\begin{align}
+\theta = \frac{A-B}{80} \\
+\phi = \frac{A+B}{160}
+\end{align}
+
+\chapter{Further NMR data}
+\section{Measurement along c-axis}
+We also measured $T^{-1}_1$ at 4 T along c-axis and at 2.6 GPa (Fig.\ref{c-axis}).
+The value in high-$T$ paramagnetic phase along c-axis is larger than that along b-axis.
+There is no significant difference in dimerization transition point, $T_d = 230$ K.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{c-axis.png}
+  \caption{Field-direction dependence of $T^{-1}_1$ at 2.6 GPa.
+  There is no significant difference in dimerization transition point, $T_d = 230$ K.} 
+  \label{c-axis}
+\end{figure}
+
+\section{Measurement for hysteresis}
+Fig.\ref{hysteresis} shows $T^{-1}_1$ at 4 T along b-axis and at 3,5 GPa.
+It is measured in the condition of decreasing temperature and increasing temperature around $T_d = 292$ K.
+We didn't observe hysteresis by the increment of 5 K.
+This means that the hysteresis is smaller than 5 K.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{hysteresis.png}
+  \caption{$T^{-1}_1$ at 4 T along b-axis and at 3.5 GPa around $T_d = 292$ K.
+  The hysteresis is smaller than 5 K.} 
+  \label{hysteresis}
+\end{figure}
+
+\section{Condition for measurement}
+Detail pulse condition for the measurement is summarized in Table.\ref{pulse}.
+%Table
+\begin{table}
+\begin{center}
+\caption{Pulse condition we used for the measurement.}
+\begin{tabular}{ccc} \hline
+            & 1st pulse (width, intensity)& 2nd pulse (width, intensity)\\ \hline
+ ${}^7$Li   & 2 $\mu$s, -3 dB         & 2 $\mu$s, 0 dB\\ \hline
+ ${}^{63}$Cu& 2 or 5 $\mu$s, -3 or -1 dB      & 2 or 5 $\mu$s, 0 dB\\ \hline
+\end{tabular}
+\label{pulse}
+\end{center}
+\end{table}
+For the low-temperature measurement, lower value of master level (-15 dB) with -10 dB attenuator was enough, but as increasing temperature, we needed to increase the master level
+up to -12 dB with the attenuator.
+Width of comb pulse to measure $T^{-1}_1$ was 6 or 7 $\mu$s with 0 dB and the number of comb pulses was one.
+
+We used $\tau$ listed in Table.\ref{tau}.
+\begin{table}
+\begin{center}
+\caption{$\tau$ we used for the measurement. The first and second row are the field and pressure when the $\tau$ was used.}
+\begin{tabular}{ccccc} \hline
+ $B$ (T)& $P$ (GPa)& $\tau$ ($\mu$s) for ${}^7$Li& $\tau$ ($\mu$s) for ${}^{63}$Cu\\ \hline
+ 4& 1.3& 20& 80&\\ \hline
+ 4& 2.6& 20& 80&\\ \hline
+ 4& 3.5& 70& 160&\\ \hline
+ 4& 3.9& 70& 160&\\ \hline
+ 4& 0& 70& 180&low $T$\\ \hline
+ 4& 0& 60& 180&For Li1, high $T$\\ \hline
+ 4& 0& 40, 50& 180&For Li2, high $T$\\ \hline
+ 1& 0& 20& 90&$T > T_{\mathrm{mag}} = 38$ K\\ \hline
+ 1& 0& 14& -&$T < T_{\mathrm{mag}} = 38$ K\\ \hline
+\end{tabular}
+\label{tau}
+\end{center}
+\end{table}
+
+For the data collection, parameters listed in Table. \ref{trig} were used.
+\begin{table}
+\begin{center}
+\caption{Parameters for data collection.}
+\begin{tabular}{cccc} \hline
+                  & ${}^7$Li& ${}^{63}$Cu& ${}^7$L (1 T)\\ \hline
+ From Trigger (ms)& -0.01& -0.07& -0.005\\ \hline
+ Width (ms)& 0.045& 0.2& 0.045\\ \hline
+\end{tabular}
+\label{trig}
+\end{center}
+\end{table}
+
+All NMR measurement was based on KAME interface programmed by K. Kitagawa.
+
+
+\newpage
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+For the initial sample preparation, I thank to T. Takayama for giving us the $\beta$-Li$_2$IrO$_3$ crystals.
+I am grateful to K. Kitagawa and S. Sasaki for guiding and helping the synthesis of the improved crystals by ourselves.
+I thank to N. Tateiwa for giving us the advices on using mCAC cell to measure high-pressure magnetic susceptibility.
+For the high-pressure measurement of susceptibility, I am grateful to K. Kitagawa, M. Blanckenhorn and S. Sasaki for encouragement and collaboration. 
+I deeply appreciate the guidance for NMR measurement and high-pressure cell for NMR by K. Kitagawa.
+I am grateful for the daily discussion on the experiment with K. Kitatgawa.
+I also appreciate the daily interesting, relaxing talk with all members of Takagi-Kitagawa lab. 
+I am really grateful for the overall supervision by H. Takagi. 
+Finally, I thank to my friends and my families for spending a joyful time together and always relaxing me.
+
+
+\printbibliography[title=Reference]
+\addcontentsline{toc}{chapter}{References}
+
+%\bibliography{docter_thesis_ref}
+%\bibliographystyle{phys}
+%\addcontentsline{toc}{chapter}{References}
+\begin{comment}
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{References}
+ \bibitem{T.Arima1993} T. Arima, Y. Tokura, and J. B. Torrance, Phys. Rev. B \textbf{48}, 17006 (1993).
+ \bibitem{E.Dagotto2005} Elbio Dagotto, Science \textbf{309}, 257 (2005).
+ \bibitem{B.J.Kim2008} B. J. Kim, Hosub Jin, S. J. Moon, J.-Y. Kim, B.-G. Park, C. S. Leem, Jaejun Yu, T.W. Noh, C. Kim, S.-J. Oh,
+J.-H. Park, V. Durairaj, G. Cao, and E. Rotenberg, Phys. Rev. Lett. \textbf{101}, 076402 (2008).
+ \bibitem{B.J.Kim2009} B. J. Kim, H. Ohsumi, T. Komesu, S. Sakai, T. Morita, H. Takagi, T. Arima, Science \textbf{323}, 1329 (2009).
+ \bibitem{L.J.Sandilands2016} Luke J. Sandilands, Yao Tian, Anjan A. Reijnders, Heung-Sik Kim, K. W. Plumb, Young-June Kim, Hae-Young Kee, and Kenneth S. Burch, 
+ Phys. Rev. B \textbf{93}, 075144 (2016).
+ \bibitem{T.Takayama2018} T. Takayama, A. Krajewska, A. S. Gibbs, A. N. Yaresko, H. Ishii, H. Yamaoka, K. Ishii, N. Hiraoka, N. P. Funnell, C. L. Bull, and H. Takagi, arXiv:1808.0549.
+ \bibitem{G.Jackeli2009} G. Jackeli and G. Khaliullin, Phys. Rev. Lett. \textbf{102}, 017205 (2009).
+ \bibitem{A.Kitaev2006} A. Kitaev, Ann. Phys. (N.Y.) 321, 2 (2006).
+ \bibitem{K.Kitagawa2018} K. Kitagawa, T. Takayama, Y. Matsumoto, A. Kato, R. Takano, Y. Kishimoto, S. Bette, R. Dinnebier, G. Jackeli, and
+H. Takagi, Nature \textbf{554}, 341 (2018).
+ \bibitem{Y-Z.You2012} Yi-Zhuang You, Itamar Kimchi, and Ashvin Vishwanath, Phys. Rev. B \textbf{86}, 085145 (2012).
+ \bibitem{J.Nasu2015} Joji Nasu, Masafumi Udagawa, and Yukitoshi Motome, Phys. Rev. B \textbf{92}, 115122 (2015).
+ \bibitem{J.Yoshitake2017} Junki Yoshitake, Joji Nasu, and Yukitoshi Motome, Phys. Rev. B \textbf{96}, 064433 (2017).
+ \bibitem{K.O'Brien2016} Kevin O’Brien, Maria Hermanns, and Simon Trebst, Phys. Rev. B \textbf{93}, 085101 (2016).
+ \bibitem{S.Mandal2009} S. Mandal and N. Surendran, Phys. Rev. B, \textbf{79}, 024426 (2009). 
+ \bibitem{J.Nasu2014} Joji Nasu, Masafumi Udagawa, and Yukitoshi Motome, Phys. Rev. Lett. \textbf{113}, 197205 (2014).
+ \bibitem{Y.Singh2010} Yogesh Singh and P. Gegenwart, Phys. Rev. B \textbf{82}, 064412 (2010).%Na2IrO3
+ \bibitem{F.Ye2012} F. Ye, S. Chi, H. Cao, B. C. Chakoumakos, J. A. Fernandez-Baca, R. Custelcean, T. F. Qi, O. B. Korneta, and G. Cao, Phys. Rev. B \textbf{85}, 180403(R) (2012).
+ \bibitem{S.H.Chun2015} Sae Hwan Chun, Jong-Woo Kim, Jungho Kim, H. Zheng, Constantinos C. Stoumpos,
+C. D. Malliakas, J. F. Mitchell, Kavita Mehlawat, Yogesh Singh, Y. Choi, T. Gog, A. Al-Zein,
+M. Moretti Sala, M. Krisch, J. Chaloupka, G. Jackeli, G. Khaliullin and B. J. Kim, Nat. Phys. \textbf{11}, 462, (2015).
+ \bibitem{Y.Singh2012} Yogesh Singh, S. Manni, J. Reuther, T. Berlijn, R. Thomale, W. Ku, S. Trebst, and P. Gegenwart, Phys. Rev. Lett. \textbf{108}, 127203 (2012).
+ %alpha-Li2IrO3 & Na2IrO3
+ \bibitem{S.C.Williams2016} S. C. Williams, R. D. Johnson, F. Freund, Sungkyun Choi, A. Jesche, I. Kimchi,
+S. Manni, A. Bombardi, P. Manuel, P. Gegenwart, and R. Coldea, Phys. Rev. B \textbf{93}, 195158 (2016).
+ \bibitem{M.Majumder2015} M. Majumder, M. Schmidt, H. Rosner, A. A. Tsirlin, H. Yasuoka, and M. Baenitz, Phys. Rev. B \textbf{91}, 180401(R) (2015).
+ \bibitem{A.Banerjee2017} Arnab Banerjee, Jiaqiang Yan, Johannes Knolle, Craig A. Bridges,
+Matthew B. Stone, Mark D. Lumsden, David G. Mandrus, David A. Tennant,
+Roderich Moessner, Stephen E. Nagler, Science \textbf{356}, 1055 (2017).
+ \bibitem{Y.Kasahara2018} Y. Kasahara, T. Ohnishi, Y. Mizukami, O. Tanaka, Sixiao Ma, K. Sugii, N. Kurita, H. Tanaka, J. Nasu, Y. Motome,
+T. Shibauchi and Y. Matsuda, Nature \textbf{559}, 227 (2018).
+ \bibitem{S.-H.Baek2017} S.-H. Baek, S.-H. Do, K.-Y. Choi, Y. S. Kwon, A. U. B. Wolter, S. Nishimoto, Jeroen van den Brink, and B. B\"uchner, 
+ Phys. Rev. Lett. \textbf{119}, 037201 (2017). %alpha-RuCl3 high-field NMR
+ \bibitem{K.A.Modic2014} K. A. Modic, T. E. Smidt, I. Kimchi, N. P. Breznay, A. Biffin, S. Choi,
+R. D. Johnson, R. Coldea, P. Watkins-Curry, G. T. McCandless, J. Y. Chan,
+F. Gandara, Z. Islam, A. Vishwanath, A. Shekhter, R. D. McDonald, and J. G. Analytis, Nat. Commun. \textbf{5}, 4203 (2014).
+ \bibitem{A.Biffin2014_2} A. Biffin, R. D. Johnson, I. Kimchi, R. Morris, A. Bombardi, J. G. Analytis, A. Vishwanath, and R. Coldea, Phys. Rev. Lett. \textbf{113}, 197201 (2014).
+ \bibitem{K.A.Modic2017} K.A. Modic, B.J. Ramshaw, J.B. Betts, Nicholas P. Breznay, James G. Analytis, Ross D. McDonald, and Arkady Shekhter, Nat. Commun. \textbf{8}, 180 (2017).
+ \bibitem{N.P.Breznay2017} Nicholas P. Breznay, Alejandro Ruiz, Alex Frano, Wenli Bi, Robert J. Birgeneau, Daniel Haskel, 
+ and James G. Analytis, Phys. Rev. B \textbf{96}, 020402(R) (2017).%gamma-Li2IrO3 under high P
+ \bibitem{L.S.I.Veiga2017} L. S. I. Veiga, M. Etter, K. Glazyrin, F. Sun, C. A. Escanhoela, Jr., G. Fabbris,2 J. R. L. Mardegan,
+P. S. Malavi, Y. Deng, P. P. Stavropoulos, H.-Y. Kee, W. G. Yang, M. van Veenendaal, J. S. Schilling,
+T. Takayama, H. Takagi, and D. Haskel, Phys. Rev. B. \textbf{96}, 140402(R) (2017) and its Supplemental Material.
+ \bibitem{T.Takayama2015} T. Takayama, A. Kato, R. Dinnebier, J. Nuss, H. Kono, L. S. I. Veiga, G. Fabbris, 
+ D. Haskel, and H. Takagi, Phys. Rev. Lett. \textbf{114}, 077202 (2015).
+ \bibitem{A.Glamazda2016} A. Glamazda, P. Lemmens, S.-H. Do, Y.S. Choi, and K.-Y. Choi, Nat. Commun. \textbf{7}, 12286 (2016).
+ \bibitem{A.Biffin2014} A. Biffin, R. D. Johnson, S. Choi, F. Freund, S. Manni, A. Bombardi, P. Manuel, P. Gegenwart, and R. Coldea,
+  Phys. Rev. B. \textbf{90}, 205116 (2014).
+ \bibitem{E.K.H.Lee2015} Eric Kin-Ho Lee and Yong Baek Kim, Phys. Rev. B, \textbf{91}, 064407 (2015).
+ \bibitem{J.Nasu2014_2} J. Nasu and Y. Motome, Phys. Rev. B \textbf{90}, 045102 (2014).%quadrupolar
+ \bibitem{V.M.Katukuri2016} Vamshi M. Katukuri, Ravi Yadav, Liviu Hozoi, Satoshi Nishimoto, and Jeroen van den Brink, Sci. Rep. \textbf{6}, 29585 (2016).
+ \bibitem{M.Majumder2018} M. Majumder, R. S. Manna, G. Simutis, J. C. Orain, T. Dey, F. Freund, A. Jesche, R. Khasanov, P. K. Biswas, E. Bykova, N. Dubrovinskaia, L. S. Dubrovinsky,
+  R. Yadav, L. Hozoi, S. Nishimoto, A. A. Tsirlin, and P. Gegenwart, Phys. Rev. Lett. \textbf{120}, 237202 (2018).
+ \bibitem{R.Yadav2018} Ravi Yadav, Stephan Rachel, Liviu Hozoi, Jeroen van den Brink, and George Jackeli, Phys. Rev. B \textbf{98}, 121107(R) (2018).
+ \bibitem{H-S.Kim2016} Heung-Sik Kim, Yong Baek Kim, and Hae-Young Kee, Phys. Rev. B \textbf{94}, 245127 (2016).
+ \bibitem{I.Rousochatzakis2017} Ioannis Rousochatzakis and Natalia B. Perkins, Phys. Rev. Lett. \textbf{118}, 147204 (2017).
+ \bibitem{F.Freund2016} F. Freund, S. C. Williams, R. D. Johnson, R. Coldea, P. Gegenwart, and A. Jesche, Sci. Rep. \textbf{6}, 35362 (2016).
+ \bibitem{N.Tateiwa2011} N. Tateiwa, Y. Haga, Z. Fisk, and Y. $\bar{\mathrm{O}}$nuki, Rev. Sci. Instrum. \textbf{82}, 053906 (2011).
+ \bibitem{Daphne} Successor of Daphne 7474 (K. Murata, K. Yokogawa, H. Yoshino, S. Klotz, P. Munsch, A. Irizawa, M. Nishiyama, K. Iizuka,
+T. Nanba, T. Okada, Y. Shiraga, and S. Aoyama, Rev. Sci. Instrum., \textbf{79}, 085101 (2008).
+ \bibitem{Y.Kitaoka} 北岡良雄, 共鳴型磁気測定の基礎と応用 (内田老鶴圃, 2014)
+ \bibitem{K.Asayama} 朝山邦輔, 遍歴電子系の核磁気共鳴:金属磁性と超伝導 (裳華房, 2002)
+ \bibitem{H.Takigawa} 瀧川仁, 核磁気共鳴とその固体物理学への応用 (物性若手夏の学校全体講義テキスト, 2009)
+ \bibitem{K.Kitagawa2010} K. Kitagawa, H. Gotou, T. Yagi, A. Yamada,
+ T. Matsumoto, Y. Uwatoko, and M. Takigawa, J. Phys. Soc. Jpn., \textbf{79}, 024001 (2010).
+ \bibitem{J.Zheng2017} Jiacheng Zheng, Kejing Ran, Tianrun Li, Jinghui Wang, Pengshuai Wang, Bin Liu, Zheng-Xin Liu, B. Normand, Jinsheng Wen, and Weiqiang Yu, 
+ Phys. Rev. Lett. \textbf{119}, 227208 (2017).
+ \bibitem{P.W.Anderson1973} P. W. Anderson, Mater. Res. Bull. \textbf{8}, 153-160 (1973).
+ \bibitem{P.G.Radaelli2002} Paolo G. Radaelli, Y. Horibe, Matthias J. Gutmann, Hiroki Ishibashi, C. H. Chen, Richard M. Ibberson, Y. Koyama,
+Yew-San Hor, Valery Kiryukhin and Sang-Wook Cheong, Nature (London) 416, 155 (2002).
+ \bibitem{S.Tsuji1997} S. Tsuji, K. Kumagai, N. Matsumoto and S. Nagata, Physica C 282-287 (1997) 1107-1108.
+ \bibitem{D.I.Khomskii2005} D. I. Khomskii and T. Mizokawa, Phys. Rev. Lett. \textbf{94}, 156402 (2005)
+ \bibitem{G.L.Pascut2014} G. L. Pascut, K. Haule, M. J. Gutmann, S. A. Barnett, A. Bombardi, S. Artyukhin, T. Birol,
+D. Vanderbilt, J. J. Yang, S.-W. Cheong, and V. Kiryukhin, Phys. Rev. Lett. \textbf{112}, 086402 (2014).
+ \bibitem{K.Mizuno2002} Kiyoshi Mizuno, Ko-ichi Magishi, Yasuaki Shinonome, Takahito Saito, Kuniyuki Koyama, Nobuhiro Matsumoto, and Shoichi Nagata, Physica B 312–313 (2002) 818–819.
+ \bibitem{M.Isobe1996} M. Isobe and Y. Ueda, J. Phys. Soc. Jpn. \textbf{65}, 1178 (1996).
+ \bibitem{T.Ohama1997} T. Ohama, M. Isobe, H. Yasuoka, and Y. Ueda, J. Phys. Soc. Jpn. \textbf{66}, 545 (1997).
+ \bibitem{V.Hermann2018} V. Hermann, M. Altmeyer, J. Ebad-Allah, F. Freund, A. Jesche, A. A. Tsirlin, M. Hanfland, P. Gegenwart, I. I. Mazin, D. I. Khomskii, R. Valent\`i,
+  and C. A. Kuntscher, Phys. Rev. B \textbf{97}, 020104(R) (2018).%alpha-Li2IrO3 under high P
+ \bibitem{G.Bastien2018} G. Bastien, G. Garbarino, R. Yadav, F. J. Martinez-Casado, R. Beltr\`an Rodr\`iguez, Q. Stahl, M. Kusch, S. P. Limandri, R. Ray, P. Lampen-Kelley, 
+ D. G. Mandrus, S. E. Nagler, M. Roslova, A. Isaeva, T. Doert, L. Hozoi, A. U. B. Wolter, B. B\"uchner, J. Geck, and J. van den Brink, Phys. Rev. B \textbf{97}, 241108(R) (2018).
+ %RuCl3 magnetization under high P
+ \bibitem{V.Hermann2017} V. Hermann, J. Ebad-Allah, F. Freund, I. M. Pietsch, A. Jesche, A. A. Tsirlin, J. Deisenhofer, M. Hanfland, P. Gegenwart, 
+ and C. A. Kuntscher, Phys. Rev. B \textbf{96}, 195137 (2017). %Na2IrO3 under high P
+ \bibitem{X.Xi2018} Xiaoxiang Xi, Xiangyan Bo, X. S. Xu, P. P. Kong, Z. Liu, X. G. Hong, C. Q. Jin, G. Cao, Xiangang Wan, and G. L. Carr, Phys. Rev. B \textbf{98}, 125117 (2018).
+ %Na2IrO3 under high P
+ \bibitem{J.Kanamori} 金森順次郎, 磁性 (培風館, 1992).
+\end{thebibliography}
+\end{comment}
+\begin{comment}
+\bibitem{J.A.Sears2015} J. A. Sears, M. Songvilay, K. W. Plumb, J. P. Clancy, Y. Qiu, Y. Zhao, D. Parshall, and Young-June Kim, Phys. Rev. B \textbf{91}, 144420 (2015).%alpha-RuCl3
+\end{comment}
+%\` %Just because of unusual number of tables stacked at end
+%%\bibliography{document} 
+
+
+\end{document}

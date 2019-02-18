@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage{geometry}
+\geometry{top=4cm, bottom=4cm, left=3cm, right=3cm}
+%\renewcommand{\baselinestretch}{1.05}
+\usepackage[backend=bibtex,style=phys,articletitle=false,biblabel=brackets,chaptertitle=false,pageranges=false]{biblatex}
+%\DeclareSortingScheme{mysorting}{
+%  \sort{\citeorder}
+%}
+%\ExecuteBibliographyOptions{sorting=mysorting}
+\bibliography{docter_thesis_ref.bib}
+\usepackage{graphicx}
+\usepackage{here}
+%\usepackage{nccmath}
+%\usepackage{docmute}
+\usepackage{braket}
+\usepackage{amsmath}
+%\usepackage{arydshln}
+%\usepackage{listings}
+%\usepackage[hang,small,bf]{caption}
+%\usepackage[subrefformat=parens]{subcaption}
+
+\begin{document}
+\newgeometry{top=4cm, bottom=4cm, left=2cm, right=2cm}
+\begin{titlepage}
+\begin{center}
+~\\
+\vspace{40truept}
+{\LARGE 東京大学理学系研究科物理学専攻}\\
+\vspace{20truept}
+{\LARGE 平成31年度}\\
+\vspace{20truept}
+{\LARGE 博士論文}\\
+\vspace{60truept}
+{\Huge ハイパーハニカム・イリジウム酸化物}\\
+\vspace{7truept}
+{\Huge $\beta$-Li$_2$IrO$_3$における圧力下の$J_\mathrm{eff} = 1/2$磁性と}\\
+\vspace{7truept}
+{\Huge スピン一重項形成の競合}\\
+\vspace{100truept}
+{\LARGE 2019年 9月 日}\\
+\vspace{20truept}
+{\LARGE 指導教員 : 高木 英典 ~教授 ~~~~ 印}\\
+\vspace{50truept}
+{\LARGE 35-167048 ~~ 林 義之}
+\end{center}
+\end{titlepage}
+
+\begin{titlepage}
+\begin{center}
+~\\
+\vspace{40truept}
+{\LARGE Department of Physics,}\\
+\vspace{20truept}
+{\LARGE  The University of Tokyo}\\
+\vspace{20truept}
+{\LARGE Docter thesis}\\
+\vspace{60truept}
+{\Huge Competition of $J_\mathrm{eff} = 1/2$ magnetism with}\\
+\vspace{7truept}
+{\Huge spin singlet dimer formation under pressure}\\
+\vspace{7truept}
+{\Huge in the hyperhoneycomb iridate $\beta$-Li$_2$IrO$_3$}\\
+\vspace{100truept}
+{\LARGE September , 2019}\\
+\vspace{20truept}
+{\LARGE Supervisor : Prof. Hidenori Takagi}\\
+\vspace{50truept}
+{\LARGE 35-167048 ~~Yoshiyuki Hayashi}
+\end{center}
+\end{titlepage}
+
+\restoregeometry
+\tableofcontents
+
+%\include{abstruct}
+
+\include{introduction}
+
+%\include{method}
+
+%\include{result}
+
+%\include{discussion}
+
+%\include{appendix}
+
+%\include{acknowledgments}
+
+\printbibliography[title=Reference]
+\addcontentsline{toc}{chapter}{References}
+
+\end{document}

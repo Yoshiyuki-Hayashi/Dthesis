@@ -1,0 +1,421 @@
+\chapter{Introduction}
+Historically, band theory succeeded to explain the physics of weakly correlated $s$ or $p$ electron system like alkhali metal or semiconducting behavior of Si or Ge.
+The interest of physicists pursuing the exotic quantum phenomena, then, focused on surveying the effect of strong Coulomb correlation.
+The target was $3d$ electron system, where strong correlation originated from well-localized $3d$ orbital was expected ($U \sim 5$eV for NiO \cite{bengone2000implementation}).
+For example, Mott/charge-transfer insulator \cite{arima1993variation}, colossal magnetoresistance in manganites \cite{dagotto2005complexity}
+and high-$T_C$ superconducting cuprate \cite{dagotto2005complexity} are the topics in 3d electron system.
+These phenomena are beyond the conventional band theory or mean-field theory.
+They stimulated the theoretical development to correctly include strong Coulomb $U$ such as dynamical mean-field theory \cite{georges1996dynamical}.
+In that sense, $4d, 5d$ electron systems had been forgot because the effect of correlation was considered to be weaker in the extended $4d, 5d$ orbitals compared to $3d$.
+
+
+The situation is drastically changed from the discovery of layered perovskite Sr$_2$IrO$_4$ \cite{kim2008novel, kim2009phase}.
+In Sr$_2$IrO$_4$, octahedral crystal field split $5d$ orbital into $t_{2g}$ and $e_g$ orbitals.
+Metallic state was expected since five electrons fill the widely-spread $t_{2g}$ orbital.
+However, it is actually a magnetic insulator.
+The insulating state is induced by the interplay of strong spin-orbit coupling (SOC) ($\lambda_{SO} \sim 0.3$ eV \cite{kim2008novel}, 0.01 eV for 3d ion \cite{Kanamori})
+and modest Coulomb $U$($U \sim 2$eV for Sr$_2$IrO$_4$ \cite{arita2012ab}).
+Strong SOC mixes up $S = 1/2$ of the hole and the effective angular momentum of $t_{2g}$ orbital, $L_\mathrm{eff} = -1$ (Fig.\ref{five_t2g}).
+It gives the splitting of $t_{2g}$ orbitals into completely filled $J_{\mathrm{eff}} = 3/2$ quartet and half-filled $J_{\mathrm{eff}} = 1/2$ doublet.
+The band width of $t_{2g}$ orbitals is reduced to that of $J_{\mathrm{eff}} = 1/2$ state by SOC.
+In the narrow $J_{\mathrm{eff}} = 1/2$ state, the modest value of Coulomb $U$ is enough to open the Mott gap.
+Thus, by reducing the band width, strong SOC enhances the effect of Coulomb $U$, which makes $4d$, $5d$ systems nontrivial spin-orbit Mott insulators.
+
+The existence of $J_{\mathrm{eff}} = 1/2$ state in Sr$_2$IrO$_4$ was established by resonant X-ray scattering (RXS) \cite{kim2009phase}.
+Fig.\ref{Sr2IrO4} shows the RXS intensity for L$_2$ and L$_3$ edge of Ir.
+In $S = 1/2$ model, both of L$_2$ and L$_3$ edge should be enhanced, while in $J_\mathrm{eff} = 1/2$ model, only L$_3$ edge is enhanced.
+The enhancement in RXS intensity is only observed in L$_3$ edge, indicating the validity of $J_\mathrm{eff} = 1/2$ model in Sr$_2$IrO$_4$.
+
+%Fig. Energy level splitting of Ir$^{4+}$ or Ru$^{3+} ion.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{five_t2g.png}
+  \caption{Energy level splitting of Ir$^{4+}$ or Ru$^{3+}$ ion under octahedral crystal field.
+  $\Delta_{\mathrm{cubic}}$ is the strength of crystal field splitting.
+  Angular momentum of $d$ orbital ($L$ = 2) reduces to $L_{\mathrm{eff}}$ = -1 in $t_{2g}$ manifold.
+  Strong SOC mixes $L_{\mathrm{eff}}$ = -1 and $S = \frac{1}{2}$ of one hole and gives $J_{\mathrm{eff}} = \frac{1}{2}$ state.
+  $\lambda_{\mathrm{SO}}$ is the strength of SOC.
+  $\Delta_{\mathrm{cubic}}$ is of the order of 3.3 eV for Sr$_2$IrO$_4$ \cite{ishii2011momentum}, 2.2 eV for RuCl$_3$ \cite{sandilands2016spin}
+  and 3.5 eV for $\beta$-Li$_2$IrO$_3$ \cite{takayama2018pressure}.
+  Splitting $\frac{3}{2}\lambda_{\mathrm{SOC}}$ is of the order of 0.4 eV for Sr$_2$IrO$_4$ \cite{kim2008novel} 0.14 eV for RuCl$_3$ \cite{sandilands2016spin}
+  and 0.7 eV for $\beta$-Li$_2$IrO$_3$ \cite{takayama2018pressure}.}
+  \label{five_t2g}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Sr2IrO4.png}
+  \caption{(A) Solid lines are X-ray absorption spectra. The dotted red lines is the intensity of magnetic (1 0 22) peak.
+  (B) Equal resonant enhancement for L$_2$ and L$_3$ edge is expected in $S = 1/2$ model. In contrast, the enhancement occurs only in L$_3$ edge in $J_\mathrm{eff} = 1/2$ model
+  \cite{kim2009phase}.}
+  \label{Sr2IrO4}
+\end{figure}
+
+In conventional $S = 1/2$ Mott insulator, the interaction between spins is isotropic AF Heisenberg interaction.
+However, in the spin-orbit $J_\mathrm{eff} = 1/2$ Mott insulator, the interaction between $J_\mathrm{eff} = 1/2$ pseudo-spins can be strongly anisotropic \cite{jackeli2009mott}
+and it depends on how the octahedra are connected.
+First, let's consider two $J_\mathrm{eff} = 1/2$ spins in corner-shared octahedra (Fig.\ref{180_90bond}(a)).
+In this case, isotropic Heisenberg interaction remains.
+Interation between $J_\mathrm{eff} = 1/2$ spins is
+\begin{equation}
+\mathcal{H}_{ij} = J_1\bm{S}_i\cdot\bm{S}_j + J_2(\bm{S}_i\cdot\bm{r}_{ij})(\bm{r}_{ij}\cdot\bm{S}_j),
+\end{equation}
+where $\bm{S}_{i(j)}$ is  $J_{\mathrm{eff}} = 1/2$ spin at site $i(j)$, $\bm{r}_{ij}$ is a unit vector along $ij$ bond.
+$J_1$, $J_2$ is a coupling constant and the isotropic Heisenberg interaction, $J_1$, is more dominant.
+On the other hand, let's consider two $J_\mathrm{eff} = 1/2$ pseudo-spins in edge-shared anion octahedra (Fig.\ref{180_90bond}(b)).
+In this case, as shown in Fig.\ref{180_90bond}, we can consider two indirect virtual hopping paths mediated by anion,
+$d_{yz}$-$p_z$ (upper anion)-$d_{xz}$ and $d_{xz}$-$p_z$ (lower anion)-$d_{yz}$.
+It is because the $J_{\mathrm{eff}} = 1/2$ state is a spin-orbital-entangled wavefunction including $d_{xz}$ and $d_{yz}$ \cite{jackeli2009mott}:
+\begin{align}
+\ket{J^z_{eff} = \pm \frac{1}{2}} = \frac{1}{\sqrt{3}}(\ket{d_{xy}, \pm}\pm\ket{d_{yz}, \mp}+i\ket{d_{xz}, \pm}),
+\label{Jeff}
+\end{align}
+where signs in $\ket{}$ of the right-hand side denotes the spin state.
+The two contribution interfere in destructive manner and the isotropic exchange interaction vanishes.
+This is a striking difference from 180$^\circ$ bond situation.
+Only the anisotropic FM Ising interaction called Kitaev interaction,
+\begin{equation}
+\mathcal{H}^{(\gamma)}_{ij} = -KS^\gamma_iS^\gamma_j,
+\label{Kitaev}
+\end{equation}
+remains, where $\bm{S}_{i(j)}$ is  $J_{\mathrm{eff}} = 1/2$ spin at site $i(j)$, $\gamma$ is a direction perpendicular to $ij$ bond and sharing edge, and $K$ is positive.
+The magnetic easy axis of this FM Ising interaction, $\gamma$ direction, is bond-dependent.
+This feature is key ingredient to realize Kitaev model in $J_{\mathrm{eff}} = 1/2$ pseudo-spins.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{180_90bond.png}
+  \caption{Virtual hopping path for two $J_{\mathrm{eff}} = \frac{1}{2}$ spins in (a) corner-shared anion octahedra and (b) edge-shared anion octahedra \cite{jackeli2009mott}.
+  Site $i, j$ is the position of two $J_{\mathrm{eff}} = \frac{1}{2}$ spins and small circle is anion $X$.
+  In (a), Heisenberg interaction reamains, but in (b), two virtual $dpd$ hoppings via upper or lower anion gives Kitaev interaction.}
+  \label{180_90bond}
+\end{figure}
+
+Here, Kitaev model is the model where one-half spins are aligned in honeycomb lattice and the Kitaev interaction (Eq.\ref{Kitaev}) is given for each bond (Fig.\ref{Kitaev_model})
+\cite{kitaev2006anyons}.
+In Hamiltonian, it can be written as,
+%formula.
+\begin{equation}
+\mathcal{H} = -K_x\sum_\mathrm{X-bond} S^x_iS^x_j - K_y\sum_\mathrm{Y-bond} S^y_iS^y_j - K_z\sum_\mathrm{Z-bond} S^z_iS^z_j,
+\label{Kitaev_H}
+\end{equation}
+where $K_x$, $K_y$, $K_z$ is positive, $\bm{S}$ is one-half spin, and X, Y, Z bonds are denoted in Fig.\ref{Kitaev_model}.
+Since the interactions on three bonds try to orient the spin to three different direction, it gives the frustration.
+The frustration disturbs the magnetic order and gives spin liquid in the ground state.
+
+We can exactly solve Kitaev model as follows.
+First, let's rewrite one-half spin in Kitaev model as,
+%formula
+\begin{equation}
+S^\gamma_j = \frac{i}{2}b^\gamma_jc_j
+\end{equation}
+Here, $\gamma = x,y,z$ and $b^\gamma_j$, $c_j$ is Majorana fermions.
+$j$ represents the site index.
+This means that $\bm{S}_j$ is represented by four Majorana fermions.
+One is itinerant Majorana fermion, $c_j$, and the other are localized ones, $b^x_j, b^y_j, b^z_j$.
+Generally, Majorana fermions $a_j$ is an operator which satisfies,
+\begin{equation}
+\{a_i, a_j\} = 2\delta_{ij}, \vspace{4mm} a^\dag_i = a_i.
+\end{equation}
+$S^\gamma_j$ actually behaves one-half spins if we assume one constrain for Majorana fermions,
+\begin{equation}
+D_j = b^x_jb^y_jb^z_jc_j = 1.
+\end{equation}
+Then, Kitaev model (Eq.\ref{Kitaev_H}) can be rewritten as,
+\begin{equation}
+\mathcal{H} = \frac{i}{4}\sum_{j,k}A_{jk}c_jc_k.
+\label{hopping}
+\end{equation}
+Here, $A_{jk}$ is defined as,
+\begin{equation}
+A_{jk} = \begin{cases}
+2K_{\alpha_{jk}}u_{jk} & \text{if j and k are connected}\\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+$u_{jk}$ is defined as,
+\begin{equation}
+u_{jk} = ib^{\alpha_{jk}}_jb^{\alpha_{jk}}_k,
+\end{equation}
+where $\alpha_{jk} = x, y, z$ if $jk$ is X, Y, Z-bond.
+$u_{jk}$ is a constant ($\pm 1$) since it commutes with $\mathcal{H}$ and satisfies $u^2_{jk} = 1$.
+Thus, Kitaev model (Eq.\ref{Kitaev_H}) is mapped to nearest neighbor hopping model of Majorana fermions coupled with $Z_2$ variables.
+The product of $u_{jk}$ around hexagon, $W$, is also conserved quantity with the value of $\pm1$.
+Numerical calculation or Lieb's theorem \cite{kitaev2006anyons} tell that the ground state is obtained if $W = 1$ for all hexagons.
+This means that one of the ground state is achieved if all $u_{jk}$ are equal to one.
+Thus, the model (Eq.\ref{hopping}) reduces to just a nearest neighbor hopping model on honeycomb lattice.
+It gives the Dirac cone dispersion of itinerant Majorana fermion $c_j$, similarly to graphene.
+
+For the Kitaev spin liquid, variety of novel phenomena have been predicted: application to topologaical quantum computing \cite{kitaev2006anyons},
+realization of exotic superconductor by hole-doping \cite{you2012doping}, and fractional excitation by Majorana fermions \cite{nasu2015thermal, yoshitake2017temperature}.
+
+The essential ingredients for Kitaev model is three 120$^\circ$ bond structure.
+This means that we can consider the extension of Kitaev model on the lattice different from honeycomb at least if the lattice has three 120$^\circ$ bond structure.
+Theorists invented a lot of such extension of Kitaev model \cite{o2016classification}.
+One of them is 3D hyperhoneycomb lattice (Fig.\ref{hyperhoneycomb}).
+The hyperhoneycomb structure can be constructed from the three-dimensional stack of two-dimensional honeycomb layers,
+by dividing the honeycomb lattice into zigzag chains and the bridging bonds, rotating the zigzag chains alternatively and reconnecting them with those in the upper and lower planes.
+Kitaev model on hyperhoneycomb lattice also shows spin liquid ground state with nodal line of itinerant Majorana fermion \cite{mandal2009exactly}.
+Because of the three dimensionality, it shows topological phase transition to spin liquid ground state \cite{nasu2014vaporization}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Kitaev_model.png}
+  \caption{Kitaev model on honeyomcb lattice \cite{kitaev2006anyons, kitagawa2018spin}.
+  For each X, Y, Z bond, Kitaev interaction $\mathcal{H}^{(x)}$,$\mathcal{H}^{(y)}$,$\mathcal{H}^{(z)}$ (e.q.(\ref{Kitaev})) is defined.
+  Each bond has different magnetic easy axis and frustrates.}
+  \label{Kitaev_model}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{hyperhoneycomb.png}
+  \caption{Hyperhoneycomb lattice \cite{nasu2014vaporization}. a, b, c represent primitive translation vectors.}
+  \label{hyperhoneycomb}
+\end{figure}
+
+Kiteav model was originally toy model.
+However, since it was suggested that $J_{\mathrm{eff}} = 1/2$ pseudo-spins in edge-shared anion octahedra can show the Kitaev interaction \cite{jackeli2009mott},
+the materialzation of Kitaev model become realistic.
+It triggered the intensive material reseach on honeycomb-based Ir$^{4+}$ or Ru$^{3+}$ compounds pursuing Kitaev spin liquid.
+
+Na$_2$IrO$_3$ has 2D honeycomb-layered structure of Ir$^{4+}$.
+It is an insulator with optical gap $\sim 340$ meV, which can be explained only by LDA + SO + $U$, not LDA + SO \cite{comin20122}.
+This means that Na$_2$IrO$_3$ is spin-orbit Mott insulator.
+The Ir$^{4+}$ ions are surrounded by edge-shared O$^{2-}$ octahedra, so the building blocks for Kiteav model are provided.
+However, it has AF interaction with Curie-Weiss temperature $\theta_{\mathrm{CW}} = - 116$ K \cite{singh2010antiferromagnetic}
+and shows zigzag order of $J_{\mathrm{eff}} = 1/2$ pseudo-spins \cite{ye2012direct}.
+It is considered that additional AF interaction exists and makes the iridate far from ideal FM Kitaev spin liquid.
+On the other hand, the dominance of bond-directional interaction was revealed by diffuse magnetic X-ray scattering \cite{chun2015direct}.
+For Na$_2$IrO$_3$, instead of $J_{\mathrm{eff}} = 1/2$ picture, quasi-molecular orbital (QMO) picture is proposed \cite{mazin20122}.
+In QMO picture, electrons delocalize within Ir hexagon, which is in contrast to atomically localizing $J_{\mathrm{eff}} = 1/2$ picture.
+Other calculation indicates that anisotropic interaction induced by trigonal distortion of O$^{2-}$ octahedra as well as SOC play a key role to stabilze zigzag order
+\cite{yamaji2014first}.
+In that sense, uniaxial strain to reduce trigonal distortion might be helpful to reach quantum spin liquid in Na$_2$IrO$_3$.
+
+
+$\alpha$-Li$_2$IrO$_3$ has the same structure as Na$_2$IrO$_3$.
+Again, it has AF interaction ($\theta_{\mathrm{CW}} = - 33$ K \cite{singh2012relevance}),
+and shows non-collinear order \cite{williams2016incommensurate}.
+However, if we substitute Li between the honeycomb layers of $\alpha$-Li$_2$IrO$_3$ to H,
+the resulting compound, $($H$_{\frac{3}{4}}$Li$_{\frac{1}{4}}$)$_2$IrO$_3$
+or namely H$_3$LiIr$_2$O$_6$, shows no magnetic order.
+The spin liquid behavior was confirmed down to 50 mK by specific heat measurement.
+The interaction is still AF for H$_3$LiIr$_2$O$_6$ ($\theta_{\mathrm{CW}} = -105$ K) \cite{kitagawa2018spin}, suggesting the deviation from ideal FM Kitaev spin liquid.
+In fact, the characteristic behavior for Kitaev spin liquid like fractional excitation have not been reported yet.
+Instead, fermionic excitation based on impurities was captured by NMR relaxation measurement \cite{kitagawa2018spin}.
+Theorists revealed that configuration of interlayer hydrogen modifies the interaction between pseudo-spins via H-O bonding \cite{li2018role}.
+Zero-point fluctution of hydrogen is considered as a key to understand spin-liquid behavior in H$_3$LiIr$_2$O$_6$ \cite{li2018role}.
+
+$\alpha$-RuCl$_3$ is one of the most intensively studied Kitaev candidates.
+It has Ru$^{3+}$ honeycomb-layered structure surrounded by edge-shared Cl$^-$ octahedra.
+Photoemission spectroscopy confirmed that it is Mott insulator with substaintial SOC \cite{koitzsch2016j}.
+The sign of Curie-Weiss temperature is dependent on field direction: $\theta_{\mathrm{CW}} = 37$ K ($H \parallel$ ab-plane) and
+$\theta_{\mathrm{CW}} = -150$ K ($H \parallel$ c-axis) \cite{majumder2015anisotropic}.
+In calculation, Kitaev term is FM and 3-5 times larger than AF Heisenberg \cite{yadav2016kitaev}.
+However, surpringly, inelastic neutron scattering revealed the existence of AF Kitaev interaction, not FM Kitaev interaction \cite{banerjee2017neutron}.
+It shows zigzag AF order at low temperature, but the order can be suppressed under the field within ab-plane above $\sim 7$ T \cite{kasahara2018majorana}.
+In the high-field regime, the spin liquid behavior is confirmed by NMR measurement \cite{baek2017evidence}.
+Anomolous thermal quantum Hall effect, which can be regarded as emergence of Majorana fermions, is also reported in the high-field spin liquid state of $\alpha$-RuCl$_3$
+\cite{kasahara2018majorana}.
+
+$\gamma$-Li$_2$IrO$_3$ \cite{modic2014realization} has 3D stripy honeycomb structure of Ir$^{4+}$.
+The FM Curie-Weiss behavior in high temperature region is reported.
+It shows the complex spiral order \cite{biffin2014noncoplanar}.
+Also for $\gamma$-Li$_2$IrO$_3$, field above $\sim 3$ T suppresses the magnetic order and liquid state is proposed \cite{modic2017robust},
+while the microscopic confirmation like NMR has not been done yet.
+On the other hand, high-pressure $\sim 1.4$ GPa suppress the order without structural phase transition \cite{breznay2017resonant}.
+The nature of high-pressure phase still remains unclear.
+
+%Fig. crystal structure (a) honeyocmb (b) stripy (c) beta-Li2IrO3
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{lattices2.png}
+  \caption{(a) Crystal structure of 2D honeycomb-layered H$_3$LiIr$_2$O$_6$ \cite{kitagawa2018spin}.
+  (b) 3D stripy honeycomb structure of $\gamma$-Li$_2$IrO$_3$ \cite{modic2014realization}.
+  (c) Crystal structure of 3D hyperhoneycomb $\beta$-Li$_2$IrO$_3$ \cite{takayama2015hyperhoneycomb}.}
+  \label{lattices}
+\end{figure}
+
+Our material, $\beta$-Li$_2$IrO$_3$ \cite{takayama2015hyperhoneycomb}, is one of such Kitaev candidates.
+$\beta$-Li$_2$IrO$_3$ crystallizes in orthorhombic structure with the space group $F_{ddd}$ at ambient pressure.
+Ir$^{4+}$ ions have a spin-orbital-entangled $J_\mathrm{eff}$ = 1/2 pseudo-spin due to the octahedral crystal field from surrounding O$^{2-}$ ions
+as well as the strong spin-orbit coupling.
+The Ir ions form hyperhoneycomb sub-lattice, which can be viewed as a three-dimensional analogue of two-dimensional honeycomb lattice (Fig. \ref{lattices}(c)).
+The hyperhoneycomb lattice is surrounded by edge-shared O$^{2-}$ octahedra.
+It means the existence of Kitaev interaction between Ir$^{4+}$ ions.
+Since the hyperhoneycomb lattice shares 120$^\circ$ bond structure with honeycomb lattice, the frustration of Kitaev interactions also arises.
+It leads spin liquid state theoretically \cite{mandal2009exactly}.
+There are two crystallographically inequivalent Li sites.
+Li2 is surrounded by pseudo-honeycomb five-membered ring of Ir, while Li1 is located outside the pseudo-honeycomb ring.
+
+Fig.\ref{band_cal} shows band calculation for $\beta$-Li$_2$IrO$_3$ under ambient pressure \cite{veiga2017pressure}.
+We can see the splitting of $J_\mathrm{eff} = 1/2$ band and $J_\mathrm{eff} = 3/2$ band.
+$J_\mathrm{eff} = 1/2$ band lies at fermi level, which means the physics of $\beta$-Li$_2$IrO$_3$ is governed by $J_\mathrm{eff} = 1/2$ pseudo-spins.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{band_cal.png}
+  \caption{Band calculation for $\beta$-Li$_2$IrO$_3$ under ambient pressure \cite{veiga2017pressure}. $U_\mathrm{eff} = U - J_H = 2.5$ eV, where $U$ is on-site Coulomb repulsion
+  and $J_H$ is Hund coupling.}
+  \label{band_cal}
+\end{figure}
+
+Fig. \ref{beta0GPa} (a) shows the magnetic susceptibility $\chi = M/B$ at 1 T for polycrystalline sample of $\beta$-Li$_2$IrO$_3$ \cite{takayama2015hyperhoneycomb}.
+The high-$T$ Curie-Weiss fit yields the effective moment $p_{\mathrm{eff}} \sim$ 1.61 $\mu_B$, which is close to 1.73 $\mu_B$ of ideal $J_{\mathrm{eff}} = 1/2$ moment,
+and the ferromagnetic Curie-Weiss constant $\theta_{CW} \sim 40$ K.
+The ferromagnetically interacting $J_{\mathrm{eff}} = 1/2$ spins indicate the proximity to ideal Kitaev model in $\beta$-Li$_2$IrO$_3$.
+Also, Raman spectroscopy suggests the emergence of Majorana fermionic excitation originating from Kitaev model \cite{glamazda2016raman}.
+However, $\chi$ shows steep increase below 50 K and have a kink at $T_\mathrm{mag} = 38$ K.
+The kink corresponds to the appearance of incommensurate non-coplanar antiferromagnetic (ICAF) order, confirmed by neutron scattering \cite{Biffin2014}.
+Fig. \ref{beta0GPa}(b) shows the magnetic structure for ICAF order phase.
+The theoretical investigations suggest that the existence of additional interaction different from nearest neighbor FM Kitaev interaction
+can explain the realization of the spiral order in $\beta$-Li$_2$IrO$_3$ \cite{Lee2015}.
+For example, direct $dd$ hoppings between the Ir$^{4+}$ ions gives isotropic Heisenberg interaction,
+%formula
+\begin{equation}
+\mathcal{H}_{ij} = J\bm{S}_i\cdot\bm{S}_j,
+\end{equation}
+where $\bm{S}_{i(j)}$ is  $J_{\mathrm{eff}} = 1/2$ spin at site $i(j)$.
+The combination of $dd$ and $dpd$ hopping gives symmetric off-diagonal interaction \cite{Nasu2014},
+%formula
+\begin{equation}
+\mathcal{H}_{ij} = \Gamma_{xy} (S^x_iS^y_j + S^y_iS^x_j).
+\label{symoff}
+\end{equation}
+Also, the importance of next nearest neighbor AF Heisenberg interaction is pointed out \cite{Katukuri2016}.
+These interactions disturb Kitaev spin liquid state and stabilize the ICAF order phase in $\beta$-Li$_2$IrO$_3$.
+
+%Fig. magnetic susceptibilty
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{beta0GPa.png}
+  \caption{Physical property of $\beta$-Li$_2$IrO$_3$ under ambient pressure.
+  (a) Temperature dependence of magnetic susceptibility $\chi$ and $\chi^{-1}$ (inset) at 1 T for polycrystalline sample\cite{takayama2015hyperhoneycomb}.
+  It shows the magnetic order below $T_{\mathrm{AF}} = 38$ K.
+  (b) Magnetic structure in the ordered phase revealed by neutron scattering \cite{Biffin2014}}
+  \label{beta0GPa}
+\end{figure}
+
+However, there are two ways to suppress the ICAF order --- applying high field along b-axis above $\sim$ 2.7 T
+and applying high pressure above $\sim$ 2 GPa \cite{takayama2015hyperhoneycomb}.
+In the case of high field, the kink corresponding to ICAF order vanishes (Fig. \ref{Bdep_mag} (inset)),
+and system remains paramagnetic with field induced moment of $\sim$ 0.35 $\mu_B$ (Fig. \ref{Bdep_mag}).
+The size of magnetic moment in ICAF order phase is 0.47 $\mu_B$, which is close to the value of the field-induced moment \cite{Biffin2014}.
+Thus, the high field destroys the ICAF order by ferromagnetically orienting $J_{\mathrm{eff}} = 1/2$ moment along the field direction.
+On the other hand, magnetic x-ray scattering revealed that high-field paramagnetic state admixes zigzag component along a-axis \cite{ruiz2017correlated}.
+There is also a possibility that the high-field state can be a spin liquid state.
+Thus, our first motivation is to explore the high-field state of $\beta$-Li$_2$IrO$_3$ by NMR measurement.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{magnetization.png}
+  \caption{Field dependence of magnetization of $\beta$-Li$_2$IrO$_3$ under ambient pressure.
+  (inset) Field depnedence of magnetic susceptibility $\chi$ \cite{takayama2015hyperhoneycomb}.
+  The kink of ICAF order vanishes at high field.}
+  \label{Bdep_mag}
+\end{figure}
+
+In the case of high pressure, the ICAF order is suppressed without metallization.
+Fig. \ref{beta2GPa} (a) shows the pressure dependence of X-ray Magnetic Circular Dichroism (XMCD) at 5 K, 4 T.
+XMCD corresponds to bulk magnetization.
+The field-induced moment is suppressed around 2 GPa.
+On the other hand, the resistivity shows the insulating state (Fig. \ref{beta2GPa} (a) (inset)).
+The disappearance of ICAF order without metallization indicates the possible pressure-induced Kitaev spin liquid in $\beta$-Li$_2$IrO$_3$.
+Also, $\mu$SR found the coexistence of liquid-like dynamic spins and glass-like frozen spins at $\sim$ 2 GPa (Fig. \ref{beta2GPa} (b)) \cite{Majumder2018}.
+First principle calculation suggested the enhancement of symmetric off-diagonal term (Eq.\ref{symoff}) as applying pressure in $\beta$-Li$_2$IrO$_3$ \cite{Yadav2018, Kim2016}.
+In the model with the dominance of symmetric off-diagonal term, classical spin liquid instability is proposed \cite{Rousochatzakis2017}.
+Therefore, our second motivation is to test the spin-liquid component with different time scale, NMR relaxation measurement.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{beta2GPa.png}
+  \caption{Evolution of field-induced moment or magnetic order in $\beta$-Li$_2$IrO$_3$ as pressurizing.
+  (a) Pressure dependence of X-ray Magnetic Circular Dichroism (XMCD) at 5 K, 4 T and resistivity (inset) \cite{takayama2015hyperhoneycomb}.
+  XMCD reflects bulk magnetization.
+  Around 2 GPa, the ICAF order is surppressed, but the state is insulating, which excludes metallization.
+  (b) Phase diagram based on $\mu$SR \cite{Majumder2018}.
+  Coexistence of frozen glassy spins and dynamic spins is proposed in the order-surppressed pressure region around 2 GPa.}
+  \label{beta2GPa}
+\end{figure}
+
+On the other hand, the larger pressure around 4 GPa induces a structural phase transition at room temperature for $\beta$-Li$_2$IrO$_3$.
+Fig. \ref{beta4GPa} (a) is pressure dependence of lattice parameter $\beta$ obtained by powder and single-crystal XRD at room temperature \cite{veiga2017pressure}.
+Abrupt decrease of the lattice parameter is observed around 4 GPa.
+It corresponds to structural phase transition from $F_{ddd}$ struccture to $C2/c$ structure.
+The high-pressure $C2/c$ structure has dimerized Ir-Ir bonds, which is 12 \% shorter than other bonds (Fig. \ref{beta4GPa}(b)).
+
+There are three possibilities for the non-magnetic state of dimer in $J_{\mathrm{eff}} = 1/2$ system (Fig. \ref{three}).
+The first one is $J_{\mathrm{eff}} = 1/2$ spin singlet based on the spin-orbital-entangled wave function.
+This is conventional spin singlet,
+\begin{equation}
+\frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow}-\ket{\downarrow\uparrow}),
+\end{equation}
+where $\uparrow, \downarrow$ means $J_{\mathrm{eff}} = 1/2$ up state and down state.
+It is realized when direct $dd$ hopping, $t_{dd}$, is larger than indirect $dpd$ hopping, $t'_{dpd}$
+as long as $J_{\mathrm{eff}} = 1/2$ picture is valid.
+The singlet-triplet excitation gap $\sim t^2_{dd}/U$ is relatively small.
+Here $U$ is on-site Coulomb repulsion.
+
+The second one is quadrupolar state of $J_{\mathrm{eff}} = 1/2$ spins \cite{Nasu2014}.
+It can be written as,
+%formula
+\begin{equation}
+\ket{\psi^-_Q} = \frac{1}{\sqrt{2}}(\ket{\uparrow\uparrow}-i\ket{\downarrow\downarrow}),
+\label{quad_m}
+\end{equation}
+where $\uparrow, \downarrow$ means $J_{\mathrm{eff}} = 1/2$ up state and down state.
+It is stabilized when the symmetric off-diagonal interaction (Eq.(\ref{symoff})) exists and the $t'_{dpd}$ is larger than $t_{dd}$.
+The state has a finite van Vleck term.
+If the symmetric off-diagonal interaction (Eq.(\ref{symoff})) doesn't exist, the state (Eq.\ref{quad_m}) is degenerate with another quadrupolar state,
+\begin{equation}
+\ket{\psi^+_Q} = \frac{1}{\sqrt{2}}(\ket{\uparrow\uparrow}+i\ket{\downarrow\downarrow}).
+\label{quad_p}
+\end{equation}
+
+The last one is band-insulator-like non-magnetic dimer based on molecular orbital.
+This is a singlet of $S = 1/2$.
+It is realized when $t_{dd}$ is larger than $U$.
+The $J_{\mathrm{eff}} = 1/2$ wavefunction collapses in this limit.
+The bonding-antibonding excitation gap $\sim t$ is relatively large.
+Thus, our third motivation is to judge which non-magnetic state is realzied in the high-pressure dimer phase via NMR measurement.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{beta4GPa2.png}
+  \caption{Structural property of $\beta$-Li$_2$IrO$_3$ at high pressure \cite{veiga2017pressure}.
+  (a) Pressure dependence of lattice parameter $\beta$.
+  Structural phase transition occurs around 4 GPa at room temperature
+  (b) Structure in the high pressure $C2/c$ phase.
+  Emphasized Y bond become 12 \% shorter than X, Z bond (X : 3.0139(12) \AA, Y : 2.6620(13) \AA, Z : 3.0122(15) \AA). }
+  \label{beta4GPa}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{three_possibilities.eps}
+  \caption{Three possiblities for the non-magnetic state of dimer in $J_{\mathrm{eff}} = 1/2$ system.}
+  \label{three}
+\end{figure}
+
+Here, we completed the $P$-$T$ phase diagram of $\beta$-Li$_2$IrO$_3$ (Fig. \ref{phase_pre}).
+We revealed that the high-$P$ phase is non-magnetic singlet dimer.
+It is probably based on molecular orbital.
+The high-$T$ high-$P$ singlet dimer formation is connected to low-$T$ low-$P$ magnetic collapse.
+From the continuity of the phase, we concluded that spin-liquid component observed in $\mu$SR is dynamical defect-induced moments embedded in singlet dimer phase.
+Our results suggest that the pressure-induced competition between orbitally-disordered $J_{\mathrm{eff}} = 1/2$ magnetism and orbital-selective molecular dimer
+is a ubiquitous phenomenon among some Kitaev magnets.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=1.0]{phase19.png}
+  \caption{Pressure-temperature phase diagram for $\beta$-Li2IrO3.
+  PM, ICAF means paramagnetic phase, incommensurate non-coplanar antiferromagnetic phase, respectively.
+  Dashed region is coexisting phase.
+  $\times$ is from chi at 1 T along b-axis and $\bullet$ is from 4 T NMR.
+  $\circ$ is from chi at 1 T for polycrystalline sample \cite{Majumder2018} and $\blacktriangledown$ comes from XRD \cite{veiga2017pressure}.
+  Note that ICAF order is destroyed and substituted to PM at 4 T. (Inset) crystal structures for each phase.
+  In $F_{ddd}$ phase at ambient pressure, all bonds have almost equivalent lengths \cite{takayama2015hyperhoneycomb}.
+  In $C2/c$ phase, the emphasized bonds are 12 \% shorter than other bonds \cite{veiga2017pressure}.}
+  \label{phase_pre}
+\end{figure}

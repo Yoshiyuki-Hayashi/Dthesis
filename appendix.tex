@@ -1,0 +1,343 @@
+\appendix
+\chapter{Simulation in paramagnetic phase \& angular rotation}
+\label{appendix_simu}
+In this chapter, based on the calculation of Eq.(\ref{Li1}) and Eq.(\ref{Li2}), we simulate the peak splitting in ${}^7$Li NMR of $\beta$-Li$_2$IrO$_3$ in paramagnetic phase.
+Since $+ 0 .04$ kOe is one order smaller than the values in Eq.(\ref{Li1}) and Eq.(\ref{Li2}), it is ignored in the calculation below.
+$\pm$ in Eq.(\ref{Li1}) and Eq.(\ref{Li2}) means that there are four Li sites as a hyperfine tensor, even though crystallographically there are two sites.
+Since Knight shift is a strength of internal field parallel to applied external field, it can be calculated as,
+\begin{align}
+K_i = \frac{\vec{n}\cdot\overrightarrow{H}_{hf}(i)}{H_0}
+\end{align}
+In paramagnetic phase, using Eq.(\ref{Bhf_n}), it is rewritten as,
+\begin{align}
+K_i = \frac{p}{B_0}\vec{n}\cdot\tilde{A}(i)\cdot\vec{n} = \frac{p}{B_0}M(i, \vec{n})
+\end{align}
+where $B_0 = \mu_0H_0$, $M (i,\vec{n})$ is a angular dependent part of Knight shift defined by the above.
+$M (i,\vec{n})$ is plotted in Fig.\ref{angle_dep} (b),
+where the angles are defined as the deviation from magnetic easy b axis (Fig.\ref{angle_dep}(a)).
+%Fig. (a) definition of angles & (b) angle dependence
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{angle_dep.png}
+  \caption{(a) Angles $\theta$, $\phi$ are defined as the deviation from the magnetic easy b axis.
+  (b) Angle dependent part of Knight shift, $M (i, \theta, \phi)$.
+  Li1(2)$\pm$ correspond in $\pm$ in Eq.(\ref{Li1}) and Eq.(\ref{Li2}).}
+  \label{angle_dep}
+\end{figure}
+If we apply field in arbitrary direction, spectrum splits to four lines in accordance with four hyperfine Li sites.
+However if the field is in bc-plane or ac-plane, spectrum consists of two lines corresponding to two crystallographic Li sites.
+
+This observation was utilized when we confirmed that the b-axis is parallel to applied field in NMR measurement.
+First, I determined crystal direction by single crystal XRD and set it carefully to orient b-axis to be parallel to applied field.
+In NMR measurement, spectrum with two-line structure was observed as expected for b-axis.
+I named this original direction as b0 direction and correspondingly named the orthogonal directions as c0, a0.
+Then, I conducted angular rotation with two-axis rotator from b0 to c0 axis to find the direction which shows the maximum splitting.
+It is because b axis is a magnetic easy axis and the largest magnetization, i.e., splitting is expected.
+I named this newly found direction as b1 direction, and correspondingly named the orthogonal directions as c1, a1.
+(Note that a1 is the same as a0.)
+Finally, I rotated from b1 to a1 axis and found the angle with maximum splitting again.
+Larger angle rotation in a1b1 plane gives the further splitting of two-line structure as expected for ab-plane rotation.
+As a result, I could confirm that the b axis is oriented to applied magnetic field.
+
+The example of such an angular rotation is presented in Fig, \ref{b0c0} for b0-c0 rotation and in Fig. \ref{b1a1} for b1-a1 rotation.
+In this case, I found b1 direction ($\theta = 95^\circ$) which shows slightly larger splitting than the original b0 ($\theta = 90^\circ$) direction in b0-c0 rotation (Fig.\ref{b0c0}).
+Then the splitting is insensitive to a1b1 rotation in smaller angle range ($-10^\circ \leq \phi^\prime \leq 0^\circ$).
+This indicates that b1 direction is close enough to angle region with maximum splitting.
+On the other hand, at larger angle ($\phi^\prime \leq -15$), the Li2 line splits to two lines.
+This confirms that the smaller angle region is closer to true b axis.
+Therefore, for the measurement, I chose b1 as the direction close to b axis.
+The accuracy should be roughly $\pm$ $5^\circ$ because the angular dependence was measured in the increment of $5^\circ$ around b axis.
+
+%Fig. spectrum & splitting
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{ang_dep_b0c0_2.png}
+  \caption{(a) Angle dependence of spectrum at 0 GPa, 1 T, 50 K for the rotation in b0-c0 plane.
+  (b) Angle dependence of the split in spectrum. The splitting was read by the eye.
+  Note that the definition of the angle $\theta$ is not based on Fig. \ref{angle_dep} (a).
+  It is defined as the angle within b0-c0 plane in reference of the real two-axis rotator geometry (Appendix.\ref{two-axis}).}
+  \label{b0c0}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{ang_dep_b1a1_2.png}
+  \caption{(a) Angle dependence of spectrum at 0 GPa, 1 T, 50 K for the rotation in b1-a1 plane.
+  (b) Angle dependence of the split in spectrum.
+  The splitting was read by the eye.
+  The splitting was measured from the leftmost peak.
+  Note that the definition of the angle $\phi^\prime$ is not based on Fig. \ref{angle_dep} (a).
+  It is defined as the angle within b1-a1 plane in reference of the real two-axis rotator geometry (Appendix.\ref{two-axis}).}
+  \label{b1a1}
+\end{figure}
+
+\chapter{Two-axis rotation}
+\label{two-axis}
+To conduct the two-axis rotation of high-pressure cell (or ambient-pressure setup) in NMR measurement probe, we need to understand the mathematical geometry.
+Let's define ($\hat{x}, \hat{y}, \hat{z}$) coordinate system for the probe and ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system for the cell
+(Fig.\ref{two_axis}(a)).
+Field is applied along $\hat{z}$ axis.
+($\hat{x}, \hat{y}, \hat{z}$) coordinate system is fixed to the laboratory and never move.
+($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system rotates against ($\hat{x}, \hat{y}, \hat{z}$) coordinate system.
+The rotation can be done around two axes.
+One is fixed $\hat{x}$ axis ($\theta$ rotation) and  the other is moving $\hat{z}^\prime$ axis ($\phi$ rotation) (Fig.\ref{two_axis}(b)).
+%Figure of probe and cell, definition of theta and phi
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{two_axis.png}
+  \caption{(a) Initial position without rotation.
+  (b) The schematic view of the cell rotation of $\theta$ and $\phi$.}
+  \label{two_axis}
+\end{figure}
+%The crystal to measure is in the cell and its position is fixed against the cell.
+Suppose, at the initial cell position, those two coordinate systems correspond.
+The way of two-axis rotation of the cell gives the relation between the coordinate systems,
+%matrix R(theta, phi)
+\begin{align}
+\label{coordinates}
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) &= (\hat{x}, \hat{y}, \hat{z}) R(\theta, \phi),\\
+R(\theta, \phi) &=
+\left(
+\begin{array}{ccc}
+\cos\phi & -\sin\phi & 0 \\
+\cos\theta\sin\phi & \cos\theta\cos\phi & \sin\theta \\
+-\sin\theta\sin\phi & -\sin\theta\cos\phi & \cos\theta
+\end{array}
+\right).
+\end{align}
+If a, b, c axes of the crystal perfectly correspond to $\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$ direction of the cell, $(\theta,\phi) = (\frac{\pi}{2},0)$,
+(0,0), $(\frac{\pi}{2}, \frac{\pi}{2})$ gives the measurement of b, c, a axes, respectively.
+The $\theta$ and $\phi$ rotaition gives the rotation within bc plane and ab plane, respectively.
+
+Suppose that there is a mismatch between crystal axes and $\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$ directions.
+Then, suppose that we find b, c axis in the direction of $(\theta,\phi) = (\frac{\pi}{2}+\theta_0,0), (\theta_0,0)$.
+Direction of a-axis is still $(\theta,\phi) = (\frac{\pi}{2}, \frac{\pi}{2})$.
+We can conduct the measurement within bc plane by $\theta$ rotation,
+However, we need to manipulate both of $\theta$ and $\phi$ for the measurement within ab plane.
+The problem is how to find the values of $\theta$ and $\phi$ for the ab-plane measurement.
+
+In general, if we set the rotation anlges to certain values of $(\theta,\phi)$, the direction,
+%formula
+\begin{align}
+\label{general}
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\theta, \phi)
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right),
+\end{align}
+is oriented to be parallel to probe $\hat{z}$ direction.
+(Note that, for $R$, the inverse matrix is its transposed matrix: $R^{-1} = R^T$.)
+It is because, from Eq. (\ref{coordinates}), direction of Eq. (\ref{general}) is nothing but a probe $\hat{z}$ direction,
+%formula.
+\begin{align}
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\theta, \phi)
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right)
+= (\hat{x}, \hat{y}, \hat{z})
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right).
+\end{align}
+
+Let's name the directions we found, $(\theta,\phi) = (\frac{\pi}{2}+\theta_0,0), (\theta_0,0). (\frac{\pi}{2}, \frac{\pi}{2})$ as b1, c1, a1 direction, respectively.
+b1 direction is represented in ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system as,
+%\hat{b1} = formula
+\begin{align}
+\widehat{b1} =
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\theta_0 + \frac{\pi}{2}, 0)
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right).
+\end{align}
+Correspondingly, a1 direction is represented in ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system as
+%\hat{a1} = formula
+\begin{align}
+\widehat{a1} =
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime) R^T (\frac{\pi}{2}, \frac{\pi}{2})
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right).
+\end{align}
+For the measurement within a1b1 plane, we have to orient the arbitrary direction $\hat{m}$ within a1b1 plane,
+%\hat{m} = formula
+\begin{align}
+\label{m}
+\hat{m} = \cos\phi^\prime\widehat{b1} + \sin\phi^\prime\widehat{a1},
+\end{align}
+to be parallel to probe $\hat{z}$ direction by manipulating both of $\theta$ and $\phi$.
+Here $\phi^\prime$ is a rotation angle within a1b1 plane.
+
+Here let's generalize the problem and consider the way how to orient the arbitrary direction $\hat{n}$ on ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system
+to be parallel to probe $\hat{z}$ direction.
+We introduce polar coordinate for ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system (Fig.\ref{polar}).
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{polar.png}
+  \caption{Polar coordinates for ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$).}
+  \label{polar}
+\end{figure}
+The arbitrary direction $\hat{n}$ can be described by two angles, ($\theta_n$, $\phi_n$),
+%formula
+\begin{align}
+\hat{n} =
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime)
+\left(
+\begin{array}{c}
+\sin\theta_n\cos\phi_n \\
+\sin\theta_n\sin\phi_n \\
+\cos\theta_n
+\end{array}
+\right).
+\end{align}
+The problem is now reduced to find the rotation angle, ($\theta$, $\phi$), which satisfies,
+%formula
+\begin{align}
+\hat{n} =
+(\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime)
+\left(
+\begin{array}{c}
+\sin\theta_n\cos\phi_n \\
+\sin\theta_n\sin\phi_n \\
+\cos\theta_n
+\end{array}
+\right)
+&= (\hat{x}, \hat{y}, \hat{z}) R(\theta, \phi)
+\left(
+\begin{array}{c}
+\sin\theta_n\cos\phi_n \\
+\sin\theta_n\sin\phi_n \\
+\cos\theta_n
+\end{array}
+\right) \notag\\
+&= (\hat{x}, \hat{y}, \hat{z})
+\left(
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right),
+\end{align}
+for arbitrary ($\theta_n$, $\phi_n$).
+Here, the second equation comes from Eq. (\ref{coordinates}) and the last equation is what we have to solve.
+The solution is,
+%formula
+\begin{align}
+\label{solution}
+(\theta, \phi) = \left(-\theta_n, -\phi_n + \frac{\pi}{2}\right)
+\end{align}
+If ($\theta$, $\phi$) satisfies Eq. (\ref{solution}), arbitrary direction $\hat{n}$ on ($\hat{x}^\prime, \hat{y}^\prime, \hat{z}^\prime$) coordinate system
+is oriented to be parallel to probe $\hat{z}$ direction.
+Therefore, coming back to the original problem, we can orient $\hat{m}$ in Eq. (\ref{m}) to be parallel to probe $\hat{z}$ direction
+by rewriting $\hat{m}$ as ($\theta_m$, $\phi_m$) in polar coordinate, and setting ($\theta$, $\phi$) = $\left(-\theta_m, -\phi_m+\frac{\pi}{2}\right)$.
+
+To determine ($\theta$, $\phi$) for a1b1 rotation in programming, the above results were considered.
+
+Finally, $(\theta,\phi)$ is controlled by two values (A, B) in KAME interface via
+%formula.
+\begin{align}
+\theta = \frac{A-B}{80} \\
+\phi = \frac{A+B}{160}
+\end{align}
+
+\chapter{Further NMR data}
+\section{Measurement along c-axis}
+We also measured $T^{-1}_1$ at 4 T along c-axis and at 2.6 GPa (Fig.\ref{c-axis}).
+The value in high-$T$ paramagnetic phase along c-axis is larger than that along b-axis.
+There is no significant difference in dimerization transition point, $T_d = 230$ K.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{c-axis.png}
+  \caption{Field-direction dependence of $T^{-1}_1$ at 2.6 GPa.
+  There is no significant difference in dimerization transition point, $T_d = 230$ K.}
+  \label{c-axis}
+\end{figure}
+
+\section{Measurement for hysteresis}
+Fig.\ref{hysteresis} shows $T^{-1}_1$ at 4 T along b-axis and at 3,5 GPa.
+It is measured in the condition of decreasing temperature and increasing temperature around $T_d = 292$ K.
+We didn't observe hysteresis by the increment of 5 K.
+This means that the hysteresis is smaller than 5 K.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{hysteresis.png}
+  \caption{$T^{-1}_1$ at 4 T along b-axis and at 3.5 GPa around $T_d = 292$ K.
+  The hysteresis is smaller than 5 K.}
+  \label{hysteresis}
+\end{figure}
+
+\section{Condition for measurement}
+Detail pulse condition for the measurement is summarized in Table.\ref{pulse}.
+%Table
+\begin{table}
+\begin{center}
+\caption{Pulse condition we used for the measurement.}
+\begin{tabular}{ccc} \hline
+            & 1st pulse (width, intensity)& 2nd pulse (width, intensity)\\ \hline
+ ${}^7$Li   & 2 $\mu$s, -3 dB         & 2 $\mu$s, 0 dB\\ \hline
+ ${}^{63}$Cu& 2 or 5 $\mu$s, -3 or -1 dB      & 2 or 5 $\mu$s, 0 dB\\ \hline
+\end{tabular}
+\label{pulse}
+\end{center}
+\end{table}
+For the low-temperature measurement, lower value of master level (-15 dB) with -10 dB attenuator was enough, but as increasing temperature, we needed to increase the master level
+up to -12 dB with the attenuator.
+Width of comb pulse to measure $T^{-1}_1$ was 6 or 7 $\mu$s with 0 dB and the number of comb pulses was one.
+
+We used $\tau$ listed in Table.\ref{tau}.
+\begin{table}
+\begin{center}
+\caption{$\tau$ we used for the measurement. The first and second row are the field and pressure when the $\tau$ was used.}
+\begin{tabular}{ccccc} \hline
+ $B$ (T)& $P$ (GPa)& $\tau$ ($\mu$s) for ${}^7$Li& $\tau$ ($\mu$s) for ${}^{63}$Cu\\ \hline
+ 4& 1.3& 20& 80&\\ \hline
+ 4& 2.6& 20& 80&\\ \hline
+ 4& 3.5& 70& 160&\\ \hline
+ 4& 3.9& 70& 160&\\ \hline
+ 4& 0& 70& 180&low $T$\\ \hline
+ 4& 0& 60& 180&For Li1, high $T$\\ \hline
+ 4& 0& 40, 50& 180&For Li2, high $T$\\ \hline
+ 1& 0& 20& 90&$T > T_{\mathrm{mag}} = 38$ K\\ \hline
+ 1& 0& 14& -&$T < T_{\mathrm{mag}} = 38$ K\\ \hline
+\end{tabular}
+\label{tau}
+\end{center}
+\end{table}
+
+For the data collection, parameters listed in Table. \ref{trig} were used.
+\begin{table}
+\begin{center}
+\caption{Parameters for data collection.}
+\begin{tabular}{cccc} \hline
+                  & ${}^7$Li& ${}^{63}$Cu& ${}^7$L (1 T)\\ \hline
+ From Trigger (ms)& -0.01& -0.07& -0.005\\ \hline
+ Width (ms)& 0.045& 0.2& 0.045\\ \hline
+\end{tabular}
+\label{trig}
+\end{center}
+\end{table}
+
+All NMR measurement was based on KAME interface programmed by K. Kitagawa.

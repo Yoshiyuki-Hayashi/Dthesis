@@ -1,0 +1,337 @@
+\chapter{Discussion}
+\section{Quantum critical point at ambient pressure}
+The size of the low-$T$ magnetic moment at 4 T is $\sim$ 0.4 $\mu_B$ (Fig.\ref{Bdep_mag}), which is still less than 1.6 $\mu_B$ at paramagnetic phase.
+The magnetic moments are not fully polarized at 4 T.
+This means that there is still a magnetically fluctuating component in the high-field regime.
+In fact, the magnetization is not saturated at 4 T (Fig.\ref{Bdep_mag}).
+The problem is whether the fluctuating component can be understood as spin liquid or not.
+In the case of field-induced spin liquid, $\alpha$-RuCl$_3$, the size of the low-$T$ magnetic moment at 8 T is $\sim$ 0.55 $\mu_B$ \cite{Zheng2017}.
+In that sense, there is a possibility that the unpolarized component in $\beta$-Li$_2$IrO$_3$ can be a spin liquid.
+It has a spin gap of 90 $\pm$ 20 K (Fig.\ref{spin_gap}(b)).
+
+Here, spin gap fitting was done with the function,
+\begin{equation}
+T^{-1}_1 = b\mathrm{e}^{-\Delta/T},
+\end{equation}
+where $b$ and spin gap $\Delta$ are fitting parameters, and $T$ is temperature.
+Temperature range used for fitting is summarized in Table.\ref{Trange}.
+For the pressure of 2.6, 3.5, 3.9 GPa, we estimated the spin gap by the fitting to the decrease from the intermidiate value to almost zero value.
+
+For $\alpha$-RuCl$_3$, there are two reports that one claim the gapless quantum spin liquid \cite{Zheng2017} and the other claim the gapful quantum spin liquid \cite{baek2017evidence}.
+However, the common feature is that it become gapless around the quantum critical point.
+This might mean that the gapped behavior we observed at 4 T is too far away from the quantum critical point.
+In $\alpha$-RuCl$_3$, exotic behavior like quantized thermal Hall effect is only reported around quantum critical point $\sim 8$ T (Fig.\ref{phase_BT}(b)) \cite{kasahara2018majorana}.
+Our result might suggest that, in order to observe quantized thermal Hall effect in $\beta$-Li$_2$IrO$_3$, we need to finely adjust the field between 2.7 T and 4 T
+(Fig.\ref{phase_BT} (a)).
+On the other hand, quantized thermal Hall effect might be originating from two dimensionality of spin liquid state.
+If it is the case, we cannot observe quantized thermal Hall effect in three dimensional $\beta$-Li$_2$IrO$_3$.
+Instead, if 3D Kitaev spin liquid is realized in $\beta$-Li$_2$IrO$_3$ at the field between 2.7 and 4 T, there should be a topological phase transition from paramagnetic state to
+spin liquid state \cite{nasu2014vaporization}.
+
+Thus, our result gives the upper bound (4 T) to observe the possible field-induced exotic quantum criticality in $\beta$-Li$_2$IrO$_3$.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{spin_gap_both.png}
+  \caption{(a) Spin gap fitting for $T^{-1}_1$.
+  (b) Pressure dependence of the spin gap.
+  Spin gap $\Delta$ is enhanced for the dimerization above 3.5 GPa.}
+  \label{spin_gap}
+\end{figure}
+
+\begin{table}[H]
+\begin{center}
+\caption{Temperature range used for spin gap fitting.}
+\begin{tabular}{ccc} \hline
+ $P$ (GPa)& $T_\mathrm{start}$ (K)& $T_\mathrm{end}$ (K)\\ \hline
+ 0 & 20 (lowest)& 70\\ \hline
+ 1.3& 40 (lowest)& 110\\ \hline
+ 2.6& 20 (lowest)& 225\\ \hline
+ 3.5& 160& 250\\ \hline
+ 3.9& 180& 290\\ \hline
+\end{tabular}
+\label{Trange}
+\end{center}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{phase_BT.png}
+  \caption{Field-temperature phase diagram (a) for $\beta$-Li$_2$IrO$_3$ \cite{ruiz2017correlated}
+  and (b) for $\alpha$-RuCl$_3$ \cite{kasahara2018majorana}.
+  Quantum critical behavior is observed in $\alpha$-RuCl$_3$ in the red shaded limited region.
+  It might also be true for $\beta$-Li$_2$IrO$_3$.
+  Region with dashed circle below 4 T have a possibility for quantum critical behavior.
+  In (a), we added the words, "measured", "spiral AFM", and "Quantum critical behavior?".}
+  \label{phase_BT}
+\end{figure}
+
+\section{Strong singlet dimer formation above 3.5 GPa}
+Now we examine the three possibilities for the non-magnetic state of the dimer (Fig.\ref{three}).
+Knight shift in our singlet dimer state at 3.5 GPa is almost zero (Fig.\ref{3.5GPa}).
+It means almost zero susceptibility in the dimer state.
+
+Fig.\ref{chi_cal} is a calculated magnetic susceptiblity $\chi$ for the dimer of $J_{\mathrm{eff}} = 1/2$ spins \cite{Nasu2014}.
+$t'$ represents the direct $dd$ hopping integral in the scale of indirect $dpd$ hopping.
+$t' < 1$ means stronger indirect $dpd$ hopping and it stabilizes quadrupolar state.
+We can see that the quadrupolar state has a finite $\chi$.
+Thus, quadrupolar state is excluded because we observed almost zero susceptibility in the dimer state.
+
+Then, we examine the possibilty of $J_{\mathrm{eff}} = 1/2$ spin singlet.
+In order to form $J_{\mathrm{eff}} = 1/2$ spin singlet, we need AF Heisenberg interaction.
+However, the first principle calculation revealed that Heisenberg interaction is FM even under pressure \cite{Yadav2018, Kim2016}.
+This makes the $J_{\mathrm{eff}} = 1/2$ spin singlet scenario less plausible.
+There is another negative discussion for the scenario.
+Suppose that $J_{\mathrm{eff}} = 1/2$ spin singlet is formed by exchange interaction.
+There should be the singlet-triplet gap of the order of the interaction.
+In $\beta$-Li$_2$IrO$_3$, the calculation revealed that the exchange interactions are of the order of $\sim$ 100 K \cite{Yadav2018}.
+The gap should give a finite van Vleck term in $\chi$ and correspondingly finite $K$.
+In fact, the calculation of magnetic susceptibility $\chi$ for $J_{\mathrm{eff}} = 1/2$ spin singlet revealed that $\chi$ has finite value at the temperature scale of
+the energy gap (in our case $\sim 100$ K), while it decays to zero value at lower temperature \cite{Nasu2014}.
+In Fig.\ref{chi_cal}, $J_{\mathrm{eff}} = 1/2$ singlet state corresponds to $t' > 1$ case, which means stronger direct $dd$ hopping.
+However, we observed almost zero $K$ for singlet dimer phase.
+The discrepancy means that $J_{\mathrm{eff}} = 1/2$ spin singlet is not the case.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{chi_cal.png}
+  \caption{Calculated magngetic susceptibility $\chi$ for dimer state of $J_{\mathrm{eff}} = 1/2$ spins.
+  $\beta$ is inverse temperature. \cite{Nasu2014}
+  (a) $\chi$
+  (b) $\mathrm{d}\chi/\mathrm{d}\beta$
+  $t'$ represents the direct $dd$ hopping integral in the scale of indirect $dpd$ hopping.
+  $t' < 1$ means quadrupolar state and $t' > 1$ means singlet state.
+  The singlet state has a finite peak structure at the temperature scale of singlet-triplet gap.}
+  \label{chi_cal}
+\end{figure}
+
+Other possibility is the collapse of $J_{\mathrm{eff}} = 1/2$ picture and the formation of molecular orbital.
+Fig.\ref{band_cal_highP} is the calculated density of states (DOS) for ambient-pressure $Fddd$ structure and for high-pressure $C/2c$ structure at 4.4 GPa (Fig.\ref{band_cal_highP})
+\cite{takayama2018pressure}.
+At ambient pressure, we can observe the splitting of $t_{2g}$ states to $J_{\mathrm{eff}} = 1/2$ and $J_{\mathrm{eff}} = 3/2$ states.
+On the other hand, at high-pressure $C/2c$ phase, $d_{xy}$, $d_{yz}$, $d_{zx}$ character appears.
+The lowest occupied sub-band (-1.7 eV) and the highest unoccupied sub-band (0.7 eV) are dominated by $d_{zx}$ character.
+It means the formation of bonding-antibonding state of $d_{zx}$ orbital.
+$d_{zx}$ orbital is directed along dimerized bond (Y bond).
+The degenerate $d_{xy}$, $d_{yz}$ orbitals are entangled by SOC and reside between -1.7 eV and 0.7 eV.
+Thus, the dimer state is a molecular orbital of $d_{zx}$ orbital.
+The gap induced by the formation of the bonding-antibonding state is estimated as $\sim$ 7000 K.
+This is consistent with our zero $K$ because such a large excitation gap gives negligible van Vleck susceptibility.
+If we assume the similar behavior of $\chi$ to $J_{\mathrm{eff}} = 1/2$ spin singlet, $\chi$ has a finite value at $\sim 7000$ K and decays to zero at lower temperature,
+which should give the almost zero $\chi$ in our measuring temperature range.
+
+Thus, our results support the molecular orbital formation for the non-magnetic dimer state.
+
+Also, the large spin gap $\sim 2000$ K (Fig.\ref{spin_gap}) above 3.5 GPa is consistent with our observeation.
+The strong singlet dimer formation is further supported by the high transition temperature reaching to room temperature and the fact that it is first-order transition.
+
+$J_{\mathrm{eff}} = 1/2$ state is obtained by equally mixing up the $d_{xy}$, $d_{yz}$, $d_{zx}$ orbitals with multiplying a complex factor.
+We can view the transition from $J_{\mathrm{eff}} = 1/2$ state to $d_{zx}$-molecular orbital as the pressure-induced orbital selection.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{band_cal_highP.png}
+  \caption{Calculated density of states (DOS) for Ir. \cite{takayama2018pressure}
+  (a) DOS for the ambient-pressure structure ($Fddd$).
+  $t_{2g}$ states split to $J_{\mathrm{eff}} = 1/2$ and $J_{\mathrm{eff}} = 3/2$ states.
+  (b) DOS for the high-pressure structure at 4.4 GPa ($C/2c$).
+  $d_{zx}$ orbital forms bonding-antibonding state.
+  $d_{xy}$ and $d_{yz}$ are entangled by SOC.
+  Total DOS contains O $2p$ states.}
+  \label{band_cal_highP}
+\end{figure}
+
+
+XRD and neutron scattering revealed that the zigzag chains compress easier than the bridging bonds (Fig.\ref{bond}) \cite{veiga2017pressure, takayama2018pressure}.
+The first principle calculation suggest that it gives the larger enhancement of direct hopping along zigzag chain than one in bridging bond \cite{Kim2016}.
+It is considered that the anisotropic enhancement of hopping contributes to the stabilization and formation of $d_{zx}$-molecular orbital.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{bond.png}
+  \caption{Pressure dependence of bond length \cite{veiga2017pressure, takayama2018pressure}. X, Y bond composing zigzag chain compresses easier than bridging Z bond.}
+  \label{bond}
+\end{figure}
+
+\section{Competition between spin-orbit couping and dimer formation}
+As we discussed in Chap.\ref{result}, there is a coexisting phase of $J_\mathrm{eff} = 1/2$ spins and singlet dimer in the intermidiate pressure range (1 GPa $< P <$ 3 GPa)
+(Fig.\ref{pressure_phase}).
+In Chap.\ref{result}, we presented the interpretaion that singlet dimer state in the intermidiate region (1.3 and 2.6 GPa) is affected by defects.
+However, we can also have a speculation that the dimer state at 1.3 and 2.6 GPa is different from molecular orbital dimer.
+Quadrupolar dimer state can still be excluded because it cannot be continuously connected to $S = 1/2$ molecular dimer state above 3.5 GPa.
+They belong to different symmertries.
+Here, we mean the possibility of $J_\mathrm{eff} = 1/2$ pseudo-spin singlet at 1.3 and 2.6 GPa.
+It can be continuously connected to $S = 1/2$ molecular dimer state above 3.5 GPa.
+In this view, finite $K$ for Li$_\mathrm{d}$ peak at 1.3 GPa (Fig.\ref{spectrum_highP}(d)) is originated from van Vleck term of modest singlet-triplet gap.
+One of the coexisting component at 2.6 GPa (Fig.\ref{spectrum_highP}(e)) is also understood as $J_\mathrm{eff} = 1/2$ pseudo-spin singlet with finite $K$.
+However, XRD at high pressure and at low temperature is now revealing that the structure of dimer at lower pressure region is the same as one at higher pressure region
+(private communication).
+This suggests the same dimer state for the overall $P-T$ phase diagram.
+The conclusive results from high-pressure XRD is awaited.
+
+What we found in $\beta$-Li$_2$IrO$_3$ under pressure is a competition between spin-orbit Mott state and molecular dimer state.
+The former is characterized by the energy gain of SOC and Coulomb $U$, while the latter is characterized by the energy gain of hopping amplitude $t$.
+If there is no SOC in $\beta$-Li$_2$IrO$_3$, it shows dimerization in Z-bond \cite{Kim2016}.
+Note that, in reality, the dimerization in $\beta$-Li$_2$IrO$_3$ occurs in Y-bond.
+$\alpha$-RuCl$_3$ also shows dimerization without SOC \cite{Kim2016a}.
+These mean that there is an intrinsic instability for orbital-selective dimerization among these Kitaev magnets and strong SOC prevents the dimerization
+by mixing the orbitals at ambient pressure.
+Pressure modifies the subtle balance by increasing hopping integrals, resulting in the transition from $J_\mathrm{eff} = 1/2$ state to dimerized state.
+On the other hand, Li$_2$RuO$_3$ ($4d^4$) shows dimerizatoin under ambient pressure \cite{Miura2007}.
+This might mean that not only SOC but also spin-orbit Mottness of $J_\mathrm{eff} = 1/2$ state is a key to prevent dimerization.
+
+If the pressure is moderate and the system is just in a competitive region, there should be the incomplete dimer formation.
+In that region, the pairing partner for dimer is not fully determined.
+Fluctuation to find the dimer pair can be regarded as the similar state to resonating valence bond (RVB) state \cite{ANDERSON1973153}.
+In this sense, there might be RVB-like spin liquid state in the competitive region.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{pressure_phase.png}
+  \caption{Schematic image of pressure dependence of the phase in $\beta$-Li$_2$IrO$_3$.
+  Singlet dimer in the intermidiate pressure region is affected by defect or different from strong singlet dimer at higher pressure.}
+  \label{pressure_phase}
+\end{figure}
+
+\section{Effect of defect and $\mu$SR}
+Fig. \ref{lowQ} shows the crystal-quality dependence of $\chi_b$ and $T^{-1}_1$.
+Crystal 1 is supplied by a collaborator.
+Crystal 2 is obtained by the method described in Chap.\ref{method}.
+The kink at $T_\mathrm{mag} = 38$ K disappears for crystal 1 (Fig.\ref{lowQ}(a)).
+It is considered that the large amount of defect disturbs ICAF order for crystal 1.
+The effect of defects is more prominently observed in $T^{-1}_1$ (Fig.\ref{lowQ}(b)).
+$T^{-1}_1$ for crystal 1 at 3.2 GPa and at 7 T doesn't show non-magnetic transition.
+Instead, it shows peak structure around 40 K.
+The low-$T$ value is two order of magnitude larger than that for crystal 2 at 3.5 GPa.
+The peak structure is also observed for crystal 1 at 3 T.
+This means the anomalous behavior in $T^{-1}_1$ is originating not from the difference in applied field but from the sample quality.
+It is considered that the high concentration of defects in crystal 1 produces dynamical spins.
+
+$\mu$SR at high pressure concluded that there is a coexistence of liquid-like dynamical spins and glass-like frozen spins
+in the pressure range from 1.37 GPa to 2.27 GPa below $T_{\mathrm{mag}}$ = 38 K \cite{Majumder2018}.
+In the $P$-$T$ region, our measurement showed the coexistence of ICAF ordered spins, singlet dimers and defects.
+The discrepancy is possibly caused by the amount of defect.
+It is considered that the large amount of defect in ICAF order phase make it close to glassy state
+as we observed the diffuse of hyperfine field for paramagnetic component (or ICAF order moments in low-field regime) at 1.3 GPa and at low temperature.
+Also, the high concentration of defect in singlet dimer phase can produce dynamical spins.
+In fact, $T^{-1}_1$ measured for low-quality sample at 3.2 GPa was two-order of magnitude larger than that at 3.5 GPa (Fig.\ref{lowQ}(b)).
+This indicates the existence of dynamical spins can be strongly dependent on sample quality.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{lowQ.png}
+  \caption{Effect of sample quality.
+  (a) Magnetic susceptibility at 1 T along b-axis of $\beta$-Li$_2$IrO$_3$ single crystals.
+  The high-quality crystal, crystal 2, has higher and clearer magnetic transition point, $T_\mathrm{mag} = 38$ K, than crystal 1.
+  (b) Spin-lattice relaxation rate, $T^{-1}_1$.
+  Non-magnetic transition is absent for low-quality crystal, crystal 1.
+  Instead the large value of $T^{-1}_1$ is observed in crystal 1, indicating the existence of defect-induced dynamical spins.}
+  \label{lowQ}
+\end{figure}
+
+
+\section{Comparison with other compounds}
+There are not so many iridates which shows valence bond solid.
+CuIr$_2$S$_4$ shows structural transition with octamer formation at $T_s \sim 230$ K and at ambient pressure \cite{Radaelli2002}.
+Spin-lattice realaxation rate, $T^{-1}_1$, in Cu-NMR shows abrupt drop at the transition point (Fig.\ref{T1_CuIr2S4}) \cite{Tsuji1997}.
+Knight shift also change the sign at the transition point from negative above $T_s$  to positive below $T_s$ (Fig.\ref{K_CuIr2S4}) \cite{Tsuji1997}.
+Knight shift below $T_s$ has finite value possibly due to orbital contribution.
+This is a metal-insulator transition.
+There is a discussion about mechanism that one-dimensional hopping originating from anisotropy of $t_{2g}$ orbitals induces Peierls instability and octamer formation
+(orbitally-induced Peierls mechanism) \cite{Khomskii2005}, while it ignores the effect of SOC.
+Our singlet dimer formation in $\beta$-Li$_2$IrO$_3$ is insulator-to-insulator transition, so it is different from CuIr$_2$S$_4$.
+However, also in $\beta$-Li$_2$IrO$_3$, pressure induce anisotropic compression and anisotropic enhancement of hopping, especially in zigzag chain
+\cite{takayama2018pressure, veiga2017pressure, Kim2016}.
+This might mean that the one-dimensionality in hopping is induced by pressure, resulting in Peierls instability and singlet dimer formation within zigzag chain.
+This pressure-induced one-dimensionality scenario is one possibility to explain the singlet dimer formation in $\beta$-Li$_2$IrO$_3$.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{T1_CuIr2S4.png}
+  \caption{$T^{-1}_1$ of CuIr$_2$S$_4$ ($x = 0$) \cite{Tsuji1997}. It shows abrupt drop at $T_s \sim 230$ K.}
+  \label{T1_CuIr2S4}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{K_CuIr2S4.png}
+  \caption{Knight shift of CuIr$_2$S$_4$ ($x = 0$) \cite{Tsuji1997}. Sudden sign change is observed at $T_s \sim 230$ K.}
+  \label{K_CuIr2S4}
+\end{figure}
+
+IrTe$_2$ is another example which shows dimer formation at $T_s \sim 280$ K and at ambient pressure \cite{Pascut2014}.
+Spin-lattice realaxation rate, $T^{-1}_1$, in ${}^{125}$Te-NMR shows abrupt drop at the transition point (Fig.\ref{T1_IrTe2}).
+This is a metal-to-metal transition.
+Both of CuIr$_2$S$_4$ and IrTe$_2$ are mixed-valnent system with formal Ir$^{3.5+}$ valnece \cite{Radaelli2002, Pascut2014}.
+Charge ordering accompanies with octamer or dimer formation for both compounds.
+In that sense, singlet dimer formation in $\beta$-Li$_2$IrO$_3$ without charge fluctuation is rare case among dimerization in iridates.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{T1_IrTe2.png}
+  \caption{$T^{-1}_1$ of IrTe$_2$ \cite{Mizuno2002}. It shows abrupt drop at $T_s \sim 280$ K.}
+  \label{T1_IrTe2}
+\end{figure}
+
+$\alpha'$-NaV$_2$O$_5$ shows dimer formation of V$^{4+}$ at $T_{SP} = $ 34 K and at ambient pressure (spin-Peierls transitoin) \cite{Isobe1996}.
+Here, spin-Peierls transition is a singlet dimer formation observed in one-dimensional $S = 1/2$ spin system, which is induced by AF Heisenberg interaction.
+The absolute value of Knight shift in ${}^{23}$Na-NMR shows the reduction of almost 1/10 from high-$T$ paramagnetic state to low-$T$ singlet dimer state (Fig.\ref{K_NaV2O5}).
+In our singlet dimer formation in $\beta$-Li$_2$IrO$_3$, the reduction of Knight shift from paramagnetic to singlet state is almost 1/100 at 3.5 GPa (Fig.\ref{3.5GPa}(b)).
+The large reduction in $\beta$-Li$_2$IrO$_3$ indicates that the dimer formation is stronger than spin-Peierls transition in $\alpha'$-NaV$_2$O$_5$.
+In other words, the excitaion gap induced by singlet dimer formation in $\beta$-Li$_2$IrO$_3$ is far larger than singlet-triplet gap in $\alpha'$-NaV$_2$O$_5$.
+This comparison also guarantees that the singlet dimer in $\beta$-Li$_2$IrO$_3$ originates from molecular orbital dimer, not from singlet induced by exchange interaction.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{K_NaV2O5.png}
+  \caption{Knight shift of $\alpha'$-NaV$_2$O$_5$ \cite{Ohama1997}.
+  Field is along b-axis.
+  The absolute value of Knight shift decrease at $T_{SP} \sim 34$ K.
+  The amount of the decrease is smaller than that at $T_\mathrm{d} = 292$ K in $\beta$-Li$_2$IrO$_3$ under 3.5 GPa.}
+  \label{K_NaV2O5}
+\end{figure}
+
+The pressure-induced lattice dimerization was also reported for other Kitaev magnets, $\alpha$-Li$_2$IrO$_3$ \cite{Hermann2018}, $\alpha$-RuCl$_3$ \cite{Bastien2018}.
+Magnetism of the high-$P$ phase in $\alpha$-Li$_2$IrO$_3$ is still unknown though (Fig.\ref{phase_PT}(b)).
+For $\alpha$-RuCl$_3$, the high-pressure magnetism was revealed to be a singlet dimer and similar phase diagram to $\beta$-Li$_2$IrO$_3$ was discovered (Fig.\ref{phase_PT}(a)).
+It is considered that similar mechanism of molecular orbital formation is valid also for the dimerization in $\alpha$-RuCl$_3$.
+For Na$_2$IrO$_3$, it is controversial whether it has a structural phase transition at high pressure \cite{Hermann2017, Xi2018}.
+The discrepancy possibly comes from the air- and moisture-sensitivity of the compound.
+However, at least, the reported transition is moderate and is not the dimerization \cite{Xi2018}.
+$\gamma$-Li$_2$IrO$_3$ do not show any structural phase transition under pressure \cite{breznay2017resonant}.
+The magnetic order disappears at $\sim$ 1.4 GPa without any lattice distortion.
+These indicate that there is a general tendency of pressure-induced singlet dimer formation in Kitaev magnets,
+but the appearance is highly sensitive to chemical composition or structure.
+It is necessary to reveal the whole $P-T$ phase diagram for all the Kitaev magnets and to elucidate the condition of appearance or disappearance of singlet dimer formation.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{phase_PT.png}
+  \caption{Pressure-temperature phase diagram (a) for $\alpha$-RuCl$_3$ \cite{Bastien2018} and (b) for $\alpha$-Li$_2$IrO$_3$ \cite{Hermann2018}.
+  Phase diagram for $\alpha$-RuCl$_3$ is similar to one for $\beta$-Li$_2$IrO$_3$.}
+  \label{phase_PT}
+\end{figure}
+
+\chapter{Summary}
+Since the discovery of $J_\mathrm{eff} = 1/2$ pseudo-spin in Sr$_2$IrO$_4$ \cite{kim2008novel, kim2009phase},
+interplay between SOC and correlation has provided the fascinating research area.
+One of the most intensively studied themes is a realizatoin of Kiteav spin liquid in $J_\mathrm{eff} = 1/2$ pseudo-spin system \cite{kitaev2006anyons, jackeli2009mott}.
+For Kitaev spin liquid, there are various exotic theoretical predition such as application to quantum computing \cite{kitaev2006anyons},
+realization of fractional excitation \cite{nasu2015thermal, yoshitake2017temperature}
+and appearance of exotic superconductor by hole doping \cite{you2012doping}.
+$\beta$-Li$_2$IrO$_3$ was expected to realize the Kitaev spin liquid under high pressure.
+It is because magnetic order of $J_\mathrm{eff} = 1/2$ at ambient pressure is suppressed by pressure without metallization \cite{takayama2015hyperhoneycomb}.
+Also, there is a $\mu$SR report that the high-pressure phase is a mixture of spin liquid and spin glass  \cite{Majumder2018}.
+Thus, we started the study of high-pressure magnetism of $\beta$-Li$_2$IrO$_3$.
+
+We synthesized the largest $\beta$-Li$_2$IrO$_3$ single crystals.
+At ambient pressure, we confirmed that the magnetic order in low-field regime becomes ferromagnetically polarized paramagnet in high-field regime.
+We measured the high-pressure magnetism up to 3.9 GPa through magnetic susceptibility and ${}^7$Li NMR.
+We revealed $P$-$T$ phase diagram.
+The high-pressure phase is a non-magnetic singlet dimer probably based on molecular orbital.
+Also, we concluded that spin-liquid component observed in $\mu$SR is defect-induced dynamical moments in singlet dimer background.
+
+We revealed that there is a pressure-induced competition between orbital-disordered $J_{\mathrm{eff}} = 1/2$ state and orbital-selective molecular dimer state in $\beta$-Li$_2$IrO$_3$.
+In the competitive region, pairing partner of dimer fluctuates and RVB-like spin liquid might realize.
+The competition seems to be a common feature among some Kitaev magnets.
+Uncovering of $P$-$T$ phase diagram for all Kitaev candidates is awaited.
